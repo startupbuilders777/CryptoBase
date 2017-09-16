@@ -5,6 +5,7 @@ import sqlalchemy.orm
 import gdax #GDAX WRAPPER FOR GDAX EXCHANGE API CALLS
 from cockroachdb.sqlalchemy import run_transaction
 import datetime
+from datetime import timedelta
 
 app = Flask(__name__)
 app.config.from_pyfile('hello.cfg')
@@ -331,24 +332,24 @@ class TradingInfo(db.Model):
 
 
 def serializeHistoricData(data):
-    data.sort()
-    serializedData = []
-    for i in data:
-        time = datetime.datetime.utcfromtimestamp(i[0])
-        serializedData.append(
-            {"unix epoch time": i[0],
-             "nicetime": datetime.datetime.utcfromtimestamp(i[0]),
-             "time": {"year": time.year,
-             "month": time.month,
-             "day": time.day,
-             "hour": time.hour},
-             "low": i[1],
-             "high": i[2],
-              "open": i[3],
-              "close": i[4],
-              "volume": i[5],
-             })
-
+    if(data is not None):
+        data.sort()
+        serializedData = []
+        for i in data:
+            time = datetime.datetime.utcfromtimestamp(i[0])
+            serializedData.append(
+                {"unix epoch time": i[0],
+                 "nicetime": datetime.datetime.utcfromtimestamp(i[0]),
+                 "time": {"year": time.year,
+                 "month": time.month,
+                 "day": time.day,
+                 "hour": time.hour},
+                 "low": i[1],
+                 "high": i[2],
+                  "open": i[3],
+                  "close": i[4],
+                  "volume": i[5],
+                 })
     return serializedData
 
 
@@ -373,6 +374,9 @@ def send():
     if request.method == 'GET':
         data = public_client.get_product_historic_rates("ETH-USD", granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
         print(len(data))
+
+        data2 = getData()
+       #print(jsonify(serializeHistoricData(data2)))
         return jsonify(serializeHistoricData(data))
 
 '''
@@ -411,14 +415,42 @@ volume volume of trading activity during the bucket interval
 
 
 
+
 '''
 
+def getData():
+    '''Start from 2016 and collect to 2017, and test with latest 30% of data, data is hourly'''
+    dateStart = datetime.datetime(2016, 1, 1, 0, 0, 0)
+    dateStartISO = dateStart.isoformat()
+    dateEnd = datetime.datetime(2016, 1, 2, 0, 0, 0)#datetime.datetime(2017,9,15,0,0,0)
+    dateEndISO = dateEnd.isoformat()
+    dateNext = dateStart
+
+    data = []
+    for i in range(1,10):
+        dateStart = dateNext
+        dateNext  = dateNext + timedelta(days=15)
+        dateNextISO = dateNext.isoformat()
+        print("date next is")
+        print(dateStart)
+        print("date next is again")
+        print(dateNext)
+        data +=  public_client.get_product_historic_rates("ETH-USD", start=dateStartISO, end=dateNextISO, granularity=3600)
+
+
+    print(dateStart)
+    #  print(dateEnd)
+
+    #data = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO, granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
+    print(data)
+
+getData()
 
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
 #print(last_24_hours_data)
 
 #Convert to ISO
-print(datetime.datetime.utcnow().isoformat())
+
 
 
 
