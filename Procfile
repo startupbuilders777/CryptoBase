@@ -1,3 +1,3 @@
-exec: ./setup-database.sh
+init: ./setup-database.sh
 web: gunicorn cryptobase:app
 
