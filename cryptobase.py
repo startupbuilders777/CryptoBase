@@ -275,36 +275,78 @@ def update_done():
     flash('Updated status')
     return redirect(url_for('show_all'))
 
-'''
+
+
 class TradingInfo(db.Model):
     __tablename__ = "trading_info"
     id = db.Column("trading_info_id", db.Integer, primary_key=True)
-    
     name = db.Column(db.String, unique=True)
     open = db.Column(db.Float)
     close = db.Column(db.Float)
+    high = db.Column(db.Float)
+    low = db.Column(db.Float)
+    day = db.Column(db.Integer)
+    year = db.Column(db.Integer)
+    hour = db.Column(db.Integer)
+    minute = db.Column(db.Integer)
+    second = db.Column(db.Integer)
+    volume = db.Column(db.Float)
+    currencyHistory = db.relationship("Currency", backref="tradinginfo", lazy="dynamic")
 
-    def __init__(self, name):
+    def __init__(self, name, open, close, high, low, month, day, year, hour, minute, second, volume):
         self.name = name
+        self.open = open
+        self.close = close
+        self.high = high
+        self.low = low
+        self.month = month
+        self.day = day
+        self.year = year
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+        self.volume = volume
+
 
     @property
     def serialize(self):
         return {
             "name": self.name,
+            "open": self.open,
+            "close": self.close,
+            "high": self.high,
+            "low": self.low,
+            "month": self.month,
+            "day": self.day,
+            "year": self.year,
+            "hour": self.hour,
+            "minute": self.minute,
+            "second": self.second,
+            "volume": self.volume,
             "id": self.id
         }
 
     @property
-    def serializeWithPrices(self):
+    def serializeWithCurrency(self):
         return {
             "name": self.name,
-            "prices": [price.serialize() for price in self.priceHistory],
+            "open": self.open,
+            "close": self.close,
+            "high": self.high,
+            "low": self.low,
+            "month": self.month,
+            "day": self.day,
+            "year": self.year,
+            "hour": self.hour,
+            "minute": self.minute,
+            "second": self.second,
+            "volume": self.volume,
+            "curr": [currency.serialize() for currency in self.currencyHistory],
             "id": self.id
         }
         
-        
-TUBA WILL MAKE THIS SHIT
-'''
+
+
 
 def serializeHistoricData(data):
     if(data is not None):
