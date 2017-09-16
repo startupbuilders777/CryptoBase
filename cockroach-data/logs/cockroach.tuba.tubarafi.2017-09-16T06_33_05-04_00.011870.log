@@ -1,0 +1,23 @@
+I170916 06:33:05.070664 1 util/log/clog.go:1013  [config] file created at: 2017/09/16 06:33:05
+I170916 06:33:05.070664 1 util/log/clog.go:1013  [config] running on machine: tuba
+I170916 06:33:05.070664 1 util/log/clog.go:1013  [config] binary: CockroachDB CCL v1.0.6 (linux amd64, built 2017/09/14 15:15:48, go1.8.3)
+I170916 06:33:05.070664 1 util/log/clog.go:1013  [config] arguments: [cockroach start]
+I170916 06:33:05.070664 1 util/log/clog.go:1013  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I170916 06:33:05.070663 1 cli/start.go:593  CockroachDB CCL v1.0.6 (linux amd64, built 2017/09/14 15:15:48, go1.8.3)
+I170916 06:33:05.171592 1 server/config.go:281  available memory from cgroups (8.0 EiB) exceeds system memory 7.7 GiB, using system memory
+I170916 06:33:05.171635 1 server/config.go:375  system total memory: 7.7 GiB
+I170916 06:33:05.171757 1 server/config.go:377  server configuration:
+max offset                   500ms
+cache size                   1.9 GiB
+SQL memory pool size         1.9 GiB
+scan interval                10m0s
+scan max idle time           200ms
+consistency check interval   24h0m0s
+metrics sample interval      10s
+time until store dead        5m0s
+send next timeout            10m0s
+event log enabled            true
+linearizable                 false
+I170916 06:33:05.171948 14 cli/start.go:340  starting cockroach node
+E170916 06:33:05.239630 1 cli/error.go:68  failed to start server: problem using security settings, did you mean to use --insecure?: problem with CA certificate: not found
+Error: failed to start server: problem using security settings, did you mean to use --insecure?: problem with CA certificate: not found
