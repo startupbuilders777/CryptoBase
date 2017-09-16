@@ -144,9 +144,12 @@ def add_prices(currency_id):
         if(session.query(Currency).filter_by(name=currency_id) is None):
             jsonify({"USER NOT FOUND": True})
             abort(404)
+
         prices = request.json["prices"]
-        for price in prices:
-            newPrice = Price(value=float(price), currency_id=currency_id, month=float(month))
+        dates = request.json["dates"]
+
+        for price, date in zip(prices, dates):
+            newPrice = Price(value=float(price), currency_id=currency_id, month=int(date["month"]))
                              #, day=float(day), year=float(year),
                              #hour=float(hour), minute=float(minute), second=float(second))
             session.add(newPrice)
@@ -232,8 +235,6 @@ def delete_task(task_id):
         abort(404)
     #tasks.remove(task[0])
     return jsonify({'result': True})
-
-
 
 ######TO DO TUTORIAL ENDPOINTS ##############################################################################
 @app.route('/')
