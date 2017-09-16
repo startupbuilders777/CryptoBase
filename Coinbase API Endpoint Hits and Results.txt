@@ -1,0 +1,110 @@
+https://api-public.sandbox.gdax.com/products
+
+[
+    {
+        "id": "BTC-USD",
+        "base_currency": "BTC",
+        "quote_currency": "USD",
+        "base_min_size": "0.01",
+        "base_max_size": "10000",
+        "quote_increment": "0.01",
+        "display_name": "BTC/USD",
+        "margin_enabled": true
+    },
+    {
+        "id": "BTC-GBP",
+        "base_currency": "BTC",
+        "quote_currency": "GBP",
+        "base_min_size": "0.01",
+        "base_max_size": "10000",
+        "quote_increment": "0.01",
+        "display_name": "BTC/GBP",
+        "margin_enabled": false
+    },
+    {
+        "id": "BTC-EUR",
+        "base_currency": "BTC",
+        "quote_currency": "EUR",
+        "base_min_size": "0.01",
+        "base_max_size": "10000",
+        "quote_increment": "0.01",
+        "display_name": "BTC/EUR",
+        "margin_enabled": false
+    },
+    {
+        "id": "ETH-BTC",
+        "base_currency": "ETH",
+        "quote_currency": "BTC",
+        "base_min_size": "0.01",
+        "base_max_size": "1000000",
+        "quote_increment": "0.00001",
+        "display_name": "ETH/BTC",
+        "margin_enabled": false
+    },
+    {
+        "id": "ETH-USD",
+        "base_currency": "ETH",
+        "quote_currency": "USD",
+        "base_min_size": "0.01",
+        "base_max_size": "1000000",
+        "quote_increment": "0.01",
+        "display_name": "ETH/USD",
+        "margin_enabled": true
+    },
+    {
+        "id": "LTC-BTC",
+        "base_currency": "LTC",
+        "quote_currency": "BTC",
+        "base_min_size": "0.01",
+        "base_max_size": "1000000",
+        "quote_increment": "0.00001",
+        "display_name": "LTC/BTC",
+        "margin_enabled": false
+    },
+    {
+        "id": "LTC-USD",
+        "base_currency": "LTC",
+        "quote_currency": "USD",
+        "base_min_size": "0.01",
+        "base_max_size": "1000000",
+        "quote_increment": "0.01",
+        "display_name": "LTC/USD",
+        "margin_enabled": false
+    },
+    {
+        "id": "ETH-EUR",
+        "base_currency": "ETH",
+        "quote_currency": "EUR",
+        "base_min_size": "0.01",
+        "base_max_size": "1000000",
+        "quote_increment": "0.01",
+        "display_name": "ETH/EUR",
+        "margin_enabled": false
+    }
+]
+
+
+
+
+https://api-public.sandbox.gdax.com/products/ETH-USD/ticker
+
+{
+    "trade_id": 0,
+    "price": "0",
+    "size": "0",
+    "volume": 0,
+    "time": "2017-09-14T02:19:52.674000Z"
+}
+
+https://api-public.sandbox.gdax.com/products/BTC-USD/ticker
+
+{
+    "trade_id": 286,
+    "price": "8.00000000",
+    "size": "0.91000000",
+    "bid": "100",
+    "ask": "2000",
+    "volume": "134.09065951",
+    "time": "2017-09-16T09:36:51.525000Z"
+}
+
