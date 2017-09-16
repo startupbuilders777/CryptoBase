@@ -55,33 +55,33 @@ class Price(db.Model):
     value = db.Column(db.Float)
     currency_id = db.Column(db.Integer, db.ForeignKey("currency.currency_id"))
     month = db.Column(db.Integer)
-    #day = db.Column(db.Integer)
-    #year = db.Column(db.Integer)
-    #hour = db.Column(db.Integer)
-    #minute = db.Column(db.Integer)
-    #second = db.Column(db.Integer)
+    day = db.Column(db.Integer)
+    year = db.Column(db.Integer)
+    hour = db.Column(db.Integer)
+    minute = db.Column(db.Integer)
+    second = db.Column(db.Integer)
 
 
-    def __init__(self, value, currency_id, month):
+    def __init__(self, value, currency_id, month, day, year, hour, minute, second):
         self.value = value
         self.currency_id = currency_id
         self.month = month
-        #self.day = day
-        #self.year = year
-        #self.hour = hour
-        #self.minute = minute
-        #self.second = second , day, year, hour, minute, second
+        self.day = day
+        self.year = year
+        self.hour = hour
+        self.minute = minute
+        self.second = second
 
 
     def serialize(self):
         return {
             "price": self.value,
-            "month": self.month
-            #"day": self.day,
-            #"year": self.year,
-            #"hour": self.hour,
-            #"minute": self.minute,
-            #"second": self.second
+            "month": self.month,
+            "day": self.day,
+            "year": self.year,
+            "hour": self.hour,
+            "minute": self.minute,
+            "second": self.second
         }
 
 ###### RESTFUL API TUTORIAL ENDPOINTS#########################################################################################
@@ -136,23 +136,7 @@ def create_currency():
     flash("Currency Created")
     return jsonify({"Created" : True})
 
-'''
-{
-	
-	"prices": ["1", "2", "5"],
-	"dates": [
-		{
-			"month": "1"
-		},
-		{
-			"month": "2"
-		},
-		{
-			"month": "3"
-		}
-		]
-}
-'''
+
 
 @app.route('/currency/<int:currency_id>', methods=['POST'])
 def add_prices(currency_id):
@@ -167,9 +151,9 @@ def add_prices(currency_id):
         dates = request.json["dates"]
 
         for price, date in zip(prices, dates):
-            newPrice = Price(value=float(price), currency_id=currency_id, month=int(date["month"]))
-                             #, day=float(day), year=float(year),
-                             #hour=float(hour), minute=float(minute), second=float(second))
+            newPrice = Price(value=float(price), currency_id=currency_id, month=int(date["month"]),
+                             day=int(date["day"]), year=int(date["year"]), hour=int(date["hour"]),
+                             minute=int(date["minute"]), second=int(date["second"]))
             session.add(newPrice)
     run_transaction(sessionmaker, callback)
     flash("Prices added")
