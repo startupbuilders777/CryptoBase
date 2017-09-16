@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30ed0f3b-cfac-4144-bafc-508aab143735" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cryptobase.py" afterPath="$PROJECT_DIR$/cryptobase.py" />
-    </list>
+    <list default="true" id="30ed0f3b-cfac-4144-bafc-508aab143735" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +119,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Machine Learning Notes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Machine Learning Notes/Articles" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -244,7 +242,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="111" y="205" width="1334" height="1047" extended-state="0" />
+    <frame x="111" y="205" width="1334" height="1047" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27476782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
