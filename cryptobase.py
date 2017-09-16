@@ -5,13 +5,15 @@ import sqlalchemy.orm
 import gdax #GDAX WRAPPER FOR GDAX EXCHANGE API CALLS
 from cockroachdb.sqlalchemy import run_transaction
 import datetime
+import tensorflow as tf
 from datetime import timedelta
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.from_pyfile('hello.cfg')
 db = SQLAlchemy(app)
 sessionmaker = sqlalchemy.orm.sessionmaker(db.engine)
-
+CORS(app)
 
 class Todo(db.Model):
     __tablename__ = 'todos'
@@ -439,20 +441,24 @@ def getData():
     '''Start from 2016 and collect to 2017, and test with latest 30% of data, data is hourly'''
     dateStart = datetime.datetime(2016, 1, 1, 0, 0, 0)
     dateStartISO = dateStart.isoformat()
-    dateEnd = datetime.datetime(2016, 1, 2, 0, 0, 0)#datetime.datetime(2017,9,15,0,0,0)
+    dateEnd = datetime.datetime(2017,9,15,0,0,0)
     dateEndISO = dateEnd.isoformat()
     dateNext = dateStart
 
     data = []
-    for i in range(1,10):
+    for i in range(1,5):
         dateStart = dateNext
-        dateNext  = dateNext + timedelta(days=15)
+        dateNext  = dateNext + timedelta(days=1)
+        dateStartISO = dateStart.isoformat()
         dateNextISO = dateNext.isoformat()
-        print("date next is")
-        print(dateStart)
+        print("date start")
+        print(dateStartISO)
         print("date next is again")
-        print(dateNext)
-        data +=  public_client.get_product_historic_rates("ETH-USD", start=dateStartISO, end=dateNextISO, granularity=3600)
+        print(dateNextISO)
+        print("CURRENT DATA IS")
+        someData = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
+        print(someData)
+        data += someData
 
 
     print(dateStart)
