@@ -2,8 +2,9 @@ from datetime import datetime
 from flask import Flask, request, flash, url_for, redirect, render_template, abort, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy.orm
+import gdax #GDAX WRAPPER FOR GDAX EXCHANGE API CALLS
 from cockroachdb.sqlalchemy import run_transaction
-
+import datetime
 
 app = Flask(__name__)
 app.config.from_pyfile('hello.cfg')
@@ -272,6 +273,129 @@ def update_done():
     run_transaction(sessionmaker, callback)
     flash('Updated status')
     return redirect(url_for('show_all'))
+
+'''
+class TradingInfo(db.Model):
+    __tablename__ = "trading_info"
+    id = db.Column("trading_info_id", db.Integer, primary_key=True)
+    
+    name = db.Column(db.String, unique=True)
+    open = db.Column(db.Float)
+    close = db.Column(db.Float)
+
+    def __init__(self, name):
+        self.name = name
+
+    @property
+    def serialize(self):
+        return {
+            "name": self.name,
+            "id": self.id
+        }
+
+    @property
+    def serializeWithPrices(self):
+        return {
+            "name": self.name,
+            "prices": [price.serialize() for price in self.priceHistory],
+            "id": self.id
+        }
+        
+        
+TUBA WILL MAKE THIS SHIT
+'''
+
+def serializeHistoricData(data):
+    data.sort()
+    serializedData = []
+    for i in data:
+        time = datetime.datetime.utcfromtimestamp(i[0])
+        serializedData.append(
+            {"unix epoch time": i[0],
+             "nicetime": datetime.datetime.utcfromtimestamp(i[0]),
+             "time": {"year": time.year,
+             "month": time.month,
+             "day": time.day,
+             "hour": time.hour},
+             "low": i[1],
+             "high": i[2],
+              "open": i[3],
+              "close": i[4],
+              "volume": i[5],
+             })
+
+    return serializedData
+
+
+
+#########################################################################################################
+######################################################################################################
+####MACHINE LEARNING ALGO
+
+#https://api-public.sandbox.gdax.com/products/ETH-USD/ticker
+#https://api-public.sandbox.gdax.com/products/ETH-USD/candles
+public_client = gdax.PublicClient()
+
+'''
+THIS ENDPOINT SHOULD ALLOW FOR GRANULARITY IN THE DATA
+AND PICK WHATEVER YOU WANT
+
+
+'''
+
+@app.route('/send', methods=['GET'])
+def send():
+    if request.method == 'GET':
+        data = public_client.get_product_historic_rates("ETH-USD", granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
+        print(len(data))
+        return jsonify(serializeHistoricData(data))
+
+'''
+FOR PRODUCT HISTORIC RATES
+[
+    [ time, low, high, open, close, volume ],
+    [ 1415398768, 0.32, 4.2, 0.35, 4.2, 12.3 ],
+    
+HTTP REQUEST
+
+GET /products/<product-id>/candles
+
+PARAMETERS
+
+Param	Description
+start	Start time in ISO 8601
+end	End time in ISO 8601
+granularity	Desired timeslice in seconds
+    ...
+    
+Each bucket is an array of the following information:
+
+time bucket start time
+low lowest price during the bucket interval
+high highest price during the bucket interval
+open opening price (first trade) in the bucket interval
+close closing price (last trade) in the bucket interval
+volume volume of trading activity during the bucket interval    
+]
+
+ The maximum number of data points for a single request is 200 candles. If your selection of start/end time and granularity 
+ will result in more than 200 data points, your request will be rejected. If you wish to retrieve fine granularity data over a 
+ larger time range, you will need to make multiple requests with new start/end ranges.
+
+
+
+
+
+'''
+
+
+#last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
+#print(last_24_hours_data)
+
+#Convert to ISO
+print(datetime.datetime.utcnow().isoformat())
+
+
 
 
 if __name__ == '__main__':
