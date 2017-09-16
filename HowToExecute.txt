@@ -1,0 +1,2 @@
+exec gunicorn cryptobase:app
+
