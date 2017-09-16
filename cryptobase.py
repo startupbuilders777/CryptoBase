@@ -54,14 +54,34 @@ class Price(db.Model):
     id = db.Column("price_id", db.Integer, primary_key=True)
     value = db.Column(db.Float)
     currency_id = db.Column(db.Integer, db.ForeignKey("currency.currency_id"))
+    month = db.Column(db.Integer)
+    #day = db.Column(db.Integer)
+    #year = db.Column(db.Integer)
+    #hour = db.Column(db.Integer)
+    #minute = db.Column(db.Integer)
+    #second = db.Column(db.Integer)
 
-    def __init__(self, value, currency_id):
+
+    def __init__(self, value, currency_id, month):
         self.value = value
         self.currency_id = currency_id
+        self.month = month
+        #self.day = day
+        #self.year = year
+        #self.hour = hour
+        #self.minute = minute
+        #self.second = second , day, year, hour, minute, second
+
 
     def serialize(self):
         return {
-            "price": self.value
+            "price": self.value,
+            "month": self.month
+            #"day": self.day,
+            #"year": self.year,
+            #"hour": self.hour,
+            #"minute": self.minute,
+            #"second": self.second
         }
 
 ###### RESTFUL API TUTORIAL ENDPOINTS#########################################################################################
@@ -126,7 +146,9 @@ def add_prices(currency_id):
             abort(404)
         prices = request.json["prices"]
         for price in prices:
-            newPrice = Price(value=float(price), currency_id=currency_id)
+            newPrice = Price(value=float(price), currency_id=currency_id, month=float(month))
+                             #, day=float(day), year=float(year),
+                             #hour=float(hour), minute=float(minute), second=float(second))
             session.add(newPrice)
     run_transaction(sessionmaker, callback)
     flash("Prices added")
