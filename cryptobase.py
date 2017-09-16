@@ -31,6 +31,7 @@ class Currency(db.Model):
     id = db.Column("currency_id", db.Integer, primary_key=True)
     name = db.Column(db.String, unique=True)
     priceHistory = db.relationship("Price", backref="currencyAyy", lazy="dynamic")
+    tradingHistory = db.relationship("Hist", backref="currency", lazy="dynamic")
 
     def __init__(self, name):
         self.name = name
@@ -47,6 +48,7 @@ class Currency(db.Model):
         return{
             "name" : self.name,
             "prices": [price.serialize() for price in self.priceHistory],
+            "hist": [tradinginfo.serialize() for tradinginfo in self.tradingHistory],
             "id": self.id
         }
 
@@ -290,7 +292,6 @@ class TradingInfo(db.Model):
     minute = db.Column(db.Integer)
     second = db.Column(db.Integer)
     volume = db.Column(db.Float)
-    currencyHistory = db.relationship("Currency", backref="tradinginfo", lazy="dynamic")
 
     def __init__(self, name, open, close, high, low, month, day, year, hour, minute, second, volume):
         self.name = name
@@ -325,24 +326,6 @@ class TradingInfo(db.Model):
             "id": self.id
         }
 
-    @property
-    def serializeWithCurrency(self):
-        return {
-            "name": self.name,
-            "open": self.open,
-            "close": self.close,
-            "high": self.high,
-            "low": self.low,
-            "month": self.month,
-            "day": self.day,
-            "year": self.year,
-            "hour": self.hour,
-            "minute": self.minute,
-            "second": self.second,
-            "volume": self.volume,
-            "curr": [currency.serialize() for currency in self.currencyHistory],
-            "id": self.id
-        }
         
 
 
