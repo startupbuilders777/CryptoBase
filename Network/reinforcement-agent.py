@@ -141,9 +141,17 @@ def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.
 #Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
 
-def plot_prices(prices):
-    plt.title('Opening stock prices')
-    plt.xlabel('day')
+def plot_prices_test(prices):
+    plt.title('Opening stock prices for test data')
+    plt.xlabel('hour')
+    plt.ylabel('price ($)')
+    plt.plot(prices)
+    plt.savefig('prices.png')
+    plt.show()
+
+def plot_prices_train(prices):
+    plt.title('Opening stock prices for train data')
+    plt.xlabel('hour')
     plt.ylabel('price ($)')
     plt.plot(prices)
     plt.savefig('prices.png')
@@ -158,21 +166,29 @@ def standardizeData(trading_info):
 if __name__ == '__main__':
     #prices = get_prices('MSFT', '1992-07-22', '2016-07-22')
     with open('gdaxEtherData.json') as data_file:
-        data = json.load(data_file)
-    print("THE TRAINING DATA IS")
-    print(data)
+        dataTest = json.load(data_file)
+    print("THE Testing DATA IS")
+    print(dataTest)
 
-    prices = standardizeData(data)
-    plot_prices(prices)
-    print(prices)
+    with open('etherdata.json') as data_file:
+        dataTrain = json.load(data_file)
+    print("THE Training DATA IS")
+    print(dataTrain)
 
+    test_prices = standardizeData(dataTest)
+    plot_prices_test(test_prices)
+    print(test_prices)
+
+    train_prices = standardizeData(dataTrain)
+    plot_prices_train(train_prices)
+    print(train_prices)
 
 
     actions = ['Buy', 'Sell', 'Hold']
     hist = 200
     # policy = RandomDecisionPolicy(actions)
     policy = QLearningDecisionPolicy(actions, hist + 2)
-    budget = 1000.0
+    budget = 1000
     num_stocks = 0
-    avg, std = run_simulations(policy, budget, num_stocks, prices, hist)
+    avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
     print(avg, std)
