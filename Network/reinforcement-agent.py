@@ -1,7 +1,5 @@
-from yahoo_finance import Share
 from matplotlib import pyplot as plt
 import numpy as np
-import random
 import tensorflow as tf
 import random
 
@@ -9,10 +7,7 @@ import json
 import pprint
 
 '''
-Reinforcement learning
-The states are previous history of stock prices, current budget, and current number of shares of a stock.
-The actions are buy, sell, or hold (i.e. do nothing).
-The stock market data comes from the Yahoo Finance library, pip install yahoo-finance.
+ACTIONS ARE BUY, SELL AND HOLD
 '''
 
 
@@ -25,15 +20,6 @@ class DecisionPolicy:
     def update_q(self, state, action, reward, next_state):
         pass
 
-#Heres one way we could implement the decision policy called a random decision policy
-
-class RandomDecisionPolicy(DecisionPolicy):
-    def __init__(self, actions):
-        self.actions = actions
-
-    def select_action(self, current_state, step):
-        action = random.choice(self.actions)
-        return action
 
 #Thats a good baseline. Now lets use a smarter approach using a neural network
 
@@ -78,10 +64,6 @@ class QLearningDecisionPolicy(DecisionPolicy):
         action_q_vals[0, next_action_idx] = reward + self.gamma * next_action_q_vals[0, next_action_idx]
         action_q_vals = np.squeeze(np.asarray(action_q_vals))
         self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
-
-
-#Define a function to run a simulation of buying and selling stocks from a market:
-
 
 def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, debug=False):
     budget = initial_budget
@@ -140,21 +122,28 @@ def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.
 
 #Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
-
-def plot_prices_test(prices):
-    plt.title('Opening stock prices for test data')
+def plot_prices_all(prices):
+    plt.title('Closing stock prices for all data')
     plt.xlabel('hour')
     plt.ylabel('price ($)')
     plt.plot(prices)
-    plt.savefig('prices.png')
+    plt.savefig('all_prices.png')
+    plt.show()
+
+def plot_prices_test(prices):
+    plt.title('Closing stock prices for test data')
+    plt.xlabel('hour')
+    plt.ylabel('price ($)')
+    plt.plot(prices)
+    plt.savefig('test_prices.png')
     plt.show()
 
 def plot_prices_train(prices):
-    plt.title('Opening stock prices for train data')
+    plt.title('Closing stock prices for train data')
     plt.xlabel('hour')
     plt.ylabel('price ($)')
     plt.plot(prices)
-    plt.savefig('prices.png')
+    plt.savefig('train_prices.png')
     plt.show()
 
 def standardizeData(trading_info):
@@ -163,30 +152,61 @@ def standardizeData(trading_info):
         prices.append(item["close"])
     return prices
 
+'''
+Just use the closing prices of stocks right now but will add more later
+
+Further analysis of the candlestick required?
+Maybe a convolutional Analysis on the candlesticj 
+Followed by LSTM Analysis
+'''
+def splitDataToTestAndTrain(trading_info):
+    #The first 70% of the data is for training the neural net and is old data
+    #Assuming the data is ordererd from oldest to newest
+
+    length = len(trading_info)
+    train_len = length * 0.7
+    train = trading_info[:int(train_len)]
+
+    #The next 30% is recent data the neural net has not seen and will be tested on this data
+    test_len = length * 0.3
+    test = trading_info[int(train_len):]
+
+    return (train, test)
+
+'''
+Candlestick analysis requires viewing several candlesticks at once and performing convolutions on these candle batches
+MUST BE FOLLOWED BY LSTM
+'''
+
 if __name__ == '__main__':
-    #prices = get_prices('MSFT', '1992-07-22', '2016-07-22')
-    with open('gdaxEtherData.json') as data_file:
-        dataTest = json.load(data_file)
-    print("THE Testing DATA IS")
-    print(dataTest)
-
     with open('etherdata.json') as data_file:
-        dataTrain = json.load(data_file)
-    print("THE Training DATA IS")
-    print(dataTrain)
+        data = json.load(data_file)
+    print("THE DATA IS")
+    print(data)
 
-    test_prices = standardizeData(dataTest)
-    plot_prices_test(test_prices)
-    print(test_prices)
+    trainData, testData = splitDataToTestAndTrain(data)
+    print("AMOUT OF DATA IS: ")
+    print(len(data))
+    print("Amount of training data is: ")
+    print(len(trainData))
+    print("Amount of test data is: ")
+    print(len(testData))
 
-    train_prices = standardizeData(dataTrain)
+    all_prices = standardizeData(data)
+    plot_prices_all(all_prices)
+    print(all_prices)
+
+    train_prices = standardizeData(trainData)
     plot_prices_train(train_prices)
     print(train_prices)
+
+    test_prices = standardizeData(testData)
+    plot_prices_test(test_prices)
+    print(test_prices)
 
 
     actions = ['Buy', 'Sell', 'Hold']
     hist = 200
-    # policy = RandomDecisionPolicy(actions)
     policy = QLearningDecisionPolicy(actions, hist + 2)
     budget = 1000
     num_stocks = 0
