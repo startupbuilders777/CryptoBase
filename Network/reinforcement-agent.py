@@ -5,12 +5,16 @@ import random
 import tensorflow as tf
 import random
 
+import json
+import pprint
+
 '''
 Reinforcement learning
 The states are previous history of stock prices, current budget, and current number of shares of a stock.
 The actions are buy, sell, or hold (i.e. do nothing).
 The stock market data comes from the Yahoo Finance library, pip install yahoo-finance.
 '''
+
 
 # Define an abstract class called DecisionPolicy
 
@@ -145,9 +149,25 @@ def plot_prices(prices):
     plt.savefig('prices.png')
     plt.show()
 
+def standardizeData(trading_info):
+    prices = []
+    for item in trading_info:
+        prices.append(item["close"])
+    return prices
+
 if __name__ == '__main__':
-    prices = get_prices('MSFT', '1992-07-22', '2016-07-22')
+    #prices = get_prices('MSFT', '1992-07-22', '2016-07-22')
+    with open('gdaxEtherData.json') as data_file:
+        data = json.load(data_file)
+    print("THE TRAINING DATA IS")
+    print(data)
+
+    prices = standardizeData(data)
     plot_prices(prices)
+    print(prices)
+
+
+
     actions = ['Buy', 'Sell', 'Hold']
     hist = 200
     # policy = RandomDecisionPolicy(actions)

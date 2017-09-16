@@ -374,7 +374,7 @@ AND PICK WHATEVER YOU WANT
 @app.route('/send', methods=['GET'])
 def send():
     if request.method == 'GET':
-        data = public_client.get_product_historic_rates("ETH-USD", granularity=3000)  # GRANULAIRTY IS PER HOUR DATA
+        data = public_client.get_product_historic_rates("ETH-USD", granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
         print(len(data))
 
         data2 = getData()
@@ -427,7 +427,7 @@ def getData():
     dateEnd = datetime.datetime(2017,9,15,0,0,0)
     dateEndISO = dateEnd.isoformat()
     dateNext = dateStart
-
+    '''
     data = []
     for i in range(1,5):
         dateStart = dateNext
@@ -442,14 +442,14 @@ def getData():
         someData = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
         print(someData)
         data.append(someData)
-
+    
 
     print(dateStart)
     #  print(dateEnd)
 
     #data = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO, granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
     print(data)
-
+    '''
 getData()
 
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
