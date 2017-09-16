@@ -136,6 +136,24 @@ def create_currency():
     flash("Currency Created")
     return jsonify({"Created" : True})
 
+'''
+{
+	
+	"prices": ["1", "2", "5"],
+	"dates": [
+		{
+			"month": "1"
+		},
+		{
+			"month": "2"
+		},
+		{
+			"month": "3"
+		}
+		]
+}
+'''
+
 @app.route('/currency/<int:currency_id>', methods=['POST'])
 def add_prices(currency_id):
     if not request.json or not 'prices' in request.json:
