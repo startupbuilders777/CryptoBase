@@ -472,10 +472,13 @@ def getData():
 
 #Convert to ISO
 
+#whatToLearn = BTC-USD
+#whatToLearn = ETH-USD
+#whatToLearn = ETH-USD
+#whatToLearn = LITE-USD
 
-
-@app.route('/executeNet', methods=['GET'])
-def reinforcementAgent():
+@app.route('/executeNet/<string:whatToLearn>', methods=['POST'])
+def reinforcementAgent(whatToLearn):
     import numpy as np
     import tensorflow as tf
     import random
@@ -608,7 +611,7 @@ def reinforcementAgent():
         plt.xlabel('hour')
         plt.ylabel('price ($)')
         plt.plot(prices)
-        plt.savefig('all_prices.png')
+        plt.savefig(whatToLearn + " " + "'all_prices.png')
         plt.show()
 
     def plot_prices_test(prices):
@@ -661,10 +664,26 @@ def reinforcementAgent():
     '''
 
     if __name__ == '__main__':
-        with open('etherdata.json') as data_file:
-            data = json.load(data_file)
-        print("THE DATA IS")
-        print(data)
+        if(whatToLearn == "ETH-BTC"):
+            with open('etherdata.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "BTC-USD"):
+            with open('btcUSD.csv') as data_file:
+                data = csv.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "ETH-USD"):
+            with open('ethUSD.csv') as data_file:
+                data = csv.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "LITE-USD"):
+            with open('liteUSD.csv') as data_file:
+                data = csv.load(data_file)
+                print("THE DATA IS")
+                print(data)
 
         data.sort(key=lambda x: x["date"])
 
@@ -679,14 +698,6 @@ def reinforcementAgent():
         all_prices = standardizeData(data)
         plot_prices_all(all_prices)
         print(all_prices)
-
-        train_prices = standardizeData(trainData)
-        plot_prices_train(train_prices)
-        print(train_prices)
-
-        test_prices = standardizeData(testData)
-        plot_prices_test(test_prices)
-        print(test_prices)
 
         actions = ['Buy', 'Sell', 'Hold']
         reinforcementAgentDecisions = []
