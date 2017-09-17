@@ -437,14 +437,14 @@ def getData():
         dateNext  = dateNext + timedelta(days=1)
         dateStartISO = dateStart.isoformat()
         dateNextISO = dateNext.isoformat()
-        print("date start")
-        print(dateStartISO)
-        print("date next is again")
-        print(dateNextISO)
-        print("CURRENT DATA IS")
+       # print("date start")
+       # print(dateStartISO)
+       # print("date next is again")
+       # print(dateNextISO)
+       # print("CURRENT DATA IS")
         someData = public_client.get_product_historic_rates("LTC-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
         #someData = public_client.get_product_historic_rates('ETH-USD', granularity=3000)
-        print(someData)
+       # print(someData)
 
         data += someData
 
@@ -483,7 +483,9 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
     '''
     REMOVE THE TRAINING AND TESTING DATA SPLIT, DOESNT MAKE SENSE FOR REINFOORCEMENT AGENTS
-
+    ADDDD TENSORBOARD
+    ADDDD RNN
+    ADD MULTIHTREADING
     ACTIONS ARE BUY, SELL AND HOLD
     '''
 
@@ -541,7 +543,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
             action_q_vals = np.squeeze(np.asarray(action_q_vals))
             self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
 
-    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions,
+    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list,
                        debug=False):
         budget = initial_budget
         num_stocks = initial_num_stocks
@@ -572,17 +574,18 @@ def reinforcementAgent(whatToLearn, startingCapital):
             policy.update_q(current_state, action, reward, next_state)
 
         portfolio = budget + num_stocks * share_value
+        current_portfolio_value_list.append(portfolio)
         if debug:
             print('${}\t{} shares'.format(budget, num_stocks))
         return portfolio
 
     # We want to run simulations multiple times and average out the performances:
 
-    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions):
+    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list):
         num_tries = 10
         final_portfolios = list()
         for i in range(num_tries):
-            final_portfolio = run_simulation(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions)
+            final_portfolio = run_simulation(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
             final_portfolios.append(final_portfolio)
         avg, std = np.mean(final_portfolios), np.std(final_portfolios)
         return avg, std
@@ -684,20 +687,14 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
         actions = ['Buy', 'Sell', 'Hold']
         reinforcementAgentDecisions = []
+        current_portfolio_value_list = []
 
         hist = 200
         policy = QLearningDecisionPolicy(actions, hist + 2)
         budget = startingCapital
         num_stocks = 0
-        # avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
-        print("The trained amout earned was")
-        # print(avg)
-        print("The standard deviation for this is: ")
-        # print(std)
 
-        budget = 1000
-        num_stocks = 0
-        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions)
+        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
         print("The end capital earned by the agent is: ")
         print(avg)
         print("The standard deviation for this capital amount in the test batch is: ")
@@ -706,6 +703,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         print(reinforcementAgentDecisions)
         return jsonify({"data": data,
                         "decisions": reinforcementAgentDecisions,
+                        "current_portfolio_value_list": current_portfolio_value_list,
                         "average": avg,
                         "standard deviation": std
                         })
