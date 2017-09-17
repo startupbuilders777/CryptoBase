@@ -425,14 +425,14 @@ volume volume of trading activity during the bucket interval
 
 def getData():
     '''Start from 2016 and collect to 2017, and test with latest 30% of data, data is hourly'''
-    dateStart = datetime.datetime(2016, 5, 19, 0, 0, 0)
+    dateStart = datetime.datetime(2016, 9, 1, 0, 0, 0)
     dateStartISO = dateStart.isoformat()
     dateEnd = datetime.datetime(2017, 9, 14, 0, 0, 0)
     dateEndISO = dateEnd.isoformat()
     dateNext = dateStart
-    '''
+
     data = []
-    for i in range(1,450):
+    for i in range(1,300):
         dateStart = dateNext
         dateNext  = dateNext + timedelta(days=1)
         dateStartISO = dateStart.isoformat()
@@ -442,30 +442,28 @@ def getData():
         print("date next is again")
         print(dateNextISO)
         print("CURRENT DATA IS")
-        someData = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
+        someData = public_client.get_product_historic_rates("LTC-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
         #someData = public_client.get_product_historic_rates('ETH-USD', granularity=3000)
         print(someData)
 
         data += someData
 
 
-        data.append(someData)
-
     print(dateStart)
     #  print(dateEnd)
 
     #data = public_client.get_product_historic_rates("ETH-USD", start=dateStartISO, granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
     print(data)
-    
+
     print("LENGTH IS")
     print(len(data))
 
-    with open("out.csv", "w") as f:
+    with open("ltcUSD.csv", "w") as f:
         wr = csv.writer(f)
         wr.writerows(data)
 
-=======
-    '''
+
+getData()
 
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
 #print(last_24_hours_data)
