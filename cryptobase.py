@@ -472,8 +472,8 @@ def getData():
 #whatToLearn = ETH-USD
 #whatToLearn = LITE-USD
 
-@app.route('/executeNet/<string:whatToLearn>', methods=['POST'])
-def reinforcementAgent(whatToLearn):
+@app.route('/executeNet/<string:whatToLearn>/<int:startingCapital>', methods=['POST'])
+def reinforcementAgent(whatToLearn, startingCapital):
     import numpy as np
     import tensorflow as tf
     import random
@@ -506,8 +506,9 @@ def reinforcementAgent(whatToLearn):
             output_dim = len(actions)
             h1_dim = 200
 
-            self.x = tf.placeholder(tf.float32, [None, input_dim])
-            self.y = tf.placeholder(tf.float32, [output_dim])
+            self.x = tf.placeholder(tf.float32, [None, input_dim])      #PUT THE BATCH OF VALUES IN THE PLACEHOLDER X
+            self.y = tf.placeholder(tf.float32, [output_dim])           #outputs an action but should also output a value tooooo!!!!!!!
+
             W1 = tf.Variable(tf.random_normal([input_dim, h1_dim]))
             b1 = tf.Variable(tf.constant(0.1, shape=[h1_dim]))
             h1 = tf.nn.relu(tf.matmul(self.x, W1) + b1)
@@ -525,7 +526,7 @@ def reinforcementAgent(whatToLearn):
             if random.random() < threshold:
                 # Exploit best option with probability epsilon
                 action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
-                action_idx = np.argmax(action_q_vals)  # TODO: replace w/ tensorflow's argmax
+                action_idx = np.argmax(action_q_vals)
                 action = self.actions[action_idx]
             else:
                 # Explore random option with probability 1 - epsilon
@@ -585,19 +586,6 @@ def reinforcementAgent(whatToLearn):
             final_portfolios.append(final_portfolio)
         avg, std = np.mean(final_portfolios), np.std(final_portfolios)
         return avg, std
-
-    # Call the following function to use the Yahoo Finance library and obtain useful stockmarket data.
-
-    def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.npy'):
-        try:
-            stock_prices = np.load(cache_filename)
-        except IOError:
-            share = Share(share_symbol)
-            stock_hist = share.get_historical(start_date, end_date)
-            stock_prices = [stock_price['Open'] for stock_price in stock_hist]
-            np.save(cache_filename, stock_prices)
-
-        return stock_prices
 
     # Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
@@ -699,7 +687,7 @@ def reinforcementAgent(whatToLearn):
 
         hist = 200
         policy = QLearningDecisionPolicy(actions, hist + 2)
-        budget = 1000
+        budget = startingCapital
         num_stocks = 0
         # avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
         print("The trained amout earned was")
