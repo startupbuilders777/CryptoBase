@@ -1,4 +1,5 @@
 import csv
+import urllib.request
 from datetime import datetime
 from flask import Flask, request, flash, url_for, redirect, render_template, abort, jsonify, make_response
 from matplotlib import pyplot as plt
@@ -92,6 +93,33 @@ class Price(db.Model):
             "minute": self.minute,
             "second": self.second
         }
+
+
+class Agent(db.Model):
+    __tablename__ = "agent"
+    id = db.Column("agent_id", db.Integer, primary_key=True)
+    action = db.Column(db.Integer)
+
+    def __init__(self, action):
+            self.action = action
+
+    def serialize(self):
+        return {
+            "action": self.action
+            }
+
+from coinbase.wallet.client import Client
+
+client = Client(
+    "3ec6fdcab466768f96c39dd8ac2b2b900b12b051b7eda60c149276cf4786b90f",
+    "be25c7a84a548717aea087d1fa412ca58e137ec0289b2c5f1795e24c0b5dbfd9",
+    api_version='2017-09-17')
+
+
+
+
+
+
 
 ###### RESTFUL API TUTORIAL ENDPOINTS#########################################################################################
 '''
@@ -356,6 +384,12 @@ def serializeHistoricData(data):
                   "volume": i[5],
                  })
     return serializedData
+
+
+
+
+
+
 
 
 
