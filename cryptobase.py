@@ -12,6 +12,7 @@ import tensorflow as tf
 from datetime import timedelta
 from flask_cors import CORS
 from matplotlib import pyplot as plt
+import os
 
 app = Flask(__name__)
 app.config.from_pyfile('hello.cfg')
@@ -515,6 +516,12 @@ def reinforcementAgent(whatToLearn, startingCapital):
     import json
     import pprint
 
+
+    if(os.path.isfile(whatToLearn + "X" + ".json")):
+        with open(whatToLearn + "X" + ".json") as data_file:
+            data = json.load(data_file)
+            return jsonify(data)
+
     '''
     REMOVE THE TRAINING AND TESTING DATA SPLIT, DOESNT MAKE SENSE FOR REINFOORCEMENT AGENTS
     ADDDD TENSORBOARD
@@ -534,8 +541,11 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
     # Thats a good baseline. Now lets use a smarter approach using a neural network
 
+
+
     class QLearningDecisionPolicy(DecisionPolicy):
         def __init__(self, actions, input_dim):
+
             self.epsilon = 0.9
             self.gamma = 0.001
             self.actions = actions
@@ -552,21 +562,34 @@ def reinforcementAgent(whatToLearn, startingCapital):
             b2 = tf.Variable(tf.constant(0.1, shape=[output_dim]))
             self.q = tf.nn.relu(tf.matmul(h1, W2) + b2)
 
+            #tf.summary.histogram('q', self.q)
+            #tf.summary.histogram('W1', W1)
+            #tf.summary.histogram('W2', W2)
+            #tf.summary.histogram('histogram', W2)
+
             loss = tf.square(self.y - self.q)
+
+            #tf.summary.scalar("loss", tf.reduce_sum(loss))
+            #tf.summary.scalar("loss histogram", loss)
             self.train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
             self.sess = tf.Session()
             self.sess.run(tf.global_variables_initializer())
 
         def select_action(self, current_state, step):
+            #writer = tf.summary.FileWriter(whatToLearn + "/")
+            #merged = tf.summary.merge_all()
             threshold = min(self.epsilon, step / 1000.)
             if random.random() < threshold:
                 # Exploit best option with probability epsilon
                 action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
                 action_idx = np.argmax(action_q_vals)
                 action = self.actions[action_idx]
+                #writer.add_summary(summary, step)
+
             else:
                 # Explore random option with probability 1 - epsilon
                 action = self.actions[random.randint(0, len(self.actions) - 1)]
+            writer.close()
             return action
 
         def update_q(self, state, action, reward, next_state):
@@ -576,6 +599,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
             action_q_vals[0, next_action_idx] = reward + self.gamma * next_action_q_vals[0, next_action_idx]
             action_q_vals = np.squeeze(np.asarray(action_q_vals))
             self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
+
 
     def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list,
                        debug=False):
@@ -707,15 +731,6 @@ def reinforcementAgent(whatToLearn, startingCapital):
                 print(data)
 
         data.sort(key=lambda x: x["time"])
-
-        trainData, testData = splitDataToTestAndTrain(data)
-        print("AMOUT OF DATA IS: ")
-        print(len(data))
-        print("Amount of training data is: ")
-        print(len(trainData))
-        print("Amount of test data is: ")
-        print(len(testData))
-
         all_prices = standardizeData(data)
         plot_prices_all(all_prices)
         print(all_prices)
@@ -737,8 +752,6 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
             return data
 
-
-
         avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
         print("The end capital earned by the agent is: ")
         print(avg)
@@ -746,12 +759,18 @@ def reinforcementAgent(whatToLearn, startingCapital):
         print(std)
         print("The agenets decisions were:")
         print(reinforcementAgentDecisions)
-        return jsonify({"data": serialize(data),
+
+        output = {"data": serialize(data),
                         "decisions": reinforcementAgentDecisions,
                         "current_portfolio_value_list": current_portfolio_value_list,
                         "average": avg,
                         "standard deviation": std
-                        })
+                        }
+
+        with open(whatToLearn + "X" + ".json", 'w') as f:
+            f.write(json.dumps(output, ensure_ascii = False))
+
+        return jsonify(output)
 
 if __name__ == '__main__':
     app.run()
