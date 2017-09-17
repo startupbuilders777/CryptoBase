@@ -425,14 +425,14 @@ volume volume of trading activity during the bucket interval
 
 def getData():
     '''Start from 2016 and collect to 2017, and test with latest 30% of data, data is hourly'''
-    dateStart = datetime.datetime(2015, 3, 1, 0, 0, 0)
+    dateStart = datetime.datetime(2016, 9, 1, 0, 0, 0)
     dateStartISO = dateStart.isoformat()
     dateEnd = datetime.datetime(2017, 9, 14, 0, 0, 0)
     dateEndISO = dateEnd.isoformat()
     dateNext = dateStart
 
     data = []
-    for i in range(1,800):
+    for i in range(1,300):
         dateStart = dateNext
         dateNext  = dateNext + timedelta(days=1)
         dateStartISO = dateStart.isoformat()
@@ -442,7 +442,7 @@ def getData():
         print("date next is again")
         print(dateNextISO)
         print("CURRENT DATA IS")
-        someData = public_client.get_product_historic_rates("BTC-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
+        someData = public_client.get_product_historic_rates("LTC-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
         #someData = public_client.get_product_historic_rates('ETH-USD', granularity=3000)
         print(someData)
 
@@ -458,7 +458,7 @@ def getData():
     print("LENGTH IS")
     print(len(data))
 
-    with open("bitUSD.csv", "w") as f:
+    with open("ltcUSD.csv", "w") as f:
         wr = csv.writer(f)
         wr.writerows(data)
 
