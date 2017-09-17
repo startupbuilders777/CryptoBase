@@ -462,9 +462,6 @@ def getData():
         wr = csv.writer(f)
         wr.writerows(data)
 
-
-getData()
-
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
 #print(last_24_hours_data)
 
@@ -609,7 +606,7 @@ def reinforcementAgent(whatToLearn):
         plt.xlabel('hour')
         plt.ylabel('price ($)')
         plt.plot(prices)
-        plt.savefig(whatToLearn + " " + "'all_prices.png')
+        plt.savefig(whatToLearn + " " + 'all_prices.png')
         plt.show()
 
     def plot_prices_test(prices):
@@ -668,22 +665,22 @@ def reinforcementAgent(whatToLearn):
                 print("THE DATA IS")
                 print(data)
         elif(whatToLearn == "BTC-USD"):
-            with open('btcUSD.csv') as data_file:
-                data = csv.load(data_file)
+            with open('btcUSD.json') as data_file:
+                data = json.load(data_file)
                 print("THE DATA IS")
                 print(data)
         elif(whatToLearn == "ETH-USD"):
-            with open('ethUSD.csv') as data_file:
-                data = csv.load(data_file)
+            with open('ethUSD.json') as data_file:
+                data = json.load(data_file)
                 print("THE DATA IS")
                 print(data)
         elif(whatToLearn == "LITE-USD"):
-            with open('liteUSD.csv') as data_file:
-                data = csv.load(data_file)
+            with open('ltcUSD.json') as data_file:
+                data = json.load(data_file)
                 print("THE DATA IS")
                 print(data)
 
-        data.sort(key=lambda x: x["date"])
+        data.sort(key=lambda x: x["time"])
 
         trainData, testData = splitDataToTestAndTrain(data)
         print("AMOUT OF DATA IS: ")
