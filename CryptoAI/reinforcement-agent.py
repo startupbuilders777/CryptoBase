@@ -1,8 +1,7 @@
 from matplotlib import pyplot as plt
-def reinforcementAgent():
+def reinforcementAgent(whatToLearn, startingCapital):
     import numpy as np
     import tensorflow as tf
-    from flask import jsonify
     import random
 
     import json
@@ -15,17 +14,7 @@ def reinforcementAgent():
     '''
 
     # Define an abstract class called DecisionPolicy
-
-    class DecisionPolicy:
-        def select_action(self, current_state, step):
-            pass
-
-        def update_q(self, state, action, reward, next_state):
-            pass
-
-    # Thats a good baseline. Now lets use a smarter approach using a neural network
-
-    class QLearningDecisionPolicy(DecisionPolicy):
+    class QLearningDecisionPolicy():
         def __init__(self, actions, input_dim):
             self.epsilon = 0.9
             self.gamma = 0.001
@@ -52,7 +41,7 @@ def reinforcementAgent():
             if random.random() < threshold:
                 # Exploit best option with probability epsilon
                 action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
-                action_idx = np.argmax(action_q_vals)  # TODO: replace w/ tensorflow's argmax
+                action_idx = np.argmax(action_q_vals)
                 action = self.actions[action_idx]
             else:
                 # Explore random option with probability 1 - epsilon
@@ -102,7 +91,7 @@ def reinforcementAgent():
             print('${}\t{} shares'.format(budget, num_stocks))
         return portfolio
 
-    # We want to run simulations multiple times and average out the performances:
+
 
     def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions):
         num_tries = 10
@@ -112,8 +101,6 @@ def reinforcementAgent():
             final_portfolios.append(final_portfolio)
         avg, std = np.mean(final_portfolios), np.std(final_portfolios)
         return avg, std
-
-    # Call the following function to use the Yahoo Finance library and obtain useful stockmarket data.
 
     def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.npy'):
         try:
@@ -126,14 +113,13 @@ def reinforcementAgent():
 
         return stock_prices
 
-    # Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
     def plot_prices_all(prices):
         plt.title('Closing stock prices for all data')
         plt.xlabel('hour')
         plt.ylabel('price ($)')
         plt.plot(prices)
-        plt.savefig('all_prices.png')
+        plt.savefig(whatToLearn + " " + 'all_prices.png')
         plt.show()
 
     def plot_prices_test(prices):
@@ -186,12 +172,28 @@ def reinforcementAgent():
     '''
 
     if __name__ == '__main__':
-        with open('etherdata.json') as data_file:
-            data = json.load(data_file)
-        print("THE DATA IS")
-        print(data)
+        if(whatToLearn == "ETH-BTC"):
+            with open('etherdata.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "BTC-USD"):
+            with open('btcUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "ETH-USD"):
+            with open('ethUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "LITE-USD"):
+            with open('ltcUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
 
-        data.sort(key=lambda x: x["date"])
+        data.sort(key=lambda x: x["time"])
 
         trainData, testData = splitDataToTestAndTrain(data)
         print("AMOUT OF DATA IS: ")
@@ -205,20 +207,12 @@ def reinforcementAgent():
         plot_prices_all(all_prices)
         print(all_prices)
 
-        train_prices = standardizeData(trainData)
-        plot_prices_train(train_prices)
-        print(train_prices)
-
-        test_prices = standardizeData(testData)
-        plot_prices_test(test_prices)
-        print(test_prices)
-
         actions = ['Buy', 'Sell', 'Hold']
         reinforcementAgentDecisions = []
 
         hist = 200
         policy = QLearningDecisionPolicy(actions, hist + 2)
-        budget = 1000
+        budget = startingCapital
         num_stocks = 0
         # avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
         print("The trained amout earned was")
@@ -241,7 +235,7 @@ def reinforcementAgent():
                         "standard deviation": std
                         })
 
-reinforcementAgent()
+reinforcementAgent("ETH-BTC", 1000)
 
 
 

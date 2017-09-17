@@ -414,7 +414,7 @@ def send():
         data = public_client.get_product_historic_rates("ETH-USD", granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
         print(len(data))
 
-        data2 = getData()
+       # data2 = getData()
        #print(jsonify(serializeHistoricData(data2)))
         return jsonify(serializeHistoricData(data))
 
@@ -471,14 +471,14 @@ def getData():
         dateNext  = dateNext + timedelta(days=1)
         dateStartISO = dateStart.isoformat()
         dateNextISO = dateNext.isoformat()
-        print("date start")
-        print(dateStartISO)
-        print("date next is again")
-        print(dateNextISO)
-        print("CURRENT DATA IS")
+       # print("date start")
+       # print(dateStartISO)
+       # print("date next is again")
+       # print(dateNextISO)
+       # print("CURRENT DATA IS")
         someData = public_client.get_product_historic_rates("LTC-USD", start=dateStartISO,  end=dateNextISO, granularity=3600)
         #someData = public_client.get_product_historic_rates('ETH-USD', granularity=3000)
-        print(someData)
+       # print(someData)
 
         data += someData
 
@@ -496,18 +496,18 @@ def getData():
         wr = csv.writer(f)
         wr.writerows(data)
 
-
-getData()
-
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
 #print(last_24_hours_data)
 
 #Convert to ISO
 
+#whatToLearn = BTC-USD
+#whatToLearn = ETH-USD
+#whatToLearn = ETH-USD
+#whatToLearn = LITE-USD
 
-
-@app.route('/executeNet', methods=['GET'])
-def reinforcementAgent():
+@app.route('/executeNet/<string:whatToLearn>/<int:startingCapital>', methods=['POST'])
+def reinforcementAgent(whatToLearn, startingCapital):
     import numpy as np
     import tensorflow as tf
     import random
@@ -517,7 +517,9 @@ def reinforcementAgent():
 
     '''
     REMOVE THE TRAINING AND TESTING DATA SPLIT, DOESNT MAKE SENSE FOR REINFOORCEMENT AGENTS
-
+    ADDDD TENSORBOARD
+    ADDDD RNN
+    ADD MULTIHTREADING
     ACTIONS ARE BUY, SELL AND HOLD
     '''
 
@@ -540,8 +542,9 @@ def reinforcementAgent():
             output_dim = len(actions)
             h1_dim = 200
 
-            self.x = tf.placeholder(tf.float32, [None, input_dim])
-            self.y = tf.placeholder(tf.float32, [output_dim])
+            self.x = tf.placeholder(tf.float32, [None, input_dim])      #PUT THE BATCH OF VALUES IN THE PLACEHOLDER X
+            self.y = tf.placeholder(tf.float32, [output_dim])           #outputs an action but should also output a value tooooo!!!!!!!
+
             W1 = tf.Variable(tf.random_normal([input_dim, h1_dim]))
             b1 = tf.Variable(tf.constant(0.1, shape=[h1_dim]))
             h1 = tf.nn.relu(tf.matmul(self.x, W1) + b1)
@@ -559,7 +562,7 @@ def reinforcementAgent():
             if random.random() < threshold:
                 # Exploit best option with probability epsilon
                 action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
-                action_idx = np.argmax(action_q_vals)  # TODO: replace w/ tensorflow's argmax
+                action_idx = np.argmax(action_q_vals)
                 action = self.actions[action_idx]
             else:
                 # Explore random option with probability 1 - epsilon
@@ -574,7 +577,7 @@ def reinforcementAgent():
             action_q_vals = np.squeeze(np.asarray(action_q_vals))
             self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
 
-    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions,
+    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list,
                        debug=False):
         budget = initial_budget
         num_stocks = initial_num_stocks
@@ -605,33 +608,21 @@ def reinforcementAgent():
             policy.update_q(current_state, action, reward, next_state)
 
         portfolio = budget + num_stocks * share_value
+        current_portfolio_value_list.append(portfolio)
         if debug:
             print('${}\t{} shares'.format(budget, num_stocks))
         return portfolio
 
     # We want to run simulations multiple times and average out the performances:
 
-    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions):
+    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list):
         num_tries = 10
         final_portfolios = list()
         for i in range(num_tries):
-            final_portfolio = run_simulation(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions)
+            final_portfolio = run_simulation(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
             final_portfolios.append(final_portfolio)
         avg, std = np.mean(final_portfolios), np.std(final_portfolios)
         return avg, std
-
-    # Call the following function to use the Yahoo Finance library and obtain useful stockmarket data.
-
-    def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.npy'):
-        try:
-            stock_prices = np.load(cache_filename)
-        except IOError:
-            share = Share(share_symbol)
-            stock_hist = share.get_historical(start_date, end_date)
-            stock_prices = [stock_price['Open'] for stock_price in stock_hist]
-            np.save(cache_filename, stock_prices)
-
-        return stock_prices
 
     # Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
@@ -640,7 +631,7 @@ def reinforcementAgent():
         plt.xlabel('hour')
         plt.ylabel('price ($)')
         plt.plot(prices)
-        plt.savefig('all_prices.png')
+        plt.savefig(whatToLearn + " " + 'all_prices.png')
         plt.show()
 
     def plot_prices_test(prices):
@@ -693,12 +684,29 @@ def reinforcementAgent():
     '''
 
     if __name__ == '__main__':
-        with open('etherdata.json') as data_file:
-            data = json.load(data_file)
-        print("THE DATA IS")
-        print(data)
+        data = 0
+        if(whatToLearn == "ETH-BTC"):
+            with open('etherdata.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "BTC-USD"):
+            with open('btcUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "ETH-USD"):
+            with open('ethUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
+        elif(whatToLearn == "LITE-USD"):
+            with open('ltcUSD.json') as data_file:
+                data = json.load(data_file)
+                print("THE DATA IS")
+                print(data)
 
-        data.sort(key=lambda x: x["date"])
+        data.sort(key=lambda x: x["time"])
 
         trainData, testData = splitDataToTestAndTrain(data)
         print("AMOUT OF DATA IS: ")
@@ -712,30 +720,16 @@ def reinforcementAgent():
         plot_prices_all(all_prices)
         print(all_prices)
 
-        train_prices = standardizeData(trainData)
-        plot_prices_train(train_prices)
-        print(train_prices)
-
-        test_prices = standardizeData(testData)
-        plot_prices_test(test_prices)
-        print(test_prices)
-
         actions = ['Buy', 'Sell', 'Hold']
         reinforcementAgentDecisions = []
+        current_portfolio_value_list = []
 
         hist = 200
         policy = QLearningDecisionPolicy(actions, hist + 2)
-        budget = 1000
+        budget = startingCapital
         num_stocks = 0
-        # avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
-        print("The trained amout earned was")
-        # print(avg)
-        print("The standard deviation for this is: ")
-        # print(std)
 
-        budget = 1000
-        num_stocks = 0
-        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions)
+        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
         print("The end capital earned by the agent is: ")
         print(avg)
         print("The standard deviation for this capital amount in the test batch is: ")
@@ -744,6 +738,7 @@ def reinforcementAgent():
         print(reinforcementAgentDecisions)
         return jsonify({"data": data,
                         "decisions": reinforcementAgentDecisions,
+                        "current_portfolio_value_list": current_portfolio_value_list,
                         "average": avg,
                         "standard deviation": std
                         })
