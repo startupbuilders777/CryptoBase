@@ -1,0 +1,6017 @@
+[
+    {
+        "close": 385.13,
+        "high": 385.89,
+        "low": 384.02,
+        "nicetime": "Thu, 31 Aug 2017 03:00:00 GMT",
+        "open": 384.67,
+        "time": {
+            "day": 31,
+            "hour": 3,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504148400,
+        "volume": 3709.2445686800097
+    },
+    {
+        "close": 385.03,
+        "high": 387,
+        "low": 385.02,
+        "nicetime": "Thu, 31 Aug 2017 04:00:00 GMT",
+        "open": 385.13,
+        "time": {
+            "day": 31,
+            "hour": 4,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504152000,
+        "volume": 5765.963213420031
+    },
+    {
+        "close": 384.5,
+        "high": 385.04,
+        "low": 384.01,
+        "nicetime": "Thu, 31 Aug 2017 05:00:00 GMT",
+        "open": 385.03,
+        "time": {
+            "day": 31,
+            "hour": 5,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504155600,
+        "volume": 2412.0964148000057
+    },
+    {
+        "close": 383.2,
+        "high": 384.51,
+        "low": 383,
+        "nicetime": "Thu, 31 Aug 2017 06:00:00 GMT",
+        "open": 384.51,
+        "time": {
+            "day": 31,
+            "hour": 6,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504159200,
+        "volume": 2290.7390724499933
+    },
+    {
+        "close": 383.01,
+        "high": 384.17,
+        "low": 383.01,
+        "nicetime": "Thu, 31 Aug 2017 07:00:00 GMT",
+        "open": 383.2,
+        "time": {
+            "day": 31,
+            "hour": 7,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504162800,
+        "volume": 2396.329183370003
+    },
+    {
+        "close": 382.44,
+        "high": 383.39,
+        "low": 382.12,
+        "nicetime": "Thu, 31 Aug 2017 08:00:00 GMT",
+        "open": 383.02,
+        "time": {
+            "day": 31,
+            "hour": 8,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504166400,
+        "volume": 2157.4131827299952
+    },
+    {
+        "close": 383.9,
+        "high": 383.97,
+        "low": 382.22,
+        "nicetime": "Thu, 31 Aug 2017 09:00:00 GMT",
+        "open": 382.44,
+        "time": {
+            "day": 31,
+            "hour": 9,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504170000,
+        "volume": 2266.469532000005
+    },
+    {
+        "close": 386.04,
+        "high": 386.09,
+        "low": 383.52,
+        "nicetime": "Thu, 31 Aug 2017 10:00:00 GMT",
+        "open": 383.9,
+        "time": {
+            "day": 31,
+            "hour": 10,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504173600,
+        "volume": 2218.0966508700044
+    },
+    {
+        "close": 386.7,
+        "high": 386.74,
+        "low": 386.02,
+        "nicetime": "Thu, 31 Aug 2017 11:00:00 GMT",
+        "open": 386.04,
+        "time": {
+            "day": 31,
+            "hour": 11,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504177200,
+        "volume": 3093.4554090700067
+    },
+    {
+        "close": 386.77,
+        "high": 386.78,
+        "low": 385.12,
+        "nicetime": "Thu, 31 Aug 2017 12:00:00 GMT",
+        "open": 386.71,
+        "time": {
+            "day": 31,
+            "hour": 12,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504180800,
+        "volume": 3567.3625741900087
+    },
+    {
+        "close": 389.2,
+        "high": 389.64,
+        "low": 386.07,
+        "nicetime": "Thu, 31 Aug 2017 13:00:00 GMT",
+        "open": 386.78,
+        "time": {
+            "day": 31,
+            "hour": 13,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504184400,
+        "volume": 8774.75022757
+    },
+    {
+        "close": 388.51,
+        "high": 389.95,
+        "low": 388.5,
+        "nicetime": "Thu, 31 Aug 2017 14:00:00 GMT",
+        "open": 389.2,
+        "time": {
+            "day": 31,
+            "hour": 14,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504188000,
+        "volume": 6434.345983430004
+    },
+    {
+        "close": 386.45,
+        "high": 388.87,
+        "low": 385.2,
+        "nicetime": "Thu, 31 Aug 2017 15:00:00 GMT",
+        "open": 388.51,
+        "time": {
+            "day": 31,
+            "hour": 15,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504191600,
+        "volume": 8131.45806325003
+    },
+    {
+        "close": 388.69,
+        "high": 389.13,
+        "low": 385.84,
+        "nicetime": "Thu, 31 Aug 2017 16:00:00 GMT",
+        "open": 386.45,
+        "time": {
+            "day": 31,
+            "hour": 16,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504195200,
+        "volume": 9716.77482874003
+    },
+    {
+        "close": 387.96,
+        "high": 389.13,
+        "low": 386.5,
+        "nicetime": "Thu, 31 Aug 2017 17:00:00 GMT",
+        "open": 388.69,
+        "time": {
+            "day": 31,
+            "hour": 17,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504198800,
+        "volume": 6527.594340230024
+    },
+    {
+        "close": 389.77,
+        "high": 389.78,
+        "low": 387.95,
+        "nicetime": "Thu, 31 Aug 2017 18:00:00 GMT",
+        "open": 387.96,
+        "time": {
+            "day": 31,
+            "hour": 18,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504202400,
+        "volume": 7251.053764769998
+    },
+    {
+        "close": 386.28,
+        "high": 389.97,
+        "low": 386.27,
+        "nicetime": "Thu, 31 Aug 2017 19:00:00 GMT",
+        "open": 389.78,
+        "time": {
+            "day": 31,
+            "hour": 19,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504206000,
+        "volume": 8099.123144700057
+    },
+    {
+        "close": 388.19,
+        "high": 388.19,
+        "low": 386.02,
+        "nicetime": "Thu, 31 Aug 2017 20:00:00 GMT",
+        "open": 386.29,
+        "time": {
+            "day": 31,
+            "hour": 20,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504209600,
+        "volume": 5241.137696510011
+    },
+    {
+        "close": 388.31,
+        "high": 388.81,
+        "low": 388.01,
+        "nicetime": "Thu, 31 Aug 2017 21:00:00 GMT",
+        "open": 388.19,
+        "time": {
+            "day": 31,
+            "hour": 21,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504213200,
+        "volume": 3627.351528779996
+    },
+    {
+        "close": 388.78,
+        "high": 388.78,
+        "low": 388,
+        "nicetime": "Thu, 31 Aug 2017 22:00:00 GMT",
+        "open": 388.42,
+        "time": {
+            "day": 31,
+            "hour": 22,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504216800,
+        "volume": 3413.143320849996
+    },
+    {
+        "close": 389.2,
+        "high": 389.2,
+        "low": 388.08,
+        "nicetime": "Thu, 31 Aug 2017 23:00:00 GMT",
+        "open": 388.78,
+        "time": {
+            "day": 31,
+            "hour": 23,
+            "month": 8,
+            "year": 2017
+        },
+        "unix epoch time": 1504220400,
+        "volume": 4877.945971250013
+    },
+    {
+        "close": 392.45,
+        "high": 392.8,
+        "low": 389,
+        "nicetime": "Fri, 01 Sep 2017 00:00:00 GMT",
+        "open": 389.2,
+        "time": {
+            "day": 1,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504224000,
+        "volume": 11671.527069260028
+    },
+    {
+        "close": 395.54,
+        "high": 396.88,
+        "low": 391.76,
+        "nicetime": "Fri, 01 Sep 2017 01:00:00 GMT",
+        "open": 392.45,
+        "time": {
+            "day": 1,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504227600,
+        "volume": 11328.323751260028
+    },
+    {
+        "close": 393.95,
+        "high": 395.55,
+        "low": 393.12,
+        "nicetime": "Fri, 01 Sep 2017 02:00:00 GMT",
+        "open": 395.55,
+        "time": {
+            "day": 1,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504231200,
+        "volume": 5516.937104280027
+    },
+    {
+        "close": 394.01,
+        "high": 395,
+        "low": 392.57,
+        "nicetime": "Fri, 01 Sep 2017 03:00:00 GMT",
+        "open": 393.96,
+        "time": {
+            "day": 1,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504234800,
+        "volume": 7187.76498311004
+    },
+    {
+        "close": 391.18,
+        "high": 394.99,
+        "low": 391,
+        "nicetime": "Fri, 01 Sep 2017 04:00:00 GMT",
+        "open": 394.01,
+        "time": {
+            "day": 1,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504238400,
+        "volume": 7188.5231981299985
+    },
+    {
+        "close": 390.98,
+        "high": 392.72,
+        "low": 390.41,
+        "nicetime": "Fri, 01 Sep 2017 05:00:00 GMT",
+        "open": 391.19,
+        "time": {
+            "day": 1,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504242000,
+        "volume": 3504.8727420599976
+    },
+    {
+        "close": 388.66,
+        "high": 390.99,
+        "low": 386.98,
+        "nicetime": "Fri, 01 Sep 2017 06:00:00 GMT",
+        "open": 390.99,
+        "time": {
+            "day": 1,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504245600,
+        "volume": 8028.112032320037
+    },
+    {
+        "close": 391.85,
+        "high": 392.39,
+        "low": 388.04,
+        "nicetime": "Fri, 01 Sep 2017 07:00:00 GMT",
+        "open": 388.67,
+        "time": {
+            "day": 1,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504249200,
+        "volume": 3273.3487628000025
+    },
+    {
+        "close": 393.85,
+        "high": 394.5,
+        "low": 391.51,
+        "nicetime": "Fri, 01 Sep 2017 08:00:00 GMT",
+        "open": 391.83,
+        "time": {
+            "day": 1,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504252800,
+        "volume": 2244.2077042400037
+    },
+    {
+        "close": 393.49,
+        "high": 395,
+        "low": 393.12,
+        "nicetime": "Fri, 01 Sep 2017 09:00:00 GMT",
+        "open": 393.84,
+        "time": {
+            "day": 1,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504256400,
+        "volume": 2534.232641480004
+    },
+    {
+        "close": 392.06,
+        "high": 393.49,
+        "low": 391,
+        "nicetime": "Fri, 01 Sep 2017 10:00:00 GMT",
+        "open": 393.49,
+        "time": {
+            "day": 1,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504260000,
+        "volume": 2288.044277319999
+    },
+    {
+        "close": 393.83,
+        "high": 394.85,
+        "low": 392,
+        "nicetime": "Fri, 01 Sep 2017 11:00:00 GMT",
+        "open": 392.06,
+        "time": {
+            "day": 1,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504263600,
+        "volume": 4203.408091230005
+    },
+    {
+        "close": 395.19,
+        "high": 395.19,
+        "low": 393.21,
+        "nicetime": "Fri, 01 Sep 2017 12:00:00 GMT",
+        "open": 393.84,
+        "time": {
+            "day": 1,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504267200,
+        "volume": 5442.059979980024
+    },
+    {
+        "close": 394.94,
+        "high": 396,
+        "low": 394.47,
+        "nicetime": "Fri, 01 Sep 2017 13:00:00 GMT",
+        "open": 395.19,
+        "time": {
+            "day": 1,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504270800,
+        "volume": 6907.700230820031
+    },
+    {
+        "close": 392.25,
+        "high": 395.45,
+        "low": 390.4,
+        "nicetime": "Fri, 01 Sep 2017 14:00:00 GMT",
+        "open": 394.92,
+        "time": {
+            "day": 1,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504274400,
+        "volume": 9370.010082500066
+    },
+    {
+        "close": 393.3,
+        "high": 393.5,
+        "low": 392.24,
+        "nicetime": "Fri, 01 Sep 2017 15:00:00 GMT",
+        "open": 392.25,
+        "time": {
+            "day": 1,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504278000,
+        "volume": 4883.262426919997
+    },
+    {
+        "close": 393.32,
+        "high": 394,
+        "low": 392.32,
+        "nicetime": "Fri, 01 Sep 2017 16:00:00 GMT",
+        "open": 393.3,
+        "time": {
+            "day": 1,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504281600,
+        "volume": 6822.586347640062
+    },
+    {
+        "close": 394.76,
+        "high": 395.43,
+        "low": 393.31,
+        "nicetime": "Fri, 01 Sep 2017 17:00:00 GMT",
+        "open": 393.32,
+        "time": {
+            "day": 1,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504285200,
+        "volume": 8621.719839580048
+    },
+    {
+        "close": 391.53,
+        "high": 395.45,
+        "low": 391.53,
+        "nicetime": "Fri, 01 Sep 2017 18:00:00 GMT",
+        "open": 394.76,
+        "time": {
+            "day": 1,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504288800,
+        "volume": 10518.74859822012
+    },
+    {
+        "close": 391.28,
+        "high": 393.99,
+        "low": 388.11,
+        "nicetime": "Fri, 01 Sep 2017 19:00:00 GMT",
+        "open": 391.54,
+        "time": {
+            "day": 1,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504292400,
+        "volume": 14380.287514290061
+    },
+    {
+        "close": 391.83,
+        "high": 392,
+        "low": 389.21,
+        "nicetime": "Fri, 01 Sep 2017 20:00:00 GMT",
+        "open": 391.28,
+        "time": {
+            "day": 1,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504296000,
+        "volume": 9440.60716192006
+    },
+    {
+        "close": 391.1,
+        "high": 392,
+        "low": 389.66,
+        "nicetime": "Fri, 01 Sep 2017 21:00:00 GMT",
+        "open": 391.83,
+        "time": {
+            "day": 1,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504299600,
+        "volume": 6575.5766720100255
+    },
+    {
+        "close": 391.01,
+        "high": 391.1,
+        "low": 390.27,
+        "nicetime": "Fri, 01 Sep 2017 22:00:00 GMT",
+        "open": 391.1,
+        "time": {
+            "day": 1,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504303200,
+        "volume": 4218.039800889998
+    },
+    {
+        "close": 392.87,
+        "high": 392.87,
+        "low": 390.74,
+        "nicetime": "Fri, 01 Sep 2017 23:00:00 GMT",
+        "open": 391.01,
+        "time": {
+            "day": 1,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504306800,
+        "volume": 4475.7356539900065
+    },
+    {
+        "close": 390.65,
+        "high": 393.76,
+        "low": 390.64,
+        "nicetime": "Sat, 02 Sep 2017 00:00:00 GMT",
+        "open": 392.87,
+        "time": {
+            "day": 2,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504310400,
+        "volume": 4243.000662239998
+    },
+    {
+        "close": 387.71,
+        "high": 390.65,
+        "low": 383.47,
+        "nicetime": "Sat, 02 Sep 2017 01:00:00 GMT",
+        "open": 390.65,
+        "time": {
+            "day": 2,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504314000,
+        "volume": 11179.666694020065
+    },
+    {
+        "close": 386.41,
+        "high": 387.71,
+        "low": 381.11,
+        "nicetime": "Sat, 02 Sep 2017 02:00:00 GMT",
+        "open": 387.71,
+        "time": {
+            "day": 2,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504317600,
+        "volume": 10195.481002080043
+    },
+    {
+        "close": 377,
+        "high": 386.62,
+        "low": 373,
+        "nicetime": "Sat, 02 Sep 2017 03:00:00 GMT",
+        "open": 386.16,
+        "time": {
+            "day": 2,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504321200,
+        "volume": 19739.27796088997
+    },
+    {
+        "close": 378.99,
+        "high": 382.39,
+        "low": 376.99,
+        "nicetime": "Sat, 02 Sep 2017 04:00:00 GMT",
+        "open": 377,
+        "time": {
+            "day": 2,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504324800,
+        "volume": 6857.948659950048
+    },
+    {
+        "close": 358.91,
+        "high": 379,
+        "low": 349.88,
+        "nicetime": "Sat, 02 Sep 2017 05:00:00 GMT",
+        "open": 379,
+        "time": {
+            "day": 2,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504328400,
+        "volume": 39905.601428130016
+    },
+    {
+        "close": 373.26,
+        "high": 374.78,
+        "low": 356.97,
+        "nicetime": "Sat, 02 Sep 2017 06:00:00 GMT",
+        "open": 356.99,
+        "time": {
+            "day": 2,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504332000,
+        "volume": 19936.45157583005
+    },
+    {
+        "close": 369.98,
+        "high": 381.49,
+        "low": 366.45,
+        "nicetime": "Sat, 02 Sep 2017 07:00:00 GMT",
+        "open": 373.27,
+        "time": {
+            "day": 2,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504335600,
+        "volume": 9091.78372466007
+    },
+    {
+        "close": 367.07,
+        "high": 370.72,
+        "low": 360,
+        "nicetime": "Sat, 02 Sep 2017 08:00:00 GMT",
+        "open": 369.99,
+        "time": {
+            "day": 2,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504339200,
+        "volume": 6333.679539870069
+    },
+    {
+        "close": 358.89,
+        "high": 367.56,
+        "low": 356.55,
+        "nicetime": "Sat, 02 Sep 2017 09:00:00 GMT",
+        "open": 367.08,
+        "time": {
+            "day": 2,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504342800,
+        "volume": 5916.98085149001
+    },
+    {
+        "close": 365.71,
+        "high": 365.72,
+        "low": 358.94,
+        "nicetime": "Sat, 02 Sep 2017 10:00:00 GMT",
+        "open": 358.96,
+        "time": {
+            "day": 2,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504346400,
+        "volume": 2940.254834160007
+    },
+    {
+        "close": 366.22,
+        "high": 369.29,
+        "low": 365.7,
+        "nicetime": "Sat, 02 Sep 2017 11:00:00 GMT",
+        "open": 365.71,
+        "time": {
+            "day": 2,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504350000,
+        "volume": 3810.2689530800053
+    },
+    {
+        "close": 365.09,
+        "high": 368.99,
+        "low": 358.12,
+        "nicetime": "Sat, 02 Sep 2017 12:00:00 GMT",
+        "open": 366.22,
+        "time": {
+            "day": 2,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504353600,
+        "volume": 5100.241947960034
+    },
+    {
+        "close": 362.01,
+        "high": 365.12,
+        "low": 362,
+        "nicetime": "Sat, 02 Sep 2017 13:00:00 GMT",
+        "open": 365.09,
+        "time": {
+            "day": 2,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504357200,
+        "volume": 3348.251068930009
+    },
+    {
+        "close": 347.57,
+        "high": 362.02,
+        "low": 340.1,
+        "nicetime": "Sat, 02 Sep 2017 14:00:00 GMT",
+        "open": 362.01,
+        "time": {
+            "day": 2,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504360800,
+        "volume": 32377.00039935967
+    },
+    {
+        "close": 355.1,
+        "high": 356,
+        "low": 340.02,
+        "nicetime": "Sat, 02 Sep 2017 15:00:00 GMT",
+        "open": 347.52,
+        "time": {
+            "day": 2,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504364400,
+        "volume": 18767.32048594985
+    },
+    {
+        "close": 348.8,
+        "high": 355.12,
+        "low": 346.23,
+        "nicetime": "Sat, 02 Sep 2017 16:00:00 GMT",
+        "open": 355.12,
+        "time": {
+            "day": 2,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504368000,
+        "volume": 10803.637965420065
+    },
+    {
+        "close": 351.9,
+        "high": 354,
+        "low": 347.2,
+        "nicetime": "Sat, 02 Sep 2017 17:00:00 GMT",
+        "open": 348.8,
+        "time": {
+            "day": 2,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504371600,
+        "volume": 7755.5783804901
+    },
+    {
+        "close": 351.02,
+        "high": 355.5,
+        "low": 350.48,
+        "nicetime": "Sat, 02 Sep 2017 18:00:00 GMT",
+        "open": 351.89,
+        "time": {
+            "day": 2,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504375200,
+        "volume": 8912.689716180046
+    },
+    {
+        "close": 349.99,
+        "high": 351.95,
+        "low": 346.21,
+        "nicetime": "Sat, 02 Sep 2017 19:00:00 GMT",
+        "open": 351.95,
+        "time": {
+            "day": 2,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504378800,
+        "volume": 5856.596836810112
+    },
+    {
+        "close": 341.01,
+        "high": 351,
+        "low": 340,
+        "nicetime": "Sat, 02 Sep 2017 20:00:00 GMT",
+        "open": 349.99,
+        "time": {
+            "day": 2,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504382400,
+        "volume": 13525.907128970104
+    },
+    {
+        "close": 337.01,
+        "high": 341.98,
+        "low": 333,
+        "nicetime": "Sat, 02 Sep 2017 21:00:00 GMT",
+        "open": 341,
+        "time": {
+            "day": 2,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504386000,
+        "volume": 23521.73881578989
+    },
+    {
+        "close": 342.44,
+        "high": 349.99,
+        "low": 336.17,
+        "nicetime": "Sat, 02 Sep 2017 22:00:00 GMT",
+        "open": 337.01,
+        "time": {
+            "day": 2,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504389600,
+        "volume": 14366.64897135003
+    },
+    {
+        "close": 354.87,
+        "high": 355,
+        "low": 342.44,
+        "nicetime": "Sat, 02 Sep 2017 23:00:00 GMT",
+        "open": 342.45,
+        "time": {
+            "day": 2,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504393200,
+        "volume": 8869.851475580039
+    },
+    {
+        "close": 357.6,
+        "high": 360,
+        "low": 354,
+        "nicetime": "Sun, 03 Sep 2017 00:00:00 GMT",
+        "open": 354.88,
+        "time": {
+            "day": 3,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504396800,
+        "volume": 11538.512703630055
+    },
+    {
+        "close": 359.29,
+        "high": 364.79,
+        "low": 357,
+        "nicetime": "Sun, 03 Sep 2017 01:00:00 GMT",
+        "open": 357.11,
+        "time": {
+            "day": 3,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504400400,
+        "volume": 10392.798225990024
+    },
+    {
+        "close": 356.23,
+        "high": 359.44,
+        "low": 355.53,
+        "nicetime": "Sun, 03 Sep 2017 02:00:00 GMT",
+        "open": 359.28,
+        "time": {
+            "day": 3,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504404000,
+        "volume": 6999.723071320009
+    },
+    {
+        "close": 356.71,
+        "high": 357.81,
+        "low": 356.12,
+        "nicetime": "Sun, 03 Sep 2017 03:00:00 GMT",
+        "open": 356.24,
+        "time": {
+            "day": 3,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504407600,
+        "volume": 2579.5965012400034
+    },
+    {
+        "close": 361.02,
+        "high": 361.28,
+        "low": 356.71,
+        "nicetime": "Sun, 03 Sep 2017 04:00:00 GMT",
+        "open": 356.71,
+        "time": {
+            "day": 3,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504411200,
+        "volume": 6155.311231920014
+    },
+    {
+        "close": 368.47,
+        "high": 369,
+        "low": 361.02,
+        "nicetime": "Sun, 03 Sep 2017 05:00:00 GMT",
+        "open": 361.02,
+        "time": {
+            "day": 3,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504414800,
+        "volume": 10176.85789807002
+    },
+    {
+        "close": 359.56,
+        "high": 372,
+        "low": 357.1,
+        "nicetime": "Sun, 03 Sep 2017 06:00:00 GMT",
+        "open": 368.74,
+        "time": {
+            "day": 3,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504418400,
+        "volume": 8821.49982468003
+    },
+    {
+        "close": 360.83,
+        "high": 363.56,
+        "low": 358.6,
+        "nicetime": "Sun, 03 Sep 2017 07:00:00 GMT",
+        "open": 359.7,
+        "time": {
+            "day": 3,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504422000,
+        "volume": 2150.3029145399955
+    },
+    {
+        "close": 360.8,
+        "high": 366.37,
+        "low": 359.45,
+        "nicetime": "Sun, 03 Sep 2017 08:00:00 GMT",
+        "open": 360.83,
+        "time": {
+            "day": 3,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504425600,
+        "volume": 1881.8988796600026
+    },
+    {
+        "close": 353.48,
+        "high": 360.8,
+        "low": 351.16,
+        "nicetime": "Sun, 03 Sep 2017 09:00:00 GMT",
+        "open": 360.8,
+        "time": {
+            "day": 3,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504429200,
+        "volume": 3095.3127508500143
+    },
+    {
+        "close": 353.14,
+        "high": 354.73,
+        "low": 353.14,
+        "nicetime": "Sun, 03 Sep 2017 10:00:00 GMT",
+        "open": 353.48,
+        "time": {
+            "day": 3,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504432800,
+        "volume": 1999.4494696299942
+    },
+    {
+        "close": 350.23,
+        "high": 353.37,
+        "low": 350,
+        "nicetime": "Sun, 03 Sep 2017 11:00:00 GMT",
+        "open": 352.9,
+        "time": {
+            "day": 3,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504436400,
+        "volume": 5073.155563870011
+    },
+    {
+        "close": 355.52,
+        "high": 355.91,
+        "low": 349.05,
+        "nicetime": "Sun, 03 Sep 2017 12:00:00 GMT",
+        "open": 350.23,
+        "time": {
+            "day": 3,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504440000,
+        "volume": 4856.806800710013
+    },
+    {
+        "close": 345.77,
+        "high": 355.61,
+        "low": 345.77,
+        "nicetime": "Sun, 03 Sep 2017 13:00:00 GMT",
+        "open": 355.52,
+        "time": {
+            "day": 3,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504443600,
+        "volume": 5940.078826330005
+    },
+    {
+        "close": 347.19,
+        "high": 350,
+        "low": 345.03,
+        "nicetime": "Sun, 03 Sep 2017 14:00:00 GMT",
+        "open": 345.78,
+        "time": {
+            "day": 3,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504447200,
+        "volume": 5447.5724274200065
+    },
+    {
+        "close": 349.15,
+        "high": 349.98,
+        "low": 345.11,
+        "nicetime": "Sun, 03 Sep 2017 15:00:00 GMT",
+        "open": 347.36,
+        "time": {
+            "day": 3,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504450800,
+        "volume": 6320.855489590002
+    },
+    {
+        "close": 349.24,
+        "high": 350,
+        "low": 347.63,
+        "nicetime": "Sun, 03 Sep 2017 16:00:00 GMT",
+        "open": 349.02,
+        "time": {
+            "day": 3,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504454400,
+        "volume": 4525.97149866
+    },
+    {
+        "close": 354.25,
+        "high": 354.94,
+        "low": 348.9,
+        "nicetime": "Sun, 03 Sep 2017 17:00:00 GMT",
+        "open": 349.24,
+        "time": {
+            "day": 3,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504458000,
+        "volume": 5469.630630580011
+    },
+    {
+        "close": 351.2,
+        "high": 354.99,
+        "low": 349.75,
+        "nicetime": "Sun, 03 Sep 2017 18:00:00 GMT",
+        "open": 354.25,
+        "time": {
+            "day": 3,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504461600,
+        "volume": 5380.646132470023
+    },
+    {
+        "close": 349.31,
+        "high": 354,
+        "low": 348.4,
+        "nicetime": "Sun, 03 Sep 2017 19:00:00 GMT",
+        "open": 351.44,
+        "time": {
+            "day": 3,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504465200,
+        "volume": 4561.017986030056
+    },
+    {
+        "close": 349.72,
+        "high": 350.73,
+        "low": 348.98,
+        "nicetime": "Sun, 03 Sep 2017 20:00:00 GMT",
+        "open": 349.31,
+        "time": {
+            "day": 3,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504468800,
+        "volume": 4703.765132220008
+    },
+    {
+        "close": 350.02,
+        "high": 352.73,
+        "low": 344,
+        "nicetime": "Sun, 03 Sep 2017 21:00:00 GMT",
+        "open": 349.72,
+        "time": {
+            "day": 3,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504472400,
+        "volume": 11250.785621730032
+    },
+    {
+        "close": 351.02,
+        "high": 352,
+        "low": 349.65,
+        "nicetime": "Sun, 03 Sep 2017 22:00:00 GMT",
+        "open": 350.02,
+        "time": {
+            "day": 3,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504476000,
+        "volume": 3846.1436516299887
+    },
+    {
+        "close": 353.06,
+        "high": 353.06,
+        "low": 351.02,
+        "nicetime": "Sun, 03 Sep 2017 23:00:00 GMT",
+        "open": 351.02,
+        "time": {
+            "day": 3,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504479600,
+        "volume": 4101.169817470012
+    },
+    {
+        "close": 349,
+        "high": 353.15,
+        "low": 348.1,
+        "nicetime": "Mon, 04 Sep 2017 00:00:00 GMT",
+        "open": 353.06,
+        "time": {
+            "day": 4,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504483200,
+        "volume": 3489.858607120019
+    },
+    {
+        "close": 347.2,
+        "high": 349.5,
+        "low": 347.01,
+        "nicetime": "Mon, 04 Sep 2017 01:00:00 GMT",
+        "open": 349.01,
+        "time": {
+            "day": 4,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504486800,
+        "volume": 2829.923316109995
+    },
+    {
+        "close": 348.13,
+        "high": 348.9,
+        "low": 345.73,
+        "nicetime": "Mon, 04 Sep 2017 02:00:00 GMT",
+        "open": 347.2,
+        "time": {
+            "day": 4,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504490400,
+        "volume": 2410.8218428200007
+    },
+    {
+        "close": 348.11,
+        "high": 349.19,
+        "low": 346.5,
+        "nicetime": "Mon, 04 Sep 2017 03:00:00 GMT",
+        "open": 348.13,
+        "time": {
+            "day": 4,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504494000,
+        "volume": 2490.5568110000067
+    },
+    {
+        "close": 347.72,
+        "high": 348.15,
+        "low": 347.01,
+        "nicetime": "Mon, 04 Sep 2017 04:00:00 GMT",
+        "open": 348.11,
+        "time": {
+            "day": 4,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504497600,
+        "volume": 1545.373283699996
+    },
+    {
+        "close": 345.71,
+        "high": 348.52,
+        "low": 345.7,
+        "nicetime": "Mon, 04 Sep 2017 05:00:00 GMT",
+        "open": 347.72,
+        "time": {
+            "day": 4,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504501200,
+        "volume": 1795.201304339997
+    },
+    {
+        "close": 342.61,
+        "high": 345.71,
+        "low": 342,
+        "nicetime": "Mon, 04 Sep 2017 06:00:00 GMT",
+        "open": 345.71,
+        "time": {
+            "day": 4,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504504800,
+        "volume": 6462.636064929998
+    },
+    {
+        "close": 328,
+        "high": 343.47,
+        "low": 328,
+        "nicetime": "Mon, 04 Sep 2017 07:00:00 GMT",
+        "open": 342.61,
+        "time": {
+            "day": 4,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504508400,
+        "volume": 22209.450974339896
+    },
+    {
+        "close": 310.5,
+        "high": 328.01,
+        "low": 306.97,
+        "nicetime": "Mon, 04 Sep 2017 08:00:00 GMT",
+        "open": 328.01,
+        "time": {
+            "day": 4,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504512000,
+        "volume": 43739.12491480984
+    },
+    {
+        "close": 321.12,
+        "high": 321.47,
+        "low": 309,
+        "nicetime": "Mon, 04 Sep 2017 09:00:00 GMT",
+        "open": 310.48,
+        "time": {
+            "day": 4,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504515600,
+        "volume": 21687.241601269958
+    },
+    {
+        "close": 322.01,
+        "high": 327,
+        "low": 320.73,
+        "nicetime": "Mon, 04 Sep 2017 10:00:00 GMT",
+        "open": 321.25,
+        "time": {
+            "day": 4,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504519200,
+        "volume": 12801.94176269004
+    },
+    {
+        "close": 307.91,
+        "high": 322.02,
+        "low": 307,
+        "nicetime": "Mon, 04 Sep 2017 11:00:00 GMT",
+        "open": 322.02,
+        "time": {
+            "day": 4,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504522800,
+        "volume": 14992.62232980005
+    },
+    {
+        "close": 306.79,
+        "high": 314,
+        "low": 301.09,
+        "nicetime": "Mon, 04 Sep 2017 12:00:00 GMT",
+        "open": 307.92,
+        "time": {
+            "day": 4,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504526400,
+        "volume": 23080.9799536601
+    },
+    {
+        "close": 308.96,
+        "high": 315,
+        "low": 301.5,
+        "nicetime": "Mon, 04 Sep 2017 13:00:00 GMT",
+        "open": 306.79,
+        "time": {
+            "day": 4,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504530000,
+        "volume": 22197.990603150072
+    },
+    {
+        "close": 291.11,
+        "high": 310.33,
+        "low": 290,
+        "nicetime": "Mon, 04 Sep 2017 14:00:00 GMT",
+        "open": 308.96,
+        "time": {
+            "day": 4,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504533600,
+        "volume": 43925.878261349964
+    },
+    {
+        "close": 296.68,
+        "high": 297.99,
+        "low": 285,
+        "nicetime": "Mon, 04 Sep 2017 15:00:00 GMT",
+        "open": 291.11,
+        "time": {
+            "day": 4,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504537200,
+        "volume": 44699.17623549978
+    },
+    {
+        "close": 300.7,
+        "high": 306.19,
+        "low": 295.05,
+        "nicetime": "Mon, 04 Sep 2017 16:00:00 GMT",
+        "open": 296.68,
+        "time": {
+            "day": 4,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504540800,
+        "volume": 32915.13129619988
+    },
+    {
+        "close": 291,
+        "high": 302.23,
+        "low": 291,
+        "nicetime": "Mon, 04 Sep 2017 17:00:00 GMT",
+        "open": 300.7,
+        "time": {
+            "day": 4,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504544400,
+        "volume": 20195.13250184004
+    },
+    {
+        "close": 308.99,
+        "high": 311.94,
+        "low": 290.5,
+        "nicetime": "Mon, 04 Sep 2017 18:00:00 GMT",
+        "open": 291.22,
+        "time": {
+            "day": 4,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504548000,
+        "volume": 26345.33657914986
+    },
+    {
+        "close": 319.99,
+        "high": 326.5,
+        "low": 308.97,
+        "nicetime": "Mon, 04 Sep 2017 19:00:00 GMT",
+        "open": 308.99,
+        "time": {
+            "day": 4,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504551600,
+        "volume": 47552.009201259956
+    },
+    {
+        "close": 324.14,
+        "high": 326,
+        "low": 313.62,
+        "nicetime": "Mon, 04 Sep 2017 20:00:00 GMT",
+        "open": 319.99,
+        "time": {
+            "day": 4,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504555200,
+        "volume": 18371.008475150033
+    },
+    {
+        "close": 326.42,
+        "high": 333.7,
+        "low": 322.66,
+        "nicetime": "Mon, 04 Sep 2017 21:00:00 GMT",
+        "open": 324.14,
+        "time": {
+            "day": 4,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504558800,
+        "volume": 19694.867158089866
+    },
+    {
+        "close": 320.25,
+        "high": 329,
+        "low": 319.12,
+        "nicetime": "Mon, 04 Sep 2017 22:00:00 GMT",
+        "open": 326.83,
+        "time": {
+            "day": 4,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504562400,
+        "volume": 10790.027382470087
+    },
+    {
+        "close": 316.86,
+        "high": 322.34,
+        "low": 312.5,
+        "nicetime": "Mon, 04 Sep 2017 23:00:00 GMT",
+        "open": 320.13,
+        "time": {
+            "day": 4,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504566000,
+        "volume": 12141.68540725008
+    },
+    {
+        "close": 310,
+        "high": 317.91,
+        "low": 306.99,
+        "nicetime": "Tue, 05 Sep 2017 00:00:00 GMT",
+        "open": 316.87,
+        "time": {
+            "day": 5,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504569600,
+        "volume": 16323.424672360004
+    },
+    {
+        "close": 291.21,
+        "high": 311.7,
+        "low": 290,
+        "nicetime": "Tue, 05 Sep 2017 01:00:00 GMT",
+        "open": 310.47,
+        "time": {
+            "day": 5,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504573200,
+        "volume": 47192.82438521973
+    },
+    {
+        "close": 301.06,
+        "high": 306,
+        "low": 290.03,
+        "nicetime": "Tue, 05 Sep 2017 02:00:00 GMT",
+        "open": 291.21,
+        "time": {
+            "day": 5,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504576800,
+        "volume": 29211.6733467196
+    },
+    {
+        "close": 296.01,
+        "high": 301.39,
+        "low": 291.99,
+        "nicetime": "Tue, 05 Sep 2017 03:00:00 GMT",
+        "open": 301.06,
+        "time": {
+            "day": 5,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504580400,
+        "volume": 15201.39386839018
+    },
+    {
+        "close": 302.71,
+        "high": 304.25,
+        "low": 295.44,
+        "nicetime": "Tue, 05 Sep 2017 04:00:00 GMT",
+        "open": 296.01,
+        "time": {
+            "day": 5,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504584000,
+        "volume": 11015.491662910103
+    },
+    {
+        "close": 295.89,
+        "high": 302.79,
+        "low": 293.82,
+        "nicetime": "Tue, 05 Sep 2017 05:00:00 GMT",
+        "open": 302.71,
+        "time": {
+            "day": 5,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504587600,
+        "volume": 6573.239630650052
+    },
+    {
+        "close": 308.62,
+        "high": 308.66,
+        "low": 294.83,
+        "nicetime": "Tue, 05 Sep 2017 06:00:00 GMT",
+        "open": 295.05,
+        "time": {
+            "day": 5,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504591200,
+        "volume": 8868.161160280024
+    },
+    {
+        "close": 314.32,
+        "high": 314.32,
+        "low": 305.58,
+        "nicetime": "Tue, 05 Sep 2017 07:00:00 GMT",
+        "open": 308.56,
+        "time": {
+            "day": 5,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504594800,
+        "volume": 12449.743262200082
+    },
+    {
+        "close": 307.99,
+        "high": 315,
+        "low": 307.45,
+        "nicetime": "Tue, 05 Sep 2017 08:00:00 GMT",
+        "open": 314.32,
+        "time": {
+            "day": 5,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504598400,
+        "volume": 7996.966289610031
+    },
+    {
+        "close": 305.82,
+        "high": 310.15,
+        "low": 302,
+        "nicetime": "Tue, 05 Sep 2017 09:00:00 GMT",
+        "open": 307.99,
+        "time": {
+            "day": 5,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504602000,
+        "volume": 4715.861749830028
+    },
+    {
+        "close": 309.95,
+        "high": 312,
+        "low": 305.32,
+        "nicetime": "Tue, 05 Sep 2017 10:00:00 GMT",
+        "open": 305.96,
+        "time": {
+            "day": 5,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504605600,
+        "volume": 4907.256401560034
+    },
+    {
+        "close": 312,
+        "high": 312,
+        "low": 307.32,
+        "nicetime": "Tue, 05 Sep 2017 11:00:00 GMT",
+        "open": 309.95,
+        "time": {
+            "day": 5,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504609200,
+        "volume": 6880.148115570038
+    },
+    {
+        "close": 316.29,
+        "high": 319.69,
+        "low": 311.99,
+        "nicetime": "Tue, 05 Sep 2017 12:00:00 GMT",
+        "open": 312,
+        "time": {
+            "day": 5,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504612800,
+        "volume": 19299.47613222009
+    },
+    {
+        "close": 316.79,
+        "high": 318,
+        "low": 312.96,
+        "nicetime": "Tue, 05 Sep 2017 13:00:00 GMT",
+        "open": 316.21,
+        "time": {
+            "day": 5,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504616400,
+        "volume": 9202.697236130016
+    },
+    {
+        "close": 313.98,
+        "high": 317,
+        "low": 313,
+        "nicetime": "Tue, 05 Sep 2017 14:00:00 GMT",
+        "open": 316.81,
+        "time": {
+            "day": 5,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504620000,
+        "volume": 7613.03151678007
+    },
+    {
+        "close": 308.03,
+        "high": 314,
+        "low": 305.1,
+        "nicetime": "Tue, 05 Sep 2017 15:00:00 GMT",
+        "open": 313.99,
+        "time": {
+            "day": 5,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504623600,
+        "volume": 13812.10430251993
+    },
+    {
+        "close": 309.81,
+        "high": 311.32,
+        "low": 304.4,
+        "nicetime": "Tue, 05 Sep 2017 16:00:00 GMT",
+        "open": 308.03,
+        "time": {
+            "day": 5,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504627200,
+        "volume": 10023.726769330027
+    },
+    {
+        "close": 312.23,
+        "high": 314.75,
+        "low": 309.22,
+        "nicetime": "Tue, 05 Sep 2017 17:00:00 GMT",
+        "open": 309.81,
+        "time": {
+            "day": 5,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504630800,
+        "volume": 8637.442816630062
+    },
+    {
+        "close": 316.03,
+        "high": 318.75,
+        "low": 311.63,
+        "nicetime": "Tue, 05 Sep 2017 18:00:00 GMT",
+        "open": 312.23,
+        "time": {
+            "day": 5,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504634400,
+        "volume": 15529.751739390058
+    },
+    {
+        "close": 321.91,
+        "high": 324,
+        "low": 315.89,
+        "nicetime": "Tue, 05 Sep 2017 19:00:00 GMT",
+        "open": 316.04,
+        "time": {
+            "day": 5,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504638000,
+        "volume": 17684.47532476989
+    },
+    {
+        "close": 320.89,
+        "high": 323.07,
+        "low": 316.09,
+        "nicetime": "Tue, 05 Sep 2017 20:00:00 GMT",
+        "open": 321.91,
+        "time": {
+            "day": 5,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504641600,
+        "volume": 12673.625015899943
+    },
+    {
+        "close": 314.52,
+        "high": 321.4,
+        "low": 313.77,
+        "nicetime": "Tue, 05 Sep 2017 21:00:00 GMT",
+        "open": 320.89,
+        "time": {
+            "day": 5,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504645200,
+        "volume": 8660.043142390052
+    },
+    {
+        "close": 321.99,
+        "high": 322.98,
+        "low": 314.51,
+        "nicetime": "Tue, 05 Sep 2017 22:00:00 GMT",
+        "open": 314.52,
+        "time": {
+            "day": 5,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504648800,
+        "volume": 9103.901315780033
+    },
+    {
+        "close": 320.08,
+        "high": 325,
+        "low": 319,
+        "nicetime": "Tue, 05 Sep 2017 23:00:00 GMT",
+        "open": 322,
+        "time": {
+            "day": 5,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504652400,
+        "volume": 14768.624578670047
+    },
+    {
+        "close": 326.62,
+        "high": 326.66,
+        "low": 319.3,
+        "nicetime": "Wed, 06 Sep 2017 00:00:00 GMT",
+        "open": 320.09,
+        "time": {
+            "day": 6,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504656000,
+        "volume": 9133.980015610055
+    },
+    {
+        "close": 335.61,
+        "high": 335.76,
+        "low": 325.77,
+        "nicetime": "Wed, 06 Sep 2017 01:00:00 GMT",
+        "open": 326.62,
+        "time": {
+            "day": 6,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504659600,
+        "volume": 22128.943896749894
+    },
+    {
+        "close": 332.05,
+        "high": 335.84,
+        "low": 331,
+        "nicetime": "Wed, 06 Sep 2017 02:00:00 GMT",
+        "open": 335.62,
+        "time": {
+            "day": 6,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504663200,
+        "volume": 11110.66649927007
+    },
+    {
+        "close": 330.34,
+        "high": 334.65,
+        "low": 328.2,
+        "nicetime": "Wed, 06 Sep 2017 03:00:00 GMT",
+        "open": 332.06,
+        "time": {
+            "day": 6,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504666800,
+        "volume": 10600.529416330035
+    },
+    {
+        "close": 322.48,
+        "high": 333.16,
+        "low": 321.59,
+        "nicetime": "Wed, 06 Sep 2017 04:00:00 GMT",
+        "open": 330.35,
+        "time": {
+            "day": 6,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504670400,
+        "volume": 13695.700622090055
+    },
+    {
+        "close": 328.62,
+        "high": 328.62,
+        "low": 322.21,
+        "nicetime": "Wed, 06 Sep 2017 05:00:00 GMT",
+        "open": 322.79,
+        "time": {
+            "day": 6,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504674000,
+        "volume": 7352.380714160017
+    },
+    {
+        "close": 329.67,
+        "high": 330,
+        "low": 325,
+        "nicetime": "Wed, 06 Sep 2017 06:00:00 GMT",
+        "open": 328.47,
+        "time": {
+            "day": 6,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504677600,
+        "volume": 4813.067510850016
+    },
+    {
+        "close": 336.02,
+        "high": 337.36,
+        "low": 328.02,
+        "nicetime": "Wed, 06 Sep 2017 07:00:00 GMT",
+        "open": 329.68,
+        "time": {
+            "day": 6,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504681200,
+        "volume": 7719.524838410051
+    },
+    {
+        "close": 342.11,
+        "high": 342.12,
+        "low": 334.13,
+        "nicetime": "Wed, 06 Sep 2017 08:00:00 GMT",
+        "open": 336.03,
+        "time": {
+            "day": 6,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504684800,
+        "volume": 7121.742415830036
+    },
+    {
+        "close": 341.25,
+        "high": 345,
+        "low": 337.29,
+        "nicetime": "Wed, 06 Sep 2017 09:00:00 GMT",
+        "open": 342.12,
+        "time": {
+            "day": 6,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504688400,
+        "volume": 6830.932723830005
+    },
+    {
+        "close": 340.8,
+        "high": 343.7,
+        "low": 337.58,
+        "nicetime": "Wed, 06 Sep 2017 10:00:00 GMT",
+        "open": 341.25,
+        "time": {
+            "day": 6,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504692000,
+        "volume": 4896.706085900017
+    },
+    {
+        "close": 343.18,
+        "high": 343.18,
+        "low": 338.08,
+        "nicetime": "Wed, 06 Sep 2017 11:00:00 GMT",
+        "open": 340.76,
+        "time": {
+            "day": 6,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504695600,
+        "volume": 5171.00271136003
+    },
+    {
+        "close": 343,
+        "high": 344.47,
+        "low": 339.26,
+        "nicetime": "Wed, 06 Sep 2017 12:00:00 GMT",
+        "open": 343.18,
+        "time": {
+            "day": 6,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504699200,
+        "volume": 5499.613053660018
+    },
+    {
+        "close": 335.66,
+        "high": 343.14,
+        "low": 333.08,
+        "nicetime": "Wed, 06 Sep 2017 13:00:00 GMT",
+        "open": 343.14,
+        "time": {
+            "day": 6,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504702800,
+        "volume": 11672.194353539986
+    },
+    {
+        "close": 335.09,
+        "high": 336.64,
+        "low": 334.54,
+        "nicetime": "Wed, 06 Sep 2017 14:00:00 GMT",
+        "open": 335.66,
+        "time": {
+            "day": 6,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504706400,
+        "volume": 5639.581989250007
+    },
+    {
+        "close": 340,
+        "high": 340,
+        "low": 334.35,
+        "nicetime": "Wed, 06 Sep 2017 15:00:00 GMT",
+        "open": 335.09,
+        "time": {
+            "day": 6,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504710000,
+        "volume": 9770.662671749984
+    },
+    {
+        "close": 339.51,
+        "high": 342,
+        "low": 338.12,
+        "nicetime": "Wed, 06 Sep 2017 16:00:00 GMT",
+        "open": 339.99,
+        "time": {
+            "day": 6,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504713600,
+        "volume": 11139.58403661999
+    },
+    {
+        "close": 342.43,
+        "high": 342.48,
+        "low": 338.1,
+        "nicetime": "Wed, 06 Sep 2017 17:00:00 GMT",
+        "open": 339.52,
+        "time": {
+            "day": 6,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504717200,
+        "volume": 5762.831562760009
+    },
+    {
+        "close": 337.55,
+        "high": 343.04,
+        "low": 337.5,
+        "nicetime": "Wed, 06 Sep 2017 18:00:00 GMT",
+        "open": 342.43,
+        "time": {
+            "day": 6,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504720800,
+        "volume": 8226.680944290003
+    },
+    {
+        "close": 339.42,
+        "high": 339.79,
+        "low": 336,
+        "nicetime": "Wed, 06 Sep 2017 19:00:00 GMT",
+        "open": 337.55,
+        "time": {
+            "day": 6,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504724400,
+        "volume": 5177.8090584000065
+    },
+    {
+        "close": 335.22,
+        "high": 339.79,
+        "low": 335.07,
+        "nicetime": "Wed, 06 Sep 2017 20:00:00 GMT",
+        "open": 339.26,
+        "time": {
+            "day": 6,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504728000,
+        "volume": 5580.782521509998
+    },
+    {
+        "close": 337.72,
+        "high": 338.73,
+        "low": 334.01,
+        "nicetime": "Wed, 06 Sep 2017 21:00:00 GMT",
+        "open": 335.22,
+        "time": {
+            "day": 6,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504731600,
+        "volume": 5177.815020810019
+    },
+    {
+        "close": 337.5,
+        "high": 337.72,
+        "low": 334.75,
+        "nicetime": "Wed, 06 Sep 2017 22:00:00 GMT",
+        "open": 337.72,
+        "time": {
+            "day": 6,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504735200,
+        "volume": 6029.852096630011
+    },
+    {
+        "close": 339.38,
+        "high": 340,
+        "low": 335.33,
+        "nicetime": "Wed, 06 Sep 2017 23:00:00 GMT",
+        "open": 337.5,
+        "time": {
+            "day": 6,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504738800,
+        "volume": 4701.611179819997
+    },
+    {
+        "close": 332.6,
+        "high": 339.38,
+        "low": 332.27,
+        "nicetime": "Thu, 07 Sep 2017 00:00:00 GMT",
+        "open": 339.38,
+        "time": {
+            "day": 7,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504742400,
+        "volume": 4608.380374190011
+    },
+    {
+        "close": 325.68,
+        "high": 334.24,
+        "low": 323.26,
+        "nicetime": "Thu, 07 Sep 2017 01:00:00 GMT",
+        "open": 332.28,
+        "time": {
+            "day": 7,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504746000,
+        "volume": 16446.253349330047
+    },
+    {
+        "close": 328.3,
+        "high": 328.69,
+        "low": 325.5,
+        "nicetime": "Thu, 07 Sep 2017 02:00:00 GMT",
+        "open": 325.66,
+        "time": {
+            "day": 7,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504749600,
+        "volume": 5358.293791310008
+    },
+    {
+        "close": 328.11,
+        "high": 331.09,
+        "low": 327.21,
+        "nicetime": "Thu, 07 Sep 2017 03:00:00 GMT",
+        "open": 328.31,
+        "time": {
+            "day": 7,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504753200,
+        "volume": 5363.204705419984
+    },
+    {
+        "close": 327.98,
+        "high": 328.89,
+        "low": 326.06,
+        "nicetime": "Thu, 07 Sep 2017 04:00:00 GMT",
+        "open": 328.11,
+        "time": {
+            "day": 7,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504756800,
+        "volume": 3625.6751603400467
+    },
+    {
+        "close": 329.92,
+        "high": 330.9,
+        "low": 327.97,
+        "nicetime": "Thu, 07 Sep 2017 05:00:00 GMT",
+        "open": 327.98,
+        "time": {
+            "day": 7,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504760400,
+        "volume": 3262.5883437299726
+    },
+    {
+        "close": 327.16,
+        "high": 329.92,
+        "low": 327.12,
+        "nicetime": "Thu, 07 Sep 2017 06:00:00 GMT",
+        "open": 329.92,
+        "time": {
+            "day": 7,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504764000,
+        "volume": 2345.925967709992
+    },
+    {
+        "close": 324.4,
+        "high": 327.16,
+        "low": 324.09,
+        "nicetime": "Thu, 07 Sep 2017 07:00:00 GMT",
+        "open": 327.16,
+        "time": {
+            "day": 7,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504767600,
+        "volume": 3015.134409440004
+    },
+    {
+        "close": 326.83,
+        "high": 326.97,
+        "low": 324.1,
+        "nicetime": "Thu, 07 Sep 2017 08:00:00 GMT",
+        "open": 324.4,
+        "time": {
+            "day": 7,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504771200,
+        "volume": 1352.0351366500026
+    },
+    {
+        "close": 330,
+        "high": 330,
+        "low": 325.92,
+        "nicetime": "Thu, 07 Sep 2017 09:00:00 GMT",
+        "open": 326.84,
+        "time": {
+            "day": 7,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504774800,
+        "volume": 2174.3675310499975
+    },
+    {
+        "close": 329.55,
+        "high": 330.99,
+        "low": 328.22,
+        "nicetime": "Thu, 07 Sep 2017 10:00:00 GMT",
+        "open": 330,
+        "time": {
+            "day": 7,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504778400,
+        "volume": 2052.4815831699993
+    },
+    {
+        "close": 331.75,
+        "high": 333.1,
+        "low": 328.88,
+        "nicetime": "Thu, 07 Sep 2017 11:00:00 GMT",
+        "open": 329.62,
+        "time": {
+            "day": 7,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504782000,
+        "volume": 4678.717655570004
+    },
+    {
+        "close": 334.99,
+        "high": 335,
+        "low": 330.24,
+        "nicetime": "Thu, 07 Sep 2017 12:00:00 GMT",
+        "open": 331.75,
+        "time": {
+            "day": 7,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504785600,
+        "volume": 5169.636427380005
+    },
+    {
+        "close": 335.87,
+        "high": 336.01,
+        "low": 334.01,
+        "nicetime": "Thu, 07 Sep 2017 13:00:00 GMT",
+        "open": 335,
+        "time": {
+            "day": 7,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504789200,
+        "volume": 4316.317704809997
+    },
+    {
+        "close": 335.4,
+        "high": 336.75,
+        "low": 334.34,
+        "nicetime": "Thu, 07 Sep 2017 14:00:00 GMT",
+        "open": 335.88,
+        "time": {
+            "day": 7,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504792800,
+        "volume": 5105.735837540009
+    },
+    {
+        "close": 336.8,
+        "high": 338,
+        "low": 335.03,
+        "nicetime": "Thu, 07 Sep 2017 15:00:00 GMT",
+        "open": 335.4,
+        "time": {
+            "day": 7,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504796400,
+        "volume": 3153.3165650500073
+    },
+    {
+        "close": 335.51,
+        "high": 338.43,
+        "low": 335.51,
+        "nicetime": "Thu, 07 Sep 2017 16:00:00 GMT",
+        "open": 336.83,
+        "time": {
+            "day": 7,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504800000,
+        "volume": 5188.266252510007
+    },
+    {
+        "close": 333.44,
+        "high": 335.57,
+        "low": 332.29,
+        "nicetime": "Thu, 07 Sep 2017 17:00:00 GMT",
+        "open": 335.52,
+        "time": {
+            "day": 7,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504803600,
+        "volume": 5240.936000020023
+    },
+    {
+        "close": 333.8,
+        "high": 333.98,
+        "low": 331.5,
+        "nicetime": "Thu, 07 Sep 2017 18:00:00 GMT",
+        "open": 333.44,
+        "time": {
+            "day": 7,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504807200,
+        "volume": 5104.974158420019
+    },
+    {
+        "close": 334.6,
+        "high": 334.6,
+        "low": 333.8,
+        "nicetime": "Thu, 07 Sep 2017 19:00:00 GMT",
+        "open": 333.81,
+        "time": {
+            "day": 7,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504810800,
+        "volume": 2008.4347807399988
+    },
+    {
+        "close": 332.44,
+        "high": 334.6,
+        "low": 332.01,
+        "nicetime": "Thu, 07 Sep 2017 20:00:00 GMT",
+        "open": 334.6,
+        "time": {
+            "day": 7,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504814400,
+        "volume": 2752.4659040400047
+    },
+    {
+        "close": 333.99,
+        "high": 334.3,
+        "low": 332.05,
+        "nicetime": "Thu, 07 Sep 2017 21:00:00 GMT",
+        "open": 332.3,
+        "time": {
+            "day": 7,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504818000,
+        "volume": 5217.323127880013
+    },
+    {
+        "close": 335.72,
+        "high": 336.89,
+        "low": 333.99,
+        "nicetime": "Thu, 07 Sep 2017 22:00:00 GMT",
+        "open": 333.99,
+        "time": {
+            "day": 7,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504821600,
+        "volume": 3700.2818159399776
+    },
+    {
+        "close": 335.56,
+        "high": 336.49,
+        "low": 335.55,
+        "nicetime": "Thu, 07 Sep 2017 23:00:00 GMT",
+        "open": 335.72,
+        "time": {
+            "day": 7,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504825200,
+        "volume": 1934.616082319977
+    },
+    {
+        "close": 333.41,
+        "high": 335.56,
+        "low": 333.01,
+        "nicetime": "Fri, 08 Sep 2017 00:00:00 GMT",
+        "open": 335.56,
+        "time": {
+            "day": 8,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504828800,
+        "volume": 2676.3911589600084
+    },
+    {
+        "close": 332.42,
+        "high": 333.41,
+        "low": 331.09,
+        "nicetime": "Fri, 08 Sep 2017 01:00:00 GMT",
+        "open": 333.41,
+        "time": {
+            "day": 8,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504832400,
+        "volume": 3427.242335649952
+    },
+    {
+        "close": 332.39,
+        "high": 333.86,
+        "low": 332.11,
+        "nicetime": "Fri, 08 Sep 2017 02:00:00 GMT",
+        "open": 332.42,
+        "time": {
+            "day": 8,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504836000,
+        "volume": 1859.4487895000264
+    },
+    {
+        "close": 331.72,
+        "high": 332.4,
+        "low": 331.37,
+        "nicetime": "Fri, 08 Sep 2017 03:00:00 GMT",
+        "open": 332.4,
+        "time": {
+            "day": 8,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504839600,
+        "volume": 1671.1608836400023
+    },
+    {
+        "close": 332.08,
+        "high": 332.89,
+        "low": 331.71,
+        "nicetime": "Fri, 08 Sep 2017 04:00:00 GMT",
+        "open": 331.72,
+        "time": {
+            "day": 8,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504843200,
+        "volume": 2038.8686641300035
+    },
+    {
+        "close": 332.08,
+        "high": 332.08,
+        "low": 331,
+        "nicetime": "Fri, 08 Sep 2017 05:00:00 GMT",
+        "open": 332.08,
+        "time": {
+            "day": 8,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504846800,
+        "volume": 1892.6693180799934
+    },
+    {
+        "close": 332.96,
+        "high": 332.96,
+        "low": 331.06,
+        "nicetime": "Fri, 08 Sep 2017 06:00:00 GMT",
+        "open": 332.08,
+        "time": {
+            "day": 8,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504850400,
+        "volume": 1048.6622556599984
+    },
+    {
+        "close": 332.84,
+        "high": 332.97,
+        "low": 332.44,
+        "nicetime": "Fri, 08 Sep 2017 07:00:00 GMT",
+        "open": 332.96,
+        "time": {
+            "day": 8,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504854000,
+        "volume": 1603.0827427599997
+    },
+    {
+        "close": 333.85,
+        "high": 333.85,
+        "low": 332.69,
+        "nicetime": "Fri, 08 Sep 2017 08:00:00 GMT",
+        "open": 332.84,
+        "time": {
+            "day": 8,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504857600,
+        "volume": 1778.9396338899953
+    },
+    {
+        "close": 332.54,
+        "high": 333.87,
+        "low": 331.71,
+        "nicetime": "Fri, 08 Sep 2017 09:00:00 GMT",
+        "open": 333.85,
+        "time": {
+            "day": 8,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504861200,
+        "volume": 1553.3384699299986
+    },
+    {
+        "close": 333.05,
+        "high": 333.4,
+        "low": 332.53,
+        "nicetime": "Fri, 08 Sep 2017 10:00:00 GMT",
+        "open": 332.54,
+        "time": {
+            "day": 8,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504864800,
+        "volume": 1142.2023423199976
+    },
+    {
+        "close": 332.07,
+        "high": 333.06,
+        "low": 332.06,
+        "nicetime": "Fri, 08 Sep 2017 11:00:00 GMT",
+        "open": 333.06,
+        "time": {
+            "day": 8,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504868400,
+        "volume": 1421.49197257
+    },
+    {
+        "close": 331.87,
+        "high": 332.49,
+        "low": 331.4,
+        "nicetime": "Fri, 08 Sep 2017 12:00:00 GMT",
+        "open": 332.07,
+        "time": {
+            "day": 8,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504872000,
+        "volume": 1332.7115442999961
+    },
+    {
+        "close": 312.7,
+        "high": 331.87,
+        "low": 310.08,
+        "nicetime": "Fri, 08 Sep 2017 13:00:00 GMT",
+        "open": 331.87,
+        "time": {
+            "day": 8,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504875600,
+        "volume": 26681.527036798387
+    },
+    {
+        "close": 307.09,
+        "high": 315.9,
+        "low": 295.75,
+        "nicetime": "Fri, 08 Sep 2017 14:00:00 GMT",
+        "open": 312.79,
+        "time": {
+            "day": 8,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504879200,
+        "volume": 69701.30796786027
+    },
+    {
+        "close": 313,
+        "high": 314.99,
+        "low": 300.2,
+        "nicetime": "Fri, 08 Sep 2017 15:00:00 GMT",
+        "open": 307.09,
+        "time": {
+            "day": 8,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504882800,
+        "volume": 39689.834206949796
+    },
+    {
+        "close": 311.95,
+        "high": 322.17,
+        "low": 311.95,
+        "nicetime": "Fri, 08 Sep 2017 16:00:00 GMT",
+        "open": 313.01,
+        "time": {
+            "day": 8,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504886400,
+        "volume": 18601.04208217001
+    },
+    {
+        "close": 306.86,
+        "high": 315.64,
+        "low": 305,
+        "nicetime": "Fri, 08 Sep 2017 17:00:00 GMT",
+        "open": 312.62,
+        "time": {
+            "day": 8,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504890000,
+        "volume": 15847.794284970116
+    },
+    {
+        "close": 306.01,
+        "high": 311.52,
+        "low": 305.5,
+        "nicetime": "Fri, 08 Sep 2017 18:00:00 GMT",
+        "open": 306.86,
+        "time": {
+            "day": 8,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504893600,
+        "volume": 11413.413800880004
+    },
+    {
+        "close": 296.51,
+        "high": 306.21,
+        "low": 296.15,
+        "nicetime": "Fri, 08 Sep 2017 19:00:00 GMT",
+        "open": 306.01,
+        "time": {
+            "day": 8,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504897200,
+        "volume": 25160.187116599933
+    },
+    {
+        "close": 301.44,
+        "high": 302.29,
+        "low": 293,
+        "nicetime": "Fri, 08 Sep 2017 20:00:00 GMT",
+        "open": 296.51,
+        "time": {
+            "day": 8,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504900800,
+        "volume": 25001.970176719842
+    },
+    {
+        "close": 298.1,
+        "high": 301.74,
+        "low": 292.71,
+        "nicetime": "Fri, 08 Sep 2017 21:00:00 GMT",
+        "open": 301.43,
+        "time": {
+            "day": 8,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504904400,
+        "volume": 15354.573441150123
+    },
+    {
+        "close": 309.43,
+        "high": 309.8,
+        "low": 298.11,
+        "nicetime": "Fri, 08 Sep 2017 22:00:00 GMT",
+        "open": 298.11,
+        "time": {
+            "day": 8,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504908000,
+        "volume": 16543.067774440126
+    },
+    {
+        "close": 307.96,
+        "high": 314.05,
+        "low": 305.51,
+        "nicetime": "Fri, 08 Sep 2017 23:00:00 GMT",
+        "open": 309.6,
+        "time": {
+            "day": 8,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504911600,
+        "volume": 11689.613050090102
+    },
+    {
+        "close": 307,
+        "high": 310,
+        "low": 301.4,
+        "nicetime": "Sat, 09 Sep 2017 00:00:00 GMT",
+        "open": 307.96,
+        "time": {
+            "day": 9,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504915200,
+        "volume": 5877.8381788700235
+    },
+    {
+        "close": 302.63,
+        "high": 313.87,
+        "low": 302.2,
+        "nicetime": "Sat, 09 Sep 2017 01:00:00 GMT",
+        "open": 307.01,
+        "time": {
+            "day": 9,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504918800,
+        "volume": 7127.281733340057
+    },
+    {
+        "close": 305.95,
+        "high": 305.95,
+        "low": 300,
+        "nicetime": "Sat, 09 Sep 2017 02:00:00 GMT",
+        "open": 302.63,
+        "time": {
+            "day": 9,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504922400,
+        "volume": 5681.8288036400145
+    },
+    {
+        "close": 304.38,
+        "high": 306.99,
+        "low": 303.04,
+        "nicetime": "Sat, 09 Sep 2017 03:00:00 GMT",
+        "open": 305.44,
+        "time": {
+            "day": 9,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504926000,
+        "volume": 3601.6170077300144
+    },
+    {
+        "close": 304.8,
+        "high": 305.67,
+        "low": 301.91,
+        "nicetime": "Sat, 09 Sep 2017 04:00:00 GMT",
+        "open": 304.48,
+        "time": {
+            "day": 9,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504929600,
+        "volume": 2718.291713029998
+    },
+    {
+        "close": 311.04,
+        "high": 311.33,
+        "low": 304.8,
+        "nicetime": "Sat, 09 Sep 2017 05:00:00 GMT",
+        "open": 304.81,
+        "time": {
+            "day": 9,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504933200,
+        "volume": 4388.974157790015
+    },
+    {
+        "close": 308.95,
+        "high": 311.04,
+        "low": 307.02,
+        "nicetime": "Sat, 09 Sep 2017 06:00:00 GMT",
+        "open": 311.04,
+        "time": {
+            "day": 9,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504936800,
+        "volume": 1765.7512900600002
+    },
+    {
+        "close": 308,
+        "high": 310.18,
+        "low": 307.55,
+        "nicetime": "Sat, 09 Sep 2017 07:00:00 GMT",
+        "open": 308.96,
+        "time": {
+            "day": 9,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504940400,
+        "volume": 1430.2472343100005
+    },
+    {
+        "close": 306.1,
+        "high": 309.66,
+        "low": 306.1,
+        "nicetime": "Sat, 09 Sep 2017 08:00:00 GMT",
+        "open": 308.05,
+        "time": {
+            "day": 9,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504944000,
+        "volume": 1315.2491144199985
+    },
+    {
+        "close": 308.5,
+        "high": 309.78,
+        "low": 304.5,
+        "nicetime": "Sat, 09 Sep 2017 09:00:00 GMT",
+        "open": 306.11,
+        "time": {
+            "day": 9,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504947600,
+        "volume": 3288.836285080003
+    },
+    {
+        "close": 307.73,
+        "high": 309.2,
+        "low": 307.23,
+        "nicetime": "Sat, 09 Sep 2017 10:00:00 GMT",
+        "open": 308.51,
+        "time": {
+            "day": 9,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504951200,
+        "volume": 1877.4261243499975
+    },
+    {
+        "close": 307.03,
+        "high": 308,
+        "low": 306.76,
+        "nicetime": "Sat, 09 Sep 2017 11:00:00 GMT",
+        "open": 307.4,
+        "time": {
+            "day": 9,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504954800,
+        "volume": 1275.5056554499986
+    },
+    {
+        "close": 308.11,
+        "high": 309.43,
+        "low": 306.31,
+        "nicetime": "Sat, 09 Sep 2017 12:00:00 GMT",
+        "open": 307.15,
+        "time": {
+            "day": 9,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504958400,
+        "volume": 2325.6995845100046
+    },
+    {
+        "close": 303.26,
+        "high": 308.6,
+        "low": 303,
+        "nicetime": "Sat, 09 Sep 2017 13:00:00 GMT",
+        "open": 308.11,
+        "time": {
+            "day": 9,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504962000,
+        "volume": 3961.9661670000064
+    },
+    {
+        "close": 301.98,
+        "high": 304.32,
+        "low": 300,
+        "nicetime": "Sat, 09 Sep 2017 14:00:00 GMT",
+        "open": 303.26,
+        "time": {
+            "day": 9,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504965600,
+        "volume": 6950.89943617003
+    },
+    {
+        "close": 303.69,
+        "high": 304.11,
+        "low": 301.42,
+        "nicetime": "Sat, 09 Sep 2017 15:00:00 GMT",
+        "open": 301.98,
+        "time": {
+            "day": 9,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504969200,
+        "volume": 4645.817835290001
+    },
+    {
+        "close": 302.81,
+        "high": 304,
+        "low": 302.76,
+        "nicetime": "Sat, 09 Sep 2017 16:00:00 GMT",
+        "open": 303.7,
+        "time": {
+            "day": 9,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504972800,
+        "volume": 3301.7216952800077
+    },
+    {
+        "close": 299.37,
+        "high": 303.19,
+        "low": 296,
+        "nicetime": "Sat, 09 Sep 2017 17:00:00 GMT",
+        "open": 303.04,
+        "time": {
+            "day": 9,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504976400,
+        "volume": 8729.383772950028
+    },
+    {
+        "close": 295.78,
+        "high": 299.7,
+        "low": 294,
+        "nicetime": "Sat, 09 Sep 2017 18:00:00 GMT",
+        "open": 299.37,
+        "time": {
+            "day": 9,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504980000,
+        "volume": 7100.105257530012
+    },
+    {
+        "close": 302,
+        "high": 303.19,
+        "low": 294.51,
+        "nicetime": "Sat, 09 Sep 2017 19:00:00 GMT",
+        "open": 295.78,
+        "time": {
+            "day": 9,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504983600,
+        "volume": 6955.630667820025
+    },
+    {
+        "close": 301.51,
+        "high": 302,
+        "low": 300.05,
+        "nicetime": "Sat, 09 Sep 2017 20:00:00 GMT",
+        "open": 302,
+        "time": {
+            "day": 9,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504987200,
+        "volume": 3661.3798142100013
+    },
+    {
+        "close": 301.24,
+        "high": 302,
+        "low": 300.09,
+        "nicetime": "Sat, 09 Sep 2017 21:00:00 GMT",
+        "open": 301.51,
+        "time": {
+            "day": 9,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504990800,
+        "volume": 1631.6356400000009
+    },
+    {
+        "close": 304.69,
+        "high": 304.99,
+        "low": 300.06,
+        "nicetime": "Sat, 09 Sep 2017 22:00:00 GMT",
+        "open": 301.24,
+        "time": {
+            "day": 9,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504994400,
+        "volume": 4950.196746380026
+    },
+    {
+        "close": 304.99,
+        "high": 306.69,
+        "low": 304.68,
+        "nicetime": "Sat, 09 Sep 2017 23:00:00 GMT",
+        "open": 304.69,
+        "time": {
+            "day": 9,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1504998000,
+        "volume": 2791.7464252800055
+    },
+    {
+        "close": 302.59,
+        "high": 305,
+        "low": 302.29,
+        "nicetime": "Sun, 10 Sep 2017 00:00:00 GMT",
+        "open": 305,
+        "time": {
+            "day": 10,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505001600,
+        "volume": 2394.868313000002
+    },
+    {
+        "close": 302.23,
+        "high": 303.33,
+        "low": 302.07,
+        "nicetime": "Sun, 10 Sep 2017 01:00:00 GMT",
+        "open": 302.59,
+        "time": {
+            "day": 10,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505005200,
+        "volume": 1824.4981814999967
+    },
+    {
+        "close": 297.62,
+        "high": 302.47,
+        "low": 296.5,
+        "nicetime": "Sun, 10 Sep 2017 02:00:00 GMT",
+        "open": 302.23,
+        "time": {
+            "day": 10,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505008800,
+        "volume": 6092.976797080038
+    },
+    {
+        "close": 297.1,
+        "high": 300.16,
+        "low": 295.61,
+        "nicetime": "Sun, 10 Sep 2017 03:00:00 GMT",
+        "open": 297.63,
+        "time": {
+            "day": 10,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505012400,
+        "volume": 4302.858011640018
+    },
+    {
+        "close": 297.22,
+        "high": 300,
+        "low": 296.86,
+        "nicetime": "Sun, 10 Sep 2017 04:00:00 GMT",
+        "open": 297.1,
+        "time": {
+            "day": 10,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505016000,
+        "volume": 2857.0746717400116
+    },
+    {
+        "close": 294.08,
+        "high": 298.22,
+        "low": 293.2,
+        "nicetime": "Sun, 10 Sep 2017 05:00:00 GMT",
+        "open": 297.21,
+        "time": {
+            "day": 10,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505019600,
+        "volume": 8611.97441496004
+    },
+    {
+        "close": 286.99,
+        "high": 294.78,
+        "low": 286.02,
+        "nicetime": "Sun, 10 Sep 2017 06:00:00 GMT",
+        "open": 294.08,
+        "time": {
+            "day": 10,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505023200,
+        "volume": 12109.67292628006
+    },
+    {
+        "close": 291.92,
+        "high": 294.47,
+        "low": 285,
+        "nicetime": "Sun, 10 Sep 2017 07:00:00 GMT",
+        "open": 287,
+        "time": {
+            "day": 10,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505026800,
+        "volume": 8667.785545840039
+    },
+    {
+        "close": 294.2,
+        "high": 295.55,
+        "low": 291.06,
+        "nicetime": "Sun, 10 Sep 2017 08:00:00 GMT",
+        "open": 292,
+        "time": {
+            "day": 10,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505030400,
+        "volume": 3011.006477490002
+    },
+    {
+        "close": 291.63,
+        "high": 294.02,
+        "low": 290,
+        "nicetime": "Sun, 10 Sep 2017 09:00:00 GMT",
+        "open": 294.02,
+        "time": {
+            "day": 10,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505034000,
+        "volume": 1826.4699400299974
+    },
+    {
+        "close": 290.13,
+        "high": 291.88,
+        "low": 287.81,
+        "nicetime": "Sun, 10 Sep 2017 10:00:00 GMT",
+        "open": 291.63,
+        "time": {
+            "day": 10,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505037600,
+        "volume": 3634.7746131000176
+    },
+    {
+        "close": 293.43,
+        "high": 293.48,
+        "low": 289.53,
+        "nicetime": "Sun, 10 Sep 2017 11:00:00 GMT",
+        "open": 290.12,
+        "time": {
+            "day": 10,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505041200,
+        "volume": 3989.1843266400188
+    },
+    {
+        "close": 293.14,
+        "high": 293.99,
+        "low": 291.6,
+        "nicetime": "Sun, 10 Sep 2017 12:00:00 GMT",
+        "open": 293.45,
+        "time": {
+            "day": 10,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505044800,
+        "volume": 2626.1108097200004
+    },
+    {
+        "close": 291.18,
+        "high": 293.78,
+        "low": 290.22,
+        "nicetime": "Sun, 10 Sep 2017 13:00:00 GMT",
+        "open": 293.13,
+        "time": {
+            "day": 10,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505048400,
+        "volume": 4930.139235170016
+    },
+    {
+        "close": 293.35,
+        "high": 293.61,
+        "low": 289.56,
+        "nicetime": "Sun, 10 Sep 2017 14:00:00 GMT",
+        "open": 291.21,
+        "time": {
+            "day": 10,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505052000,
+        "volume": 3259.558578099999
+    },
+    {
+        "close": 294.7,
+        "high": 294.96,
+        "low": 292.86,
+        "nicetime": "Sun, 10 Sep 2017 15:00:00 GMT",
+        "open": 293.35,
+        "time": {
+            "day": 10,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505055600,
+        "volume": 3745.5565453200006
+    },
+    {
+        "close": 298,
+        "high": 298,
+        "low": 292.61,
+        "nicetime": "Sun, 10 Sep 2017 16:00:00 GMT",
+        "open": 294.71,
+        "time": {
+            "day": 10,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505059200,
+        "volume": 5858.942524160018
+    },
+    {
+        "close": 304.07,
+        "high": 305,
+        "low": 297.99,
+        "nicetime": "Sun, 10 Sep 2017 17:00:00 GMT",
+        "open": 298,
+        "time": {
+            "day": 10,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505062800,
+        "volume": 12743.715097290047
+    },
+    {
+        "close": 306.5,
+        "high": 306.5,
+        "low": 302.23,
+        "nicetime": "Sun, 10 Sep 2017 18:00:00 GMT",
+        "open": 304.38,
+        "time": {
+            "day": 10,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505066400,
+        "volume": 6378.615154570034
+    },
+    {
+        "close": 305.76,
+        "high": 306.5,
+        "low": 305.5,
+        "nicetime": "Sun, 10 Sep 2017 19:00:00 GMT",
+        "open": 306.5,
+        "time": {
+            "day": 10,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505070000,
+        "volume": 3828.446860760004
+    },
+    {
+        "close": 302.5,
+        "high": 306.04,
+        "low": 300,
+        "nicetime": "Sun, 10 Sep 2017 20:00:00 GMT",
+        "open": 305.76,
+        "time": {
+            "day": 10,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505073600,
+        "volume": 7440.978588870039
+    },
+    {
+        "close": 302.05,
+        "high": 302.6,
+        "low": 301.2,
+        "nicetime": "Sun, 10 Sep 2017 21:00:00 GMT",
+        "open": 302.6,
+        "time": {
+            "day": 10,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505077200,
+        "volume": 2404.4195589400015
+    },
+    {
+        "close": 304.53,
+        "high": 305.31,
+        "low": 301.78,
+        "nicetime": "Sun, 10 Sep 2017 22:00:00 GMT",
+        "open": 302.06,
+        "time": {
+            "day": 10,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505080800,
+        "volume": 4396.287461870015
+    },
+    {
+        "close": 300.33,
+        "high": 304.53,
+        "low": 299.1,
+        "nicetime": "Sun, 10 Sep 2017 23:00:00 GMT",
+        "open": 304.53,
+        "time": {
+            "day": 10,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505084400,
+        "volume": 6425.746857240043
+    },
+    {
+        "close": 298.19,
+        "high": 301.54,
+        "low": 297.39,
+        "nicetime": "Mon, 11 Sep 2017 00:00:00 GMT",
+        "open": 300.34,
+        "time": {
+            "day": 11,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505088000,
+        "volume": 3696.959489750012
+    },
+    {
+        "close": 304.79,
+        "high": 304.8,
+        "low": 298.19,
+        "nicetime": "Mon, 11 Sep 2017 01:00:00 GMT",
+        "open": 298.2,
+        "time": {
+            "day": 11,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505091600,
+        "volume": 6858.102833140059
+    },
+    {
+        "close": 305.08,
+        "high": 306.49,
+        "low": 303.68,
+        "nicetime": "Mon, 11 Sep 2017 02:00:00 GMT",
+        "open": 304.79,
+        "time": {
+            "day": 11,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505095200,
+        "volume": 5692.163827170023
+    },
+    {
+        "close": 306.99,
+        "high": 307.97,
+        "low": 304.75,
+        "nicetime": "Mon, 11 Sep 2017 03:00:00 GMT",
+        "open": 305.08,
+        "time": {
+            "day": 11,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505098800,
+        "volume": 9610.926756879993
+    },
+    {
+        "close": 294.29,
+        "high": 306.99,
+        "low": 290.1,
+        "nicetime": "Mon, 11 Sep 2017 04:00:00 GMT",
+        "open": 306.99,
+        "time": {
+            "day": 11,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505102400,
+        "volume": 26933.192005569614
+    },
+    {
+        "close": 291.85,
+        "high": 296.76,
+        "low": 288,
+        "nicetime": "Mon, 11 Sep 2017 05:00:00 GMT",
+        "open": 294.27,
+        "time": {
+            "day": 11,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505106000,
+        "volume": 14712.23848919999
+    },
+    {
+        "close": 292.33,
+        "high": 296,
+        "low": 289.14,
+        "nicetime": "Mon, 11 Sep 2017 06:00:00 GMT",
+        "open": 291.86,
+        "time": {
+            "day": 11,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505109600,
+        "volume": 4885.238889470011
+    },
+    {
+        "close": 293.1,
+        "high": 295.68,
+        "low": 292.04,
+        "nicetime": "Mon, 11 Sep 2017 07:00:00 GMT",
+        "open": 292.33,
+        "time": {
+            "day": 11,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505113200,
+        "volume": 2964.455533820007
+    },
+    {
+        "close": 292.25,
+        "high": 294.59,
+        "low": 288.88,
+        "nicetime": "Mon, 11 Sep 2017 08:00:00 GMT",
+        "open": 293.1,
+        "time": {
+            "day": 11,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505116800,
+        "volume": 3390.931958680003
+    },
+    {
+        "close": 292.49,
+        "high": 294.99,
+        "low": 292,
+        "nicetime": "Mon, 11 Sep 2017 09:00:00 GMT",
+        "open": 292.25,
+        "time": {
+            "day": 11,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505120400,
+        "volume": 1005.7331666699987
+    },
+    {
+        "close": 294.74,
+        "high": 294.74,
+        "low": 291.88,
+        "nicetime": "Mon, 11 Sep 2017 10:00:00 GMT",
+        "open": 292.69,
+        "time": {
+            "day": 11,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505124000,
+        "volume": 2554.5414675899997
+    },
+    {
+        "close": 293.92,
+        "high": 296.42,
+        "low": 293.5,
+        "nicetime": "Mon, 11 Sep 2017 11:00:00 GMT",
+        "open": 294.73,
+        "time": {
+            "day": 11,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505127600,
+        "volume": 3410.1744381400044
+    },
+    {
+        "close": 295.4,
+        "high": 295.86,
+        "low": 293.71,
+        "nicetime": "Mon, 11 Sep 2017 12:00:00 GMT",
+        "open": 293.96,
+        "time": {
+            "day": 11,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505131200,
+        "volume": 2713.586244369999
+    },
+    {
+        "close": 298.78,
+        "high": 301.11,
+        "low": 293.68,
+        "nicetime": "Mon, 11 Sep 2017 13:00:00 GMT",
+        "open": 295.35,
+        "time": {
+            "day": 11,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505134800,
+        "volume": 7140.364645000003
+    },
+    {
+        "close": 298.97,
+        "high": 299.71,
+        "low": 297.44,
+        "nicetime": "Mon, 11 Sep 2017 14:00:00 GMT",
+        "open": 298.73,
+        "time": {
+            "day": 11,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505138400,
+        "volume": 5368.6358934300115
+    },
+    {
+        "close": 299.61,
+        "high": 300.45,
+        "low": 296.63,
+        "nicetime": "Mon, 11 Sep 2017 15:00:00 GMT",
+        "open": 298.87,
+        "time": {
+            "day": 11,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505142000,
+        "volume": 5112.356463390022
+    },
+    {
+        "close": 302,
+        "high": 302.01,
+        "low": 299.6,
+        "nicetime": "Mon, 11 Sep 2017 16:00:00 GMT",
+        "open": 299.61,
+        "time": {
+            "day": 11,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505145600,
+        "volume": 3630.418426850005
+    },
+    {
+        "close": 299,
+        "high": 302,
+        "low": 298.6,
+        "nicetime": "Mon, 11 Sep 2017 17:00:00 GMT",
+        "open": 302,
+        "time": {
+            "day": 11,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505149200,
+        "volume": 3659.5127701300057
+    },
+    {
+        "close": 299.95,
+        "high": 299.95,
+        "low": 298.01,
+        "nicetime": "Mon, 11 Sep 2017 18:00:00 GMT",
+        "open": 298.94,
+        "time": {
+            "day": 11,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505152800,
+        "volume": 2650.4237367900087
+    },
+    {
+        "close": 297,
+        "high": 299.95,
+        "low": 296,
+        "nicetime": "Mon, 11 Sep 2017 19:00:00 GMT",
+        "open": 299.95,
+        "time": {
+            "day": 11,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505156400,
+        "volume": 3295.811926060013
+    },
+    {
+        "close": 296,
+        "high": 297.15,
+        "low": 295.14,
+        "nicetime": "Mon, 11 Sep 2017 20:00:00 GMT",
+        "open": 297,
+        "time": {
+            "day": 11,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505160000,
+        "volume": 2980.251957150036
+    },
+    {
+        "close": 296.21,
+        "high": 296.21,
+        "low": 295.5,
+        "nicetime": "Mon, 11 Sep 2017 21:00:00 GMT",
+        "open": 296,
+        "time": {
+            "day": 11,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505163600,
+        "volume": 3246.4207524900135
+    },
+    {
+        "close": 298.24,
+        "high": 299.24,
+        "low": 296.25,
+        "nicetime": "Mon, 11 Sep 2017 22:00:00 GMT",
+        "open": 296.25,
+        "time": {
+            "day": 11,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505167200,
+        "volume": 3360.8341890300107
+    },
+    {
+        "close": 298.47,
+        "high": 298.94,
+        "low": 296.79,
+        "nicetime": "Mon, 11 Sep 2017 23:00:00 GMT",
+        "open": 298.25,
+        "time": {
+            "day": 11,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505170800,
+        "volume": 2998.7361171000075
+    },
+    {
+        "close": 300.79,
+        "high": 301.59,
+        "low": 298.12,
+        "nicetime": "Tue, 12 Sep 2017 00:00:00 GMT",
+        "open": 298.47,
+        "time": {
+            "day": 12,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505174400,
+        "volume": 7000.225641900016
+    },
+    {
+        "close": 299.7,
+        "high": 300.8,
+        "low": 299.68,
+        "nicetime": "Tue, 12 Sep 2017 01:00:00 GMT",
+        "open": 300.8,
+        "time": {
+            "day": 12,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505178000,
+        "volume": 2192.6322428999983
+    },
+    {
+        "close": 301.54,
+        "high": 301.59,
+        "low": 299.7,
+        "nicetime": "Tue, 12 Sep 2017 02:00:00 GMT",
+        "open": 299.7,
+        "time": {
+            "day": 12,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505181600,
+        "volume": 3587.2692850400185
+    },
+    {
+        "close": 302.97,
+        "high": 302.97,
+        "low": 301.51,
+        "nicetime": "Tue, 12 Sep 2017 03:00:00 GMT",
+        "open": 301.54,
+        "time": {
+            "day": 12,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505185200,
+        "volume": 4139.875176240009
+    },
+    {
+        "close": 303.86,
+        "high": 303.88,
+        "low": 301.54,
+        "nicetime": "Tue, 12 Sep 2017 04:00:00 GMT",
+        "open": 302.97,
+        "time": {
+            "day": 12,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505188800,
+        "volume": 6022.6799973000125
+    },
+    {
+        "close": 306.98,
+        "high": 306.98,
+        "low": 303.88,
+        "nicetime": "Tue, 12 Sep 2017 05:00:00 GMT",
+        "open": 303.88,
+        "time": {
+            "day": 12,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505192400,
+        "volume": 8805.762991680054
+    },
+    {
+        "close": 316.04,
+        "high": 316.04,
+        "low": 306.97,
+        "nicetime": "Tue, 12 Sep 2017 06:00:00 GMT",
+        "open": 306.98,
+        "time": {
+            "day": 12,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505196000,
+        "volume": 13742.774302390057
+    },
+    {
+        "close": 313.26,
+        "high": 316.19,
+        "low": 309.12,
+        "nicetime": "Tue, 12 Sep 2017 07:00:00 GMT",
+        "open": 316.04,
+        "time": {
+            "day": 12,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505199600,
+        "volume": 9923.253618480087
+    },
+    {
+        "close": 308.18,
+        "high": 313.46,
+        "low": 303.86,
+        "nicetime": "Tue, 12 Sep 2017 08:00:00 GMT",
+        "open": 313.41,
+        "time": {
+            "day": 12,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505203200,
+        "volume": 6416.836197880081
+    },
+    {
+        "close": 308.67,
+        "high": 309.81,
+        "low": 305.65,
+        "nicetime": "Tue, 12 Sep 2017 09:00:00 GMT",
+        "open": 308.18,
+        "time": {
+            "day": 12,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505206800,
+        "volume": 3624.3577278500275
+    },
+    {
+        "close": 309.55,
+        "high": 309.55,
+        "low": 306.49,
+        "nicetime": "Tue, 12 Sep 2017 10:00:00 GMT",
+        "open": 308.66,
+        "time": {
+            "day": 12,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505210400,
+        "volume": 3604.3353831700206
+    },
+    {
+        "close": 311.22,
+        "high": 312.12,
+        "low": 309.55,
+        "nicetime": "Tue, 12 Sep 2017 11:00:00 GMT",
+        "open": 309.55,
+        "time": {
+            "day": 12,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505214000,
+        "volume": 4042.3433584700156
+    },
+    {
+        "close": 308.65,
+        "high": 311.4,
+        "low": 308.58,
+        "nicetime": "Tue, 12 Sep 2017 12:00:00 GMT",
+        "open": 311.22,
+        "time": {
+            "day": 12,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505217600,
+        "volume": 3237.4818576900066
+    },
+    {
+        "close": 305.42,
+        "high": 308.98,
+        "low": 305.2,
+        "nicetime": "Tue, 12 Sep 2017 13:00:00 GMT",
+        "open": 308.65,
+        "time": {
+            "day": 12,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505221200,
+        "volume": 5794.377582970013
+    },
+    {
+        "close": 304.95,
+        "high": 306.64,
+        "low": 304.72,
+        "nicetime": "Tue, 12 Sep 2017 14:00:00 GMT",
+        "open": 305.42,
+        "time": {
+            "day": 12,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505224800,
+        "volume": 6593.910817280019
+    },
+    {
+        "close": 303.81,
+        "high": 305.47,
+        "low": 302.61,
+        "nicetime": "Tue, 12 Sep 2017 15:00:00 GMT",
+        "open": 304.96,
+        "time": {
+            "day": 12,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505228400,
+        "volume": 8098.006626169988
+    },
+    {
+        "close": 304.51,
+        "high": 305.95,
+        "low": 301.56,
+        "nicetime": "Tue, 12 Sep 2017 16:00:00 GMT",
+        "open": 303.81,
+        "time": {
+            "day": 12,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505232000,
+        "volume": 6922.513465650036
+    },
+    {
+        "close": 297.26,
+        "high": 304.51,
+        "low": 297.12,
+        "nicetime": "Tue, 12 Sep 2017 17:00:00 GMT",
+        "open": 304.51,
+        "time": {
+            "day": 12,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505235600,
+        "volume": 9655.933354479988
+    },
+    {
+        "close": 288.82,
+        "high": 297.37,
+        "low": 286,
+        "nicetime": "Tue, 12 Sep 2017 18:00:00 GMT",
+        "open": 297.26,
+        "time": {
+            "day": 12,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505239200,
+        "volume": 44403.66300076034
+    },
+    {
+        "close": 295.11,
+        "high": 295.71,
+        "low": 287.69,
+        "nicetime": "Tue, 12 Sep 2017 19:00:00 GMT",
+        "open": 288.81,
+        "time": {
+            "day": 12,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505242800,
+        "volume": 14526.050276460073
+    },
+    {
+        "close": 294.86,
+        "high": 295.11,
+        "low": 290.46,
+        "nicetime": "Tue, 12 Sep 2017 20:00:00 GMT",
+        "open": 295.11,
+        "time": {
+            "day": 12,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505246400,
+        "volume": 6631.951027550025
+    },
+    {
+        "close": 297.06,
+        "high": 298,
+        "low": 294.08,
+        "nicetime": "Tue, 12 Sep 2017 21:00:00 GMT",
+        "open": 294.86,
+        "time": {
+            "day": 12,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505250000,
+        "volume": 5696.794225940047
+    },
+    {
+        "close": 296.9,
+        "high": 297.69,
+        "low": 294.31,
+        "nicetime": "Tue, 12 Sep 2017 22:00:00 GMT",
+        "open": 297.1,
+        "time": {
+            "day": 12,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505253600,
+        "volume": 3763.9733040100214
+    },
+    {
+        "close": 294.5,
+        "high": 296.9,
+        "low": 292.05,
+        "nicetime": "Tue, 12 Sep 2017 23:00:00 GMT",
+        "open": 296.9,
+        "time": {
+            "day": 12,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505257200,
+        "volume": 5438.191714210038
+    },
+    {
+        "close": 293.65,
+        "high": 294.5,
+        "low": 290,
+        "nicetime": "Wed, 13 Sep 2017 00:00:00 GMT",
+        "open": 294.5,
+        "time": {
+            "day": 13,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505260800,
+        "volume": 6018.489793260022
+    },
+    {
+        "close": 291.15,
+        "high": 294,
+        "low": 290.4,
+        "nicetime": "Wed, 13 Sep 2017 01:00:00 GMT",
+        "open": 293.65,
+        "time": {
+            "day": 13,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505264400,
+        "volume": 3325.680569980017
+    },
+    {
+        "close": 281.41,
+        "high": 291.11,
+        "low": 281.01,
+        "nicetime": "Wed, 13 Sep 2017 02:00:00 GMT",
+        "open": 291.11,
+        "time": {
+            "day": 13,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505268000,
+        "volume": 18088.684561890062
+    },
+    {
+        "close": 276.47,
+        "high": 286.87,
+        "low": 275,
+        "nicetime": "Wed, 13 Sep 2017 03:00:00 GMT",
+        "open": 281.41,
+        "time": {
+            "day": 13,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505271600,
+        "volume": 37038.731091399524
+    },
+    {
+        "close": 282.66,
+        "high": 282.66,
+        "low": 270.01,
+        "nicetime": "Wed, 13 Sep 2017 04:00:00 GMT",
+        "open": 276.47,
+        "time": {
+            "day": 13,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505275200,
+        "volume": 25958.537267359738
+    },
+    {
+        "close": 280,
+        "high": 283.99,
+        "low": 276.47,
+        "nicetime": "Wed, 13 Sep 2017 05:00:00 GMT",
+        "open": 282.63,
+        "time": {
+            "day": 13,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505278800,
+        "volume": 10817.655908300001
+    },
+    {
+        "close": 284.56,
+        "high": 286.5,
+        "low": 278.8,
+        "nicetime": "Wed, 13 Sep 2017 06:00:00 GMT",
+        "open": 280,
+        "time": {
+            "day": 13,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505282400,
+        "volume": 6239.517992820055
+    },
+    {
+        "close": 279.91,
+        "high": 285.38,
+        "low": 277.01,
+        "nicetime": "Wed, 13 Sep 2017 07:00:00 GMT",
+        "open": 284.57,
+        "time": {
+            "day": 13,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505286000,
+        "volume": 5386.153099540045
+    },
+    {
+        "close": 277.74,
+        "high": 279.97,
+        "low": 275.25,
+        "nicetime": "Wed, 13 Sep 2017 08:00:00 GMT",
+        "open": 279.91,
+        "time": {
+            "day": 13,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505289600,
+        "volume": 3922.1710195900114
+    },
+    {
+        "close": 275.17,
+        "high": 279.98,
+        "low": 275,
+        "nicetime": "Wed, 13 Sep 2017 09:00:00 GMT",
+        "open": 277.75,
+        "time": {
+            "day": 13,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505293200,
+        "volume": 3297.799727170012
+    },
+    {
+        "close": 270,
+        "high": 275.55,
+        "low": 270,
+        "nicetime": "Wed, 13 Sep 2017 10:00:00 GMT",
+        "open": 275.17,
+        "time": {
+            "day": 13,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505296800,
+        "volume": 9283.339628899997
+    },
+    {
+        "close": 262.35,
+        "high": 270.61,
+        "low": 261.63,
+        "nicetime": "Wed, 13 Sep 2017 11:00:00 GMT",
+        "open": 270,
+        "time": {
+            "day": 13,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505300400,
+        "volume": 23923.07127335995
+    },
+    {
+        "close": 269,
+        "high": 271.29,
+        "low": 256.41,
+        "nicetime": "Wed, 13 Sep 2017 12:00:00 GMT",
+        "open": 262.32,
+        "time": {
+            "day": 13,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505304000,
+        "volume": 26916.43581419998
+    },
+    {
+        "close": 268.5,
+        "high": 274.55,
+        "low": 265.92,
+        "nicetime": "Wed, 13 Sep 2017 13:00:00 GMT",
+        "open": 269.34,
+        "time": {
+            "day": 13,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505307600,
+        "volume": 14177.121551829989
+    },
+    {
+        "close": 262.83,
+        "high": 268.97,
+        "low": 260,
+        "nicetime": "Wed, 13 Sep 2017 14:00:00 GMT",
+        "open": 268.51,
+        "time": {
+            "day": 13,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505311200,
+        "volume": 21298.46301581995
+    },
+    {
+        "close": 267.79,
+        "high": 270,
+        "low": 261.97,
+        "nicetime": "Wed, 13 Sep 2017 15:00:00 GMT",
+        "open": 262.84,
+        "time": {
+            "day": 13,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505314800,
+        "volume": 15777.791214060038
+    },
+    {
+        "close": 274.88,
+        "high": 274.88,
+        "low": 265.51,
+        "nicetime": "Wed, 13 Sep 2017 16:00:00 GMT",
+        "open": 267.79,
+        "time": {
+            "day": 13,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505318400,
+        "volume": 13358.485408669992
+    },
+    {
+        "close": 274.21,
+        "high": 277.5,
+        "low": 271.5,
+        "nicetime": "Wed, 13 Sep 2017 17:00:00 GMT",
+        "open": 274.87,
+        "time": {
+            "day": 13,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505322000,
+        "volume": 22654.843235539898
+    },
+    {
+        "close": 270.99,
+        "high": 275,
+        "low": 269,
+        "nicetime": "Wed, 13 Sep 2017 18:00:00 GMT",
+        "open": 274.22,
+        "time": {
+            "day": 13,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505325600,
+        "volume": 11306.544128580084
+    },
+    {
+        "close": 267.79,
+        "high": 270.99,
+        "low": 266.23,
+        "nicetime": "Wed, 13 Sep 2017 19:00:00 GMT",
+        "open": 270.99,
+        "time": {
+            "day": 13,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505329200,
+        "volume": 11102.769262210055
+    },
+    {
+        "close": 271.5,
+        "high": 271.99,
+        "low": 267.13,
+        "nicetime": "Wed, 13 Sep 2017 20:00:00 GMT",
+        "open": 267.75,
+        "time": {
+            "day": 13,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505332800,
+        "volume": 7658.686210440008
+    },
+    {
+        "close": 272.46,
+        "high": 272.76,
+        "low": 270.53,
+        "nicetime": "Wed, 13 Sep 2017 21:00:00 GMT",
+        "open": 271.5,
+        "time": {
+            "day": 13,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505336400,
+        "volume": 4256.118269930016
+    },
+    {
+        "close": 278.99,
+        "high": 282.74,
+        "low": 272.1,
+        "nicetime": "Wed, 13 Sep 2017 22:00:00 GMT",
+        "open": 272.47,
+        "time": {
+            "day": 13,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505340000,
+        "volume": 20992.378472029934
+    },
+    {
+        "close": 275.71,
+        "high": 280.44,
+        "low": 275.33,
+        "nicetime": "Wed, 13 Sep 2017 23:00:00 GMT",
+        "open": 279,
+        "time": {
+            "day": 13,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505343600,
+        "volume": 6647.590544770022
+    },
+    {
+        "close": 279.58,
+        "high": 280.75,
+        "low": 275.43,
+        "nicetime": "Thu, 14 Sep 2017 00:00:00 GMT",
+        "open": 275.71,
+        "time": {
+            "day": 14,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505347200,
+        "volume": 6090.64709309
+    },
+    {
+        "close": 280.33,
+        "high": 280.33,
+        "low": 278.13,
+        "nicetime": "Thu, 14 Sep 2017 01:00:00 GMT",
+        "open": 279.59,
+        "time": {
+            "day": 14,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505350800,
+        "volume": 3151.3123279000188
+    },
+    {
+        "close": 275.78,
+        "high": 280.45,
+        "low": 275.1,
+        "nicetime": "Thu, 14 Sep 2017 02:00:00 GMT",
+        "open": 280.33,
+        "time": {
+            "day": 14,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505354400,
+        "volume": 8156.949846620026
+    },
+    {
+        "close": 270.39,
+        "high": 276,
+        "low": 270.11,
+        "nicetime": "Thu, 14 Sep 2017 03:00:00 GMT",
+        "open": 275.78,
+        "time": {
+            "day": 14,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505358000,
+        "volume": 10800.331929990049
+    },
+    {
+        "close": 269.99,
+        "high": 272.64,
+        "low": 266.4,
+        "nicetime": "Thu, 14 Sep 2017 04:00:00 GMT",
+        "open": 270.54,
+        "time": {
+            "day": 14,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505361600,
+        "volume": 6711.208896440037
+    },
+    {
+        "close": 268.51,
+        "high": 272.57,
+        "low": 268.33,
+        "nicetime": "Thu, 14 Sep 2017 05:00:00 GMT",
+        "open": 269.99,
+        "time": {
+            "day": 14,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505365200,
+        "volume": 3802.1850680300195
+    },
+    {
+        "close": 269.04,
+        "high": 269.49,
+        "low": 266.5,
+        "nicetime": "Thu, 14 Sep 2017 06:00:00 GMT",
+        "open": 268.51,
+        "time": {
+            "day": 14,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505368800,
+        "volume": 4893.275828190016
+    },
+    {
+        "close": 272.36,
+        "high": 274.5,
+        "low": 269.04,
+        "nicetime": "Thu, 14 Sep 2017 07:00:00 GMT",
+        "open": 269.04,
+        "time": {
+            "day": 14,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505372400,
+        "volume": 5543.811173340017
+    },
+    {
+        "close": 270.82,
+        "high": 273.46,
+        "low": 267.51,
+        "nicetime": "Thu, 14 Sep 2017 08:00:00 GMT",
+        "open": 272.36,
+        "time": {
+            "day": 14,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505376000,
+        "volume": 3895.6384927900167
+    },
+    {
+        "close": 267.02,
+        "high": 271.22,
+        "low": 267.02,
+        "nicetime": "Thu, 14 Sep 2017 09:00:00 GMT",
+        "open": 270.82,
+        "time": {
+            "day": 14,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505379600,
+        "volume": 2423.651529729998
+    },
+    {
+        "close": 261.63,
+        "high": 268.05,
+        "low": 260.15,
+        "nicetime": "Thu, 14 Sep 2017 10:00:00 GMT",
+        "open": 267.03,
+        "time": {
+            "day": 14,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505383200,
+        "volume": 11424.076573120074
+    },
+    {
+        "close": 250.6,
+        "high": 262.7,
+        "low": 250,
+        "nicetime": "Thu, 14 Sep 2017 11:00:00 GMT",
+        "open": 261.63,
+        "time": {
+            "day": 14,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505386800,
+        "volume": 31710.712851459644
+    },
+    {
+        "close": 234.07,
+        "high": 253.86,
+        "low": 234.07,
+        "nicetime": "Thu, 14 Sep 2017 12:00:00 GMT",
+        "open": 250.5,
+        "time": {
+            "day": 14,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505390400,
+        "volume": 53490.06583556026
+    },
+    {
+        "close": 246.24,
+        "high": 249.98,
+        "low": 231.1,
+        "nicetime": "Thu, 14 Sep 2017 13:00:00 GMT",
+        "open": 234.81,
+        "time": {
+            "day": 14,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505394000,
+        "volume": 67510.38900970058
+    },
+    {
+        "close": 247,
+        "high": 251,
+        "low": 237.64,
+        "nicetime": "Thu, 14 Sep 2017 14:00:00 GMT",
+        "open": 246.23,
+        "time": {
+            "day": 14,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505397600,
+        "volume": 37783.29140617979
+    },
+    {
+        "close": 243.02,
+        "high": 247.79,
+        "low": 240.04,
+        "nicetime": "Thu, 14 Sep 2017 15:00:00 GMT",
+        "open": 247,
+        "time": {
+            "day": 14,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505401200,
+        "volume": 18941.73202191001
+    },
+    {
+        "close": 235.61,
+        "high": 244.48,
+        "low": 232,
+        "nicetime": "Thu, 14 Sep 2017 16:00:00 GMT",
+        "open": 243.22,
+        "time": {
+            "day": 14,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505404800,
+        "volume": 37409.21942129978
+    },
+    {
+        "close": 226.54,
+        "high": 235.61,
+        "low": 225.15,
+        "nicetime": "Thu, 14 Sep 2017 17:00:00 GMT",
+        "open": 235.61,
+        "time": {
+            "day": 14,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505408400,
+        "volume": 44266.02354770952
+    },
+    {
+        "close": 236.21,
+        "high": 240,
+        "low": 221.3,
+        "nicetime": "Thu, 14 Sep 2017 18:00:00 GMT",
+        "open": 226.53,
+        "time": {
+            "day": 14,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505412000,
+        "volume": 46997.11797857979
+    },
+    {
+        "close": 235.01,
+        "high": 245.5,
+        "low": 233.01,
+        "nicetime": "Thu, 14 Sep 2017 19:00:00 GMT",
+        "open": 236.21,
+        "time": {
+            "day": 14,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505415600,
+        "volume": 37926.766837349795
+    },
+    {
+        "close": 238.36,
+        "high": 241.12,
+        "low": 233.3,
+        "nicetime": "Thu, 14 Sep 2017 20:00:00 GMT",
+        "open": 235.01,
+        "time": {
+            "day": 14,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505419200,
+        "volume": 12854.897371860101
+    },
+    {
+        "close": 232.01,
+        "high": 238.59,
+        "low": 230.32,
+        "nicetime": "Thu, 14 Sep 2017 21:00:00 GMT",
+        "open": 238.37,
+        "time": {
+            "day": 14,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505422800,
+        "volume": 17955.24604598001
+    },
+    {
+        "close": 230.59,
+        "high": 236.45,
+        "low": 230,
+        "nicetime": "Thu, 14 Sep 2017 22:00:00 GMT",
+        "open": 232.12,
+        "time": {
+            "day": 14,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505426400,
+        "volume": 13778.502876659995
+    },
+    {
+        "close": 223.85,
+        "high": 230.89,
+        "low": 222.34,
+        "nicetime": "Thu, 14 Sep 2017 23:00:00 GMT",
+        "open": 230.59,
+        "time": {
+            "day": 14,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505430000,
+        "volume": 30111.78440953988
+    },
+    {
+        "close": 232.92,
+        "high": 236.88,
+        "low": 222.51,
+        "nicetime": "Fri, 15 Sep 2017 00:00:00 GMT",
+        "open": 223.85,
+        "time": {
+            "day": 15,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505433600,
+        "volume": 34566.48146696994
+    },
+    {
+        "close": 236.67,
+        "high": 239.5,
+        "low": 232.93,
+        "nicetime": "Fri, 15 Sep 2017 01:00:00 GMT",
+        "open": 232.93,
+        "time": {
+            "day": 15,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505437200,
+        "volume": 22619.442101440003
+    },
+    {
+        "close": 236.52,
+        "high": 243.98,
+        "low": 235.01,
+        "nicetime": "Fri, 15 Sep 2017 02:00:00 GMT",
+        "open": 236.67,
+        "time": {
+            "day": 15,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505440800,
+        "volume": 29323.396425319854
+    },
+    {
+        "close": 237,
+        "high": 238.91,
+        "low": 232.18,
+        "nicetime": "Fri, 15 Sep 2017 03:00:00 GMT",
+        "open": 236.53,
+        "time": {
+            "day": 15,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505444400,
+        "volume": 12827.849030800027
+    },
+    {
+        "close": 231.96,
+        "high": 237.99,
+        "low": 230,
+        "nicetime": "Fri, 15 Sep 2017 04:00:00 GMT",
+        "open": 236.98,
+        "time": {
+            "day": 15,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505448000,
+        "volume": 13045.027046200032
+    },
+    {
+        "close": 232.87,
+        "high": 233.14,
+        "low": 227.13,
+        "nicetime": "Fri, 15 Sep 2017 05:00:00 GMT",
+        "open": 231.97,
+        "time": {
+            "day": 15,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505451600,
+        "volume": 11640.867625099996
+    },
+    {
+        "close": 221.01,
+        "high": 234.62,
+        "low": 221,
+        "nicetime": "Fri, 15 Sep 2017 06:00:00 GMT",
+        "open": 232.87,
+        "time": {
+            "day": 15,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505455200,
+        "volume": 22526.619246289763
+    },
+    {
+        "close": 220.16,
+        "high": 224,
+        "low": 215.32,
+        "nicetime": "Fri, 15 Sep 2017 07:00:00 GMT",
+        "open": 221.01,
+        "time": {
+            "day": 15,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505458800,
+        "volume": 21681.011628409953
+    },
+    {
+        "close": 220.93,
+        "high": 224.45,
+        "low": 215.51,
+        "nicetime": "Fri, 15 Sep 2017 08:00:00 GMT",
+        "open": 220.1,
+        "time": {
+            "day": 15,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505462400,
+        "volume": 10230.561502000026
+    },
+    {
+        "close": 210.78,
+        "high": 223.43,
+        "low": 210.41,
+        "nicetime": "Fri, 15 Sep 2017 09:00:00 GMT",
+        "open": 220.93,
+        "time": {
+            "day": 15,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505466000,
+        "volume": 17000.520221239945
+    },
+    {
+        "close": 208.14,
+        "high": 215,
+        "low": 206.02,
+        "nicetime": "Fri, 15 Sep 2017 10:00:00 GMT",
+        "open": 210.79,
+        "time": {
+            "day": 15,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505469600,
+        "volume": 21060.98054045999
+    },
+    {
+        "close": 205.39,
+        "high": 210.12,
+        "low": 202.25,
+        "nicetime": "Fri, 15 Sep 2017 11:00:00 GMT",
+        "open": 208.14,
+        "time": {
+            "day": 15,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505473200,
+        "volume": 31492.682367529917
+    },
+    {
+        "close": 229.42,
+        "high": 235.99,
+        "low": 203.46,
+        "nicetime": "Fri, 15 Sep 2017 12:00:00 GMT",
+        "open": 205.39,
+        "time": {
+            "day": 15,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505476800,
+        "volume": 66733.49731449001
+    },
+    {
+        "close": 234.3,
+        "high": 234.95,
+        "low": 221.27,
+        "nicetime": "Fri, 15 Sep 2017 13:00:00 GMT",
+        "open": 229.42,
+        "time": {
+            "day": 15,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505480400,
+        "volume": 33206.121876839636
+    },
+    {
+        "close": 257.18,
+        "high": 267.64,
+        "low": 234.3,
+        "nicetime": "Fri, 15 Sep 2017 14:00:00 GMT",
+        "open": 234.3,
+        "time": {
+            "day": 15,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505484000,
+        "volume": 76608.8392603
+    },
+    {
+        "close": 266.59,
+        "high": 270,
+        "low": 247.92,
+        "nicetime": "Fri, 15 Sep 2017 15:00:00 GMT",
+        "open": 257.89,
+        "time": {
+            "day": 15,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505487600,
+        "volume": 58358.147558360455
+    },
+    {
+        "close": 248.98,
+        "high": 267.64,
+        "low": 244.3,
+        "nicetime": "Fri, 15 Sep 2017 16:00:00 GMT",
+        "open": 266.61,
+        "time": {
+            "day": 15,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505491200,
+        "volume": 52783.38150522015
+    },
+    {
+        "close": 249,
+        "high": 249.65,
+        "low": 240.14,
+        "nicetime": "Fri, 15 Sep 2017 17:00:00 GMT",
+        "open": 248.98,
+        "time": {
+            "day": 15,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505494800,
+        "volume": 27482.306365689412
+    },
+    {
+        "close": 248.31,
+        "high": 257.19,
+        "low": 244.42,
+        "nicetime": "Fri, 15 Sep 2017 18:00:00 GMT",
+        "open": 249,
+        "time": {
+            "day": 15,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505498400,
+        "volume": 26704.927844479767
+    },
+    {
+        "close": 258,
+        "high": 265.78,
+        "low": 248.3,
+        "nicetime": "Fri, 15 Sep 2017 19:00:00 GMT",
+        "open": 248.3,
+        "time": {
+            "day": 15,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505502000,
+        "volume": 28603.61680316964
+    },
+    {
+        "close": 259.89,
+        "high": 263,
+        "low": 255,
+        "nicetime": "Fri, 15 Sep 2017 20:00:00 GMT",
+        "open": 258.1,
+        "time": {
+            "day": 15,
+            "hour": 20,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505505600,
+        "volume": 16520.176716030008
+    },
+    {
+        "close": 265.74,
+        "high": 267.01,
+        "low": 259.88,
+        "nicetime": "Fri, 15 Sep 2017 21:00:00 GMT",
+        "open": 259.89,
+        "time": {
+            "day": 15,
+            "hour": 21,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505509200,
+        "volume": 14954.07921770013
+    },
+    {
+        "close": 263.24,
+        "high": 266.38,
+        "low": 259,
+        "nicetime": "Fri, 15 Sep 2017 22:00:00 GMT",
+        "open": 265.74,
+        "time": {
+            "day": 15,
+            "hour": 22,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505512800,
+        "volume": 10001.701061620042
+    },
+    {
+        "close": 260.88,
+        "high": 263.01,
+        "low": 257,
+        "nicetime": "Fri, 15 Sep 2017 23:00:00 GMT",
+        "open": 263.01,
+        "time": {
+            "day": 15,
+            "hour": 23,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505516400,
+        "volume": 7623.006590490035
+    },
+    {
+        "close": 261.77,
+        "high": 266.59,
+        "low": 258.28,
+        "nicetime": "Sat, 16 Sep 2017 00:00:00 GMT",
+        "open": 260.87,
+        "time": {
+            "day": 16,
+            "hour": 0,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505520000,
+        "volume": 8131.743026250023
+    },
+    {
+        "close": 264,
+        "high": 264,
+        "low": 261,
+        "nicetime": "Sat, 16 Sep 2017 01:00:00 GMT",
+        "open": 261.77,
+        "time": {
+            "day": 16,
+            "hour": 1,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505523600,
+        "volume": 5555.693199500007
+    },
+    {
+        "close": 261.18,
+        "high": 268.22,
+        "low": 260.06,
+        "nicetime": "Sat, 16 Sep 2017 02:00:00 GMT",
+        "open": 264,
+        "time": {
+            "day": 16,
+            "hour": 2,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505527200,
+        "volume": 9878.337037620036
+    },
+    {
+        "close": 264.05,
+        "high": 264.28,
+        "low": 261.18,
+        "nicetime": "Sat, 16 Sep 2017 03:00:00 GMT",
+        "open": 261.18,
+        "time": {
+            "day": 16,
+            "hour": 3,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505530800,
+        "volume": 2758.5404241900155
+    },
+    {
+        "close": 266.76,
+        "high": 266.78,
+        "low": 264,
+        "nicetime": "Sat, 16 Sep 2017 04:00:00 GMT",
+        "open": 264.04,
+        "time": {
+            "day": 16,
+            "hour": 4,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505534400,
+        "volume": 4861.693020730019
+    },
+    {
+        "close": 272.99,
+        "high": 278,
+        "low": 266.48,
+        "nicetime": "Sat, 16 Sep 2017 05:00:00 GMT",
+        "open": 266.76,
+        "time": {
+            "day": 16,
+            "hour": 5,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505538000,
+        "volume": 19102.633058060015
+    },
+    {
+        "close": 268.02,
+        "high": 273.99,
+        "low": 265.49,
+        "nicetime": "Sat, 16 Sep 2017 06:00:00 GMT",
+        "open": 272.99,
+        "time": {
+            "day": 16,
+            "hour": 6,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505541600,
+        "volume": 10585.745342349992
+    },
+    {
+        "close": 274.07,
+        "high": 274.96,
+        "low": 267.91,
+        "nicetime": "Sat, 16 Sep 2017 07:00:00 GMT",
+        "open": 268.02,
+        "time": {
+            "day": 16,
+            "hour": 7,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505545200,
+        "volume": 5347.2533647100245
+    },
+    {
+        "close": 276.24,
+        "high": 277.42,
+        "low": 272.02,
+        "nicetime": "Sat, 16 Sep 2017 08:00:00 GMT",
+        "open": 274.33,
+        "time": {
+            "day": 16,
+            "hour": 8,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505548800,
+        "volume": 6187.678916570028
+    },
+    {
+        "close": 269.52,
+        "high": 277,
+        "low": 268.2,
+        "nicetime": "Sat, 16 Sep 2017 09:00:00 GMT",
+        "open": 276.12,
+        "time": {
+            "day": 16,
+            "hour": 9,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505552400,
+        "volume": 5753.427205770035
+    },
+    {
+        "close": 254.75,
+        "high": 269.44,
+        "low": 253.34,
+        "nicetime": "Sat, 16 Sep 2017 10:00:00 GMT",
+        "open": 269.44,
+        "time": {
+            "day": 16,
+            "hour": 10,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505556000,
+        "volume": 22345.863464829807
+    },
+    {
+        "close": 264.01,
+        "high": 268,
+        "low": 254.75,
+        "nicetime": "Sat, 16 Sep 2017 11:00:00 GMT",
+        "open": 254.76,
+        "time": {
+            "day": 16,
+            "hour": 11,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505559600,
+        "volume": 8462.521167950053
+    },
+    {
+        "close": 257.72,
+        "high": 264.86,
+        "low": 256.34,
+        "nicetime": "Sat, 16 Sep 2017 12:00:00 GMT",
+        "open": 264.01,
+        "time": {
+            "day": 16,
+            "hour": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505563200,
+        "volume": 5701.897728190022
+    },
+    {
+        "close": 259.65,
+        "high": 261.31,
+        "low": 255,
+        "nicetime": "Sat, 16 Sep 2017 13:00:00 GMT",
+        "open": 257.72,
+        "time": {
+            "day": 16,
+            "hour": 13,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505566800,
+        "volume": 6063.822624480028
+    },
+    {
+        "close": 254.24,
+        "high": 259.69,
+        "low": 254.07,
+        "nicetime": "Sat, 16 Sep 2017 14:00:00 GMT",
+        "open": 259.65,
+        "time": {
+            "day": 16,
+            "hour": 14,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505570400,
+        "volume": 4977.502638410002
+    },
+    {
+        "close": 248.91,
+        "high": 257.29,
+        "low": 247.1,
+        "nicetime": "Sat, 16 Sep 2017 15:00:00 GMT",
+        "open": 254.24,
+        "time": {
+            "day": 16,
+            "hour": 15,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505574000,
+        "volume": 15731.310406750074
+    },
+    {
+        "close": 250.99,
+        "high": 253.81,
+        "low": 248.01,
+        "nicetime": "Sat, 16 Sep 2017 16:00:00 GMT",
+        "open": 249,
+        "time": {
+            "day": 16,
+            "hour": 16,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505577600,
+        "volume": 10145.34387470005
+    },
+    {
+        "close": 253,
+        "high": 254.7,
+        "low": 250,
+        "nicetime": "Sat, 16 Sep 2017 17:00:00 GMT",
+        "open": 250.52,
+        "time": {
+            "day": 16,
+            "hour": 17,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505581200,
+        "volume": 6546.835657340042
+    },
+    {
+        "close": 258.1,
+        "high": 259,
+        "low": 252.99,
+        "nicetime": "Sat, 16 Sep 2017 18:00:00 GMT",
+        "open": 253,
+        "time": {
+            "day": 16,
+            "hour": 18,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505584800,
+        "volume": 14231.971097840027
+    },
+    {
+        "close": 258.1,
+        "high": 258.1,
+        "low": 257.46,
+        "nicetime": "Sat, 16 Sep 2017 19:00:00 GMT",
+        "open": 258.1,
+        "time": {
+            "day": 16,
+            "hour": 19,
+            "month": 9,
+            "year": 2017
+        },
+        "unix epoch time": 1505588400,
+        "volume": 566.27554263
+    }
+]
