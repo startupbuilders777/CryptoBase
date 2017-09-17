@@ -2,6 +2,7 @@ from matplotlib import pyplot as plt
 def reinforcementAgent():
     import numpy as np
     import tensorflow as tf
+    from flask import jsonify
     import random
 
     import json
