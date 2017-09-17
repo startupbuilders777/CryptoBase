@@ -632,7 +632,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         plt.ylabel('price ($)')
         plt.plot(prices)
         plt.savefig(whatToLearn + " " + 'all_prices.png')
-        plt.show()
+        #plt.show()
 
     def plot_prices_test(prices):
         plt.title('Closing stock prices for test data')
@@ -640,7 +640,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         plt.ylabel('price ($)')
         plt.plot(prices)
         plt.savefig('test_prices.png')
-        plt.show()
+        #plt.show()
 
     def plot_prices_train(prices):
         plt.title('Closing stock prices for train data')
@@ -648,7 +648,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         plt.ylabel('price ($)')
         plt.plot(prices)
         plt.savefig('train_prices.png')
-        plt.show()
+        #plt.show()
 
     def standardizeData(trading_info):
         prices = []
@@ -684,7 +684,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
     '''
 
     if __name__ == '__main__':
-        data = 0
+        data = []
         if(whatToLearn == "ETH-BTC"):
             with open('etherdata.json') as data_file:
                 data = json.load(data_file)
@@ -729,6 +729,16 @@ def reinforcementAgent(whatToLearn, startingCapital):
         budget = startingCapital
         num_stocks = 0
 
+        def serialize(data):
+            serialized = []
+            for i in data:
+                time = datetime.datetime.utcfromtimestamp(i["time"])
+                i["date"] = {"year": time.year, "month":time.month, "day" :time.day, "hour": time.hour}
+
+            return data
+
+
+
         avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
         print("The end capital earned by the agent is: ")
         print(avg)
@@ -736,7 +746,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         print(std)
         print("The agenets decisions were:")
         print(reinforcementAgentDecisions)
-        return jsonify({"data": data,
+        return jsonify({"data": serialize(data),
                         "decisions": reinforcementAgentDecisions,
                         "current_portfolio_value_list": current_portfolio_value_list,
                         "average": avg,
