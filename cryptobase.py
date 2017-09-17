@@ -380,7 +380,7 @@ def send():
         data = public_client.get_product_historic_rates("ETH-USD", granularity=3600)  # GRANULAIRTY IS PER HOUR DATA
         print(len(data))
 
-        data2 = getData()
+       # data2 = getData()
        #print(jsonify(serializeHistoricData(data2)))
         return jsonify(serializeHistoricData(data))
 
@@ -650,6 +650,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
     '''
 
     if __name__ == '__main__':
+        data = 0
         if(whatToLearn == "ETH-BTC"):
             with open('etherdata.json') as data_file:
                 data = json.load(data_file)
