@@ -9,10 +9,9 @@ def reinforcementAgent():
 
     '''
     REMOVE THE TRAINING AND TESTING DATA SPLIT, DOESNT MAKE SENSE FOR REINFOORCEMENT AGENTS
-    
+
     ACTIONS ARE BUY, SELL AND HOLD
     '''
-
 
     # Define an abstract class called DecisionPolicy
 
@@ -23,8 +22,7 @@ def reinforcementAgent():
         def update_q(self, state, action, reward, next_state):
             pass
 
-
-    #Thats a good baseline. Now lets use a smarter approach using a neural network
+    # Thats a good baseline. Now lets use a smarter approach using a neural network
 
     class QLearningDecisionPolicy(DecisionPolicy):
         def __init__(self, actions, input_dim):
@@ -68,15 +66,16 @@ def reinforcementAgent():
             action_q_vals = np.squeeze(np.asarray(action_q_vals))
             self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
 
-    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, debug=False):
+    def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions,
+                       debug=False):
         budget = initial_budget
         num_stocks = initial_num_stocks
         share_value = 0
         transitions = list()
         for i in range(len(prices) - hist - 1):
             if i % 100 == 0:
-                print('progress {:.2f}%'.format(float(100*i) / (len(prices) - hist - 1)))
-            current_state = np.asmatrix(np.hstack((prices[i:i+hist], budget, num_stocks)))
+                print('progress {:.2f}%'.format(float(100 * i) / (len(prices) - hist - 1)))
+            current_state = np.asmatrix(np.hstack((prices[i:i + hist], budget, num_stocks)))
             current_portfolio = budget + num_stocks * share_value
             action = policy.select_action(current_state, i)
             share_value = float(prices[i + hist + 1])
@@ -93,7 +92,7 @@ def reinforcementAgent():
                 reinforcementAgentDecisions.append("hold")
             new_portfolio = budget + num_stocks * share_value
             reward = new_portfolio - current_portfolio
-            next_state = np.asmatrix(np.hstack((prices[i+1:i+hist+1], budget, num_stocks)))
+            next_state = np.asmatrix(np.hstack((prices[i + 1:i + hist + 1], budget, num_stocks)))
             transitions.append((current_state, action, reward, next_state))
             policy.update_q(current_state, action, reward, next_state)
 
@@ -102,7 +101,7 @@ def reinforcementAgent():
             print('${}\t{} shares'.format(budget, num_stocks))
         return portfolio
 
-    #We want to run simulations multiple times and average out the performances:
+    # We want to run simulations multiple times and average out the performances:
 
     def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions):
         num_tries = 10
@@ -113,7 +112,7 @@ def reinforcementAgent():
         avg, std = np.mean(final_portfolios), np.std(final_portfolios)
         return avg, std
 
-    #Call the following function to use the Yahoo Finance library and obtain useful stockmarket data.
+    # Call the following function to use the Yahoo Finance library and obtain useful stockmarket data.
 
     def get_prices(share_symbol, start_date, end_date, cache_filename='stock_prices.npy'):
         try:
@@ -126,7 +125,7 @@ def reinforcementAgent():
 
         return stock_prices
 
-    #Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
+    # Who wants to deal with stock market data without looking a pretty plots? No one. So we need this out of law:
 
     def plot_prices_all(prices):
         plt.title('Closing stock prices for all data')
@@ -160,20 +159,21 @@ def reinforcementAgent():
 
     '''
     Just use the closing prices of stocks right now but will add more later
-    
+
     Further analysis of the candlestick required?
     Maybe a convolutional Analysis on the candlesticj 
     Followed by LSTM Analysis
     '''
+
     def splitDataToTestAndTrain(trading_info):
-        #The first 90% of the data is for training the neural net and is old data
-        #Assuming the data is ordererd from oldest to newest
+        # The first 90% of the data is for training the neural net and is old data
+        # Assuming the data is ordererd from oldest to newest
 
         length = len(trading_info)
         train_len = length * 0.9
         train = trading_info[:int(train_len)]
 
-        #The next 10% is recent data the neural net has not seen and will be tested on this data
+        # The next 10% is recent data the neural net has not seen and will be tested on this data
         test_len = length * 0.1
         test = trading_info[int(train_len):]
 
@@ -219,11 +219,11 @@ def reinforcementAgent():
         policy = QLearningDecisionPolicy(actions, hist + 2)
         budget = 1000
         num_stocks = 0
-        #avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
+        # avg, std = run_simulations(policy, budget, num_stocks, train_prices, hist)
         print("The trained amout earned was")
-        #print(avg)
+        # print(avg)
         print("The standard deviation for this is: ")
-        #print(std)
+        # print(std)
 
         budget = 1000
         num_stocks = 0
@@ -234,6 +234,11 @@ def reinforcementAgent():
         print(std)
         print("The agenets decisions were:")
         print(reinforcementAgentDecisions)
+        return jsonify({"data": data,
+                        "decisions": reinforcementAgentDecisions,
+                        "average": avg,
+                        "standard deviation": std
+                        })
 
 reinforcementAgent()
 

@@ -703,7 +703,5 @@ def reinforcementAgent():
                         "standard deviation": std
                         })
 
-
-
 if __name__ == '__main__':
     app.run()
