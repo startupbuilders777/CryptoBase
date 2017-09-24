@@ -559,8 +559,14 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
     class QLearningDecisionPolicy(DecisionPolicy):
         def __init__(self, actions, input_dim):
+            '''
+            
+            
+            :param actions: ACTIONS ARE BUY, HOLD, SELL (Want to be able to extend these actions doe.)
+            :param input_dim: 
+            '''
 
-            self.epsilon = 0.9
+            self.epsilon = 0.9      #Choose a random action about 10% of the time and decrease the probability of choose a random action as time goes on
             self.gamma = 0.001
             self.actions = actions
             output_dim = len(actions)
@@ -607,25 +613,38 @@ def reinforcementAgent(whatToLearn, startingCapital):
                     summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state})
                 else:
                     action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
-                action_idx = np.argmax(action_q_vals)
-                action = self.actions[action_idx]
+                action_idx = np.argmax(action_q_vals)           #PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
+                action = self.actions[action_idx]               #Get the action
                 if tensorboardLog:
                     writer.add_summary(summary, step)
 
             else:
                 # Explore random option with probability 1 - epsilon
-                action = self.actions[random.randint(0, len(self.actions) - 1)]
+                action = self.actions[random.randint(0, len(self.actions) - 1)] #Chhoose a random action
             if tensorboardLog:
                 writer.close()
             return action
 
-        def update_q(self, state, action, reward, next_state):
-            action_q_vals = self.sess.run(self.q, feed_dict={self.x: state})
-            next_action_q_vals = self.sess.run(self.q, feed_dict={self.x: next_state})
-            next_action_idx = np.argmax(next_action_q_vals)
+        def update_q(self, state, action, reward, next_state):      #TO UPDATE THE STATE MATRIX FOR BETTER PREDICTIONS
+            '''
+            
+            :param state:  The current State
+            :param action: BUY, HOLD, SELL, The chosen action at the time 
+            :param reward: The reward you got for choosing that action
+            :param next_state: The next state you are in after choosing the action
+            :return: 
+            '''
+            action_q_vals = self.sess.run(self.q, feed_dict={self.x: state})    #WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
+            next_action_q_vals = self.sess.run(self.q, feed_dict={self.x: next_state})  #WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
+            next_action_idx = np.argmax(next_action_q_vals) #WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
+
+            '''
+            TODO: Document what these 2 do soon.
+            '''
             action_q_vals[0, next_action_idx] = reward + self.gamma * next_action_q_vals[0, next_action_idx]
             action_q_vals = np.squeeze(np.asarray(action_q_vals))
-            self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})
+
+            self.sess.run(self.train_op, feed_dict={self.x: state, self.y: action_q_vals})  #RUN THE TRAIN OP TO IMPROVE THE PREDICTIONS
 
 
     def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list,
@@ -634,6 +653,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
         num_stocks = initial_num_stocks
         share_value = 0
         transitions = list()
+
         for i in range(len(prices) - hist - 1):
             if i % 100 == 0:
                 print('progress {:.2f}%'.format(float(100 * i) / (len(prices) - hist - 1)))
@@ -714,7 +734,6 @@ def reinforcementAgent(whatToLearn, startingCapital):
     Maybe a convolutional Analysis on the candlesticj 
     Followed by LSTM Analysis
     '''
-
     def splitDataToTestAndTrain(trading_info):
         # The first 90% of the data is for training the neural net and is old data
         # Assuming the data is ordererd from oldest to newest
