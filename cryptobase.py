@@ -116,12 +116,6 @@ client = Client(
     "be25c7a84a548717aea087d1fa412ca58e137ec0289b2c5f1795e24c0b5dbfd9",
     api_version='2017-09-17')
 
-
-
-
-
-
-
 ###### RESTFUL API TUTORIAL ENDPOINTS#########################################################################################
 '''
 @app.route('/todo/api/v1.0/tasks/fook', methods=['GET'])
@@ -500,7 +494,7 @@ def getData():
 #last_24_hours_data = public_client.get_product_24hr_stats("ETH-USD")
 #print(last_24_hours_data)
 
-#Convert to ISO
+#Convert to ISOps
 
 #whatToLearn = BTC-USD
 #whatToLearn = ETH-USD
@@ -509,6 +503,16 @@ def getData():
 
 @app.route('/executeNet/<string:whatToLearn>/<int:startingCapital>', methods=['POST'])
 def reinforcementAgent(whatToLearn, startingCapital):
+
+    '''
+    IF YOU HAVE 
+    log: True 
+    in the header of the request, tesorboard will be loggin the weights 
+    
+    :param whatToLearn: 
+    :param startingCapital: 
+    :return: 
+    '''
     import numpy as np
     import tensorflow as tf
     import random
@@ -516,8 +520,18 @@ def reinforcementAgent(whatToLearn, startingCapital):
     import json
     import pprint
 
+    log = False
+    tensorboardLog = False
+    reloadOldResults = False
 
-    if(os.path.isfile(whatToLearn + "X" + ".json")):
+    if request.headers.get("log") is not None and request.headers.get("log") ==  "TRUE":
+        log = True
+    elif request.headers.get("tensorboard-log") is not None and request.headers.get("tensorboard-log").upper() == "TRUE":
+        tensorboardLog = True
+    elif request.headers.get("reload") is not None and  request.headers.get("reload").upper()== "TRUE": #RELOAD WORKS, ITS BEEN TESTED
+        reloadOldResults = True
+
+    if(os.path.isfile(whatToLearn + "X" + ".json") and reloadOldResults):
         with open(whatToLearn + "X" + ".json") as data_file:
             data = json.load(data_file)
             return jsonify(data)
@@ -562,34 +576,47 @@ def reinforcementAgent(whatToLearn, startingCapital):
             b2 = tf.Variable(tf.constant(0.1, shape=[output_dim]))
             self.q = tf.nn.relu(tf.matmul(h1, W2) + b2)
 
-            #tf.summary.histogram('q', self.q)
-            #tf.summary.histogram('W1', W1)
-            #tf.summary.histogram('W2', W2)
-            #tf.summary.histogram('histogram', W2)
+            if tensorboardLog:
+                tf.summary.histogram('q', self.q)
+                tf.summary.histogam('W1', W1)
+                tf.summary.histogram('W2', W2)
+                tf.summary.histogram('histogram', W2)
 
             loss = tf.square(self.y - self.q)
 
-            #tf.summary.scalar("loss", tf.reduce_sum(loss))
-            #tf.summary.scalar("loss histogram", loss)
+            if tensorboardLog:
+                tf.summary.scalar("loss", tf.reduce_sum(loss))
+                tf.summary.scalar("loss histogram", loss)
+
             self.train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
             self.sess = tf.Session()
             self.sess.run(tf.global_variables_initializer())
 
         def select_action(self, current_state, step):
-            #writer = tf.summary.FileWriter(whatToLearn + "/")
-            #merged = tf.summary.merge_all()
+            writer = None
+            merged = None
+            if tensorboardLog:
+                writer = tf.summary.FileWriter(whatToLearn + "/")
+                merged = tf.summary.merge_all()
             threshold = min(self.epsilon, step / 1000.)
             if random.random() < threshold:
                 # Exploit best option with probability epsilon
-                action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
+                summary = None
+                action_q_vals = None
+                if tensorboardLog:
+                    summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state})
+                else:
+                    action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state})
                 action_idx = np.argmax(action_q_vals)
                 action = self.actions[action_idx]
-                #writer.add_summary(summary, step)
+                if tensorboardLog:
+                    writer.add_summary(summary, step)
 
             else:
                 # Explore random option with probability 1 - epsilon
                 action = self.actions[random.randint(0, len(self.actions) - 1)]
-            writer.close()
+            if tensorboardLog:
+                writer.close()
             return action
 
         def update_q(self, state, action, reward, next_state):
