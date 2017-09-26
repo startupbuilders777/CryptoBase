@@ -781,10 +781,27 @@ def reinforcementAgent(whatToLearn, startingCapital):
         plt.savefig('train_prices.png')
         #plt.show()
 
-    def standardizeData(trading_info):
+    def getCloseData(trading_info):
         prices = []
         for item in trading_info:
             prices.append(item["close"])
+        return prices
+
+    def getAllDataExceptTime(trading_info):
+        '''
+        DATA should look like this:
+        "low": 14.89,
+        "high": 14.9,
+        "open": 14.89,
+        "close": 14.9,
+        "volume": 600.9523090700001        
+        
+        HERE A COOL RESEARCH QUESTION. Does it matter how we put the data in the array? 
+        Like if we put close before low and high. Or put volume first. Hell put volume in the middle and close at the end?????
+        '''
+        prices = []
+        for item in trading_info:
+            prices.append([item["low"], item["close"], item["high"], item["volume"]])
         return prices
 
     '''
@@ -837,7 +854,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
                 print(data)
 
         data.sort(key=lambda x: x["time"])
-        all_prices = standardizeData(data)
+        all_prices = getCloseData(data)
         plot_prices_all(all_prices)
         print(all_prices)
 
