@@ -600,7 +600,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
         def select_action(self, current_state, step):
             # -> SIZE OF 202 WHICH IS the size of the input Dim for an input x. which is also hist + 2, the +2 is the price and other data
-            print("THE CURRENT STATE IS: " + str(current_state))
+            #print("THE CURRENT STATE IS: " + str(current_state))
             '''
             THE CURRENT STATE IS: 
 [[ 292.89  285.81  288.14  276.18  272.2   265.8   262.3   251.21  267.29
@@ -678,6 +678,19 @@ def reinforcementAgent(whatToLearn, startingCapital):
 
     def run_simulation(policy, initial_budget, initial_num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list,
                        debug=False):
+        '''
+        Runs the simiulation for the Q-LEARNING ALGORITHM
+        
+        :param policy: Class that encapsulates the learning agent
+        :param initial_budget: Its a number like 1000$ that the agent can play with
+        :param initial_num_stocks: How many coins does the agent start off with?
+        :param prices: 
+        :param hist: Size by default is 200. THE STATE FOR THE QLEARNING ALGO IS BASICALLY an array of 
+        :param reinforcementAgentDecisions: NOT USED IN ALGORITHM, just there to accumulate data for graphs
+        :param current_portfolio_value_list:NOT USED IN ALGORITHM, just there to accumulate data for graphs 
+        :param debug: 
+        :return: 
+        '''
         budget = initial_budget
         num_stocks = initial_num_stocks
         share_value = 0
@@ -686,12 +699,24 @@ def reinforcementAgent(whatToLearn, startingCapital):
         for i in range(len(prices) - hist - 1):
             if i % 100 == 0:
                 print('progress {:.2f}%'.format(float(100 * i) / (len(prices) - hist - 1)))
+
             current_state = np.asmatrix(np.hstack((prices[i:i + hist], budget, num_stocks)))
+            '''THE STATE OF THE Q-ALGORITHM:
+
+                THE STATE is a definite place.
+                One sort of finite definite place is a list of prices from i to i + 200 along with the budget and num_stocks
+                there is a finite number of these types of states. Also the prices are a contiguous block.
+                
+                To determine the best possible action to take given this 202 dimensional state (if hist == 200),
+                 convert the blcok into a 200 weight -> then 200 to 3 states, BUY, SELL, HOLD
+                
+
+            '''
             current_portfolio = budget + num_stocks * share_value
             action = policy.select_action(current_state, i)
             share_value = float(prices[i + hist + 1])
 
-            #RESTRICTION TO BUY, SELL ONLY ONE AT A TIME.
+            #RESTRICTION TO BUY, SELL ONLY ONE AT A TIME. change this so it gets better.
             if action == 'Buy' and budget >= share_value:           #BUY A STOCK, ONLY BUYS 1 AT A TIME RESTRICTION
                 budget -= share_value
                 num_stocks += 1
@@ -703,9 +728,13 @@ def reinforcementAgent(whatToLearn, startingCapital):
             else:
                 action = 'Hold'
                 reinforcementAgentDecisions.append("hold")
-            new_portfolio = budget + num_stocks * share_value
-            reward = new_portfolio - current_portfolio
+            new_portfolio = budget + num_stocks * share_value      #Recalculate new portfolio value
+            reward = new_portfolio - current_portfolio              #The REWARD IS THE INCREASE IN PORTFOLIO VALUE
+
             next_state = np.asmatrix(np.hstack((prices[i + 1:i + hist + 1], budget, num_stocks)))
+
+
+
             transitions.append((current_state, action, reward, next_state))
             policy.update_q(current_state, action, reward, next_state)
 
