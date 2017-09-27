@@ -501,8 +501,11 @@ def getData():
 #whatToLearn = ETH-USD
 #whatToLearn = LITE-USD
 
-@app.route('/executeNet/<string:whatToLearn>/<int:startingCapital>', methods=['POST'])
-def reinforcementAgent(whatToLearn, startingCapital):
+#starting capital is like oh start the agent with 100$ or 10000$, specify it in the endpoint call
+#the type is oh should we use the normalQLearning Agent or an DeepRecurrentQ-Learning Agent
+
+@app.route('/executeNet/<string:whatToLearn>/<int:startingCapital>/<string:type>', methods=['POST'])
+def reinforcementAgent(whatToLearn, startingCapital, type):
 
     '''
     IF YOU HAVE 
@@ -539,7 +542,7 @@ def reinforcementAgent(whatToLearn, startingCapital):
     '''
     REMOVE THE TRAINING AND TESTING DATA SPLIT, DOESNT MAKE SENSE FOR REINFOORCEMENT AGENTS
     ADDDD TENSORBOARD
-    ADDDD RNN
+    ADDDD RNN/CNN
     ADD MULTIHTREADING
     ACTIONS ARE BUY, SELL AND HOLD
     '''
@@ -854,16 +857,31 @@ def reinforcementAgent(whatToLearn, startingCapital):
                 print(data)
 
         data.sort(key=lambda x: x["time"])
-        all_prices = getCloseData(data)
-        plot_prices_all(all_prices)
-        print(all_prices)
+
+        '''
+        Declare variables
+        '''
+
+        all_prices = None
+
+        hist = None
+        policy = None
+
+        if(type == "advanced"):
+            all_prices = getAllDataExceptTime(data)
+            plot_prices_all(all_prices)
+            print(all_prices)
+        else:
+            all_prices = getCloseData(data)
+            plot_prices_all(all_prices)
+            print(all_prices)
+
+            hist = 200
+            policy = QLearningDecisionPolicy(actions, hist + 2)         #-> INPUT DIM IS a matrix of size 202
 
         actions = ['Buy', 'Sell', 'Hold']
         reinforcementAgentDecisions = []
         current_portfolio_value_list = []
-
-        hist = 200
-        policy = QLearningDecisionPolicy(actions, hist + 2)         #-> INPUT DIM IS a matrix of size 202
         budget = startingCapital
         num_stocks = 0
 
