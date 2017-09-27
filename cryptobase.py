@@ -576,7 +576,7 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
             if i % 100 == 0:
                 print('progress {:.2f}%'.format(float(100 * i) / (len(prices) - hist - 1)))
 
-            current_state = np.asmatrix(np.hstack((prices[i:i + hist], budget, num_stocks)))
+            current_state = policy.createAgentState(prices[i + 1:i + hist + 1], budget, num_stocks)
             '''THE STATE OF THE Q-ALGORITHM:
 
                 THE STATE is a definite place.
@@ -585,12 +585,15 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
                 
                 To determine the best possible action to take given this 202 dimensional state (if hist == 200),
                  convert the blcok into a 200 weight -> then 200 to 3 states, BUY, SELL, HOLD
-                
-
             '''
             current_portfolio = budget + num_stocks * share_value
             action = policy.select_action(current_state, i)
-            share_value = float(prices[i + hist + 1])
+
+            share_value = None
+            if(type == "advanced"):
+                share_value = float(prices[i + hist + 1][1])
+            else:
+                share_value = float(prices[i + hist + 1])
 
             #RESTRICTION TO BUY, SELL ONLY ONE AT A TIME. change this so it gets better.
             if action == 'Buy' and budget >= share_value:           #BUY A STOCK, ONLY BUYS 1 AT A TIME RESTRICTION
@@ -672,6 +675,14 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
         
         HERE A COOL RESEARCH QUESTION. Does it matter how we put the data in the array? 
         Like if we put close before low and high. Or put volume first. Hell put volume in the middle and close at the end?????
+        
+        IN THIS CASE
+        price[x][0] -> low
+        price[x][1] -> close
+        price[x][2] -> high
+        price[x][3] -> volume
+        
+        
         '''
         prices = []
         for item in trading_info:

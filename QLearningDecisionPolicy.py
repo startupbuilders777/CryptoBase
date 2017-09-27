@@ -118,8 +118,10 @@ class QLearningDecisionPolicy(DecisionPolicy):
         :param next_state: The next state you are in after choosing the action
         :return: 
         '''
-        action_q_vals = self.sess.run(self.q,
-                                      feed_dict={self.x: state})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
+        #print("THE STATE SHAPE IS ")
+        #print(state)
+
+        action_q_vals = self.sess.run(self.q, feed_dict={self.x: state})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
         next_action_q_vals = self.sess.run(self.q, feed_dict={
             self.x: next_state})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
         next_action_idx = np.argmax(
