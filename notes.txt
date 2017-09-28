@@ -1,0 +1,8 @@
+FUTURE IMPROVEMENTS:
+
+Compare the feed forward q agent to the recurrent agent and optimize parameters to make recurrent agent better
+Use Train and Test Set to compare performace of each agent.
+
+(Feed forward only winning because it overlearns the data?)
+Allow to buy, selll, or hold any number of stocks instead
+

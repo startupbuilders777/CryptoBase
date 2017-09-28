@@ -587,7 +587,7 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
                  convert the blcok into a 200 weight -> then 200 to 3 states, BUY, SELL, HOLD
             '''
             current_portfolio = budget + num_stocks * share_value
-            action = policy.select_action(current_state, i)
+            (action, amount) = policy.select_action(current_state, i)
 
             share_value = None
             if(type == "advanced"):
@@ -597,12 +597,12 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
 
             #RESTRICTION TO BUY, SELL ONLY ONE AT A TIME. change this so it gets better.
             if action == 'Buy' and budget >= share_value:           #BUY A STOCK, ONLY BUYS 1 AT A TIME RESTRICTION
-                budget -= share_value
-                num_stocks += 1
+                budget -= amount*share_value
+                num_stocks += amount
                 reinforcementAgentDecisions.append("buy one")
             elif action == 'Sell' and num_stocks > 0:
-                budget += share_value
-                num_stocks -= 1
+                budget += amount*share_value
+                num_stocks -= amount*1
                 reinforcementAgentDecisions.append("sell one")
             else:
                 action = 'Hold'
@@ -758,10 +758,10 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
             all_prices = getAllDataExceptTime(data)
             plot_prices_all(all_prices)
             print(all_prices)
-            hist = 100
+            hist = 30
             trace_length = 1.5*hist
             policy = QLearningAdvancedDecisionPolicy(actions, hist, trace_length, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
-            num_tries = 1
+            num_tries = 10
         else:
             all_prices = getCloseData(data)
             plot_prices_all(all_prices)

@@ -26,7 +26,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         self.amount_of_data_in_each_state = 6
         self.convolution_layer_1_length = 5
         self.convolution_layer_2_length = 5
-        output_dim = len(actions)
+        output_dim = len(actions) + 2
 
         #if trace length is 30 and batch size is 10 -> that is 300 values
 
@@ -230,6 +230,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         with tf.device('/gpu:0'):
             writer = None
             merged = None
+            amout = 0
             if self.tensorboardLog:
                 writer = tf.summary.FileWriter(whatToLearn + "/")
                 merged = tf.summary.merge_all()
@@ -245,8 +246,16 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
                     print(action_q_vals)
                 else:
                     action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
-                action_idx = np.argmax(action_q_vals)  # PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
+                action_idx = np.argmax(action_q_vals[0:2])  # PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
+                print("ACTION IDX")
+                print(action_q_vals)
+                print(action_idx)
                 action = self.actions[action_idx]  # Get the action
+                if(action == "Buy"):
+                    amout = action_q_vals[3]
+                elif(action =="Sell"):
+                    amout = action_q_vals[4]
+
                 if self.tensorboardLog:
                     writer.add_summary(summary, step)
 
@@ -255,7 +264,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
                 action = self.actions[random.randint(0, len(self.actions) - 1)]  # Chhoose a random action
             if self.tensorboardLog:
                 writer.close()
-            return action
+            return (action, amout)
 
     def update_q(self, state, action, reward, next_state):  # TO UPDATE THE STATE MATRIX FOR BETTER PREDICTIONS
         '''
@@ -275,7 +284,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
             next_action_q_vals = self.sess.run(self.q, feed_dict={ self.x: next_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
             next_action_idx = np.argmax(
-                next_action_q_vals
+                next_action_q_vals[0:2]
             )  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
             #print("NEXT ACTION Q-VALS")
             #print(next_action_q_vals)
