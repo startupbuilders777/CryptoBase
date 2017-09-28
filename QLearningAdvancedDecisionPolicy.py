@@ -2,12 +2,14 @@ from DecisionPolicy import DecisionPolicy
 import numpy as np
 import tensorflow as tf
 import random
+import tensorflow.contrib.slim as slim
+import tensorflow.contrib.rnn
 import array
 import json
 import pprint
 
 class QLearningAdvancedDecisionPolicy(DecisionPolicy):
-    def __init__(self, actions, input_dim, tensorboardLog):
+    def __init__(self, actions, input_dim, trace_length, tensorboardLog):
         '''
         :param actions: ACTIONS ARE BUY, HOLD, SELL (Want to be able to extend these actions doe.)
         :param input_dim: 
@@ -17,9 +19,22 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         self.gamma = 0.001
         self.actions = actions
         self.tensorboardLog = tensorboardLog
-
+        self.length_of_state = input_dim
+        self.h_size = 32
+        self.amount_of_data_in_each_state = 6
         output_dim = len(actions)
         h1_dim = 200
+
+        #if trace length is 30 and batch size is 10 -> that is 300 values
+
+        # Setting the training parameters
+        self.trace_length = trace_length
+        self.rnn_batch_size_val = self.h_size*self.length_of_state*self.amount_of_data_in_each_state/(4*self.trace_length*self.h_size)  # How many experience traces to use for each training step.
+        print("THE RNN BATCH SIZE IS")
+        print(self.rnn_batch_size_val)
+
+         # How long each experience trace will be when training
+
         '''
         Input looks like this:
         price[x][0] -> low
@@ -29,17 +44,21 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         price[x][4] -> budget
         price[x][5] -> num_stocks
         '''
-        self.x = tf.placeholder(tf.float32, [None, 6*200])  # PUT THE BATCH OF VALUES IN THE PLACEHOLDER X, size is 202.
+        self.x = tf.placeholder(tf.float32, [None, self.amount_of_data_in_each_state*self.length_of_state])  # PUT THE BATCH OF VALUES IN THE PLACEHOLDER X, size is 202.
         self.y = tf.placeholder(tf.float32, [output_dim])  # outputs an action but should also output a value tooooo!!!!!!!
         self.keep_prob = tf.placeholder(tf.float32)
+        self.trainLength = tf.placeholder(dtype=tf.int32)
+
+        self.rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=self.h_size, state_is_tuple=True)
+        self.rnn_batch_size = tf.placeholder(dtype=tf.int32, shape=[])
 
         self.weights = {
             # 5x5 conv, 1 input, 32 outputs
             'wc1': tf.Variable(tf.random_normal([6, 10, 1, 16])),
             # 5x5 conv, 32 inputs, 64 outputs
-            'wc2': tf.Variable(tf.random_normal([6, 10, 16, 32])),
+            'wc2': tf.Variable(tf.random_normal([6, 10, 16, self.h_size])),
             # fully connected, 7*7*64 inputs, 1024 outputs
-            'wd1': tf.Variable(tf.random_normal([3 * 100 * 32, 1024])),
+            'wd1': tf.Variable(tf.random_normal([3 * 100 * self.h_size, 1024])),
             # 1024 inputs, 10 outputs (class prediction)
             'out': tf.Variable(tf.random_normal([1024, output_dim]))
         }
@@ -59,11 +78,11 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         def maxpool2d(x, k=2):
             return tf.nn.max_pool(x, ksize=[1, k, k, 1], strides=[1, k,k,1], padding="SAME")
 
-        def cov_net(x, weights, biases, dropout):
-            price_in = tf.reshape(x, shape=[-1, 6, 200, 1])
+        def deep_net(x, weights, biases, dropout):
+            self.price_in = tf.reshape(x, shape=[-1, 6, 200, 1])
 
             # Convolution Layer
-            conv1 = conv2d(price_in, weights['wc1'], biases['bc1'])
+            conv1 = conv2d(self.price_in, weights['wc1'], biases['bc1'])
             # Another Convolution Layer
             conv2 = conv2d(conv1, weights['wc2'], biases["bc2"])
 
@@ -72,23 +91,70 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
 
             # Fully connected layer
             # Reshape conv2 output to fit fully connected layer input
-            fc1 = tf.reshape(conv2, [-1, weights['wd1'].get_shape().as_list()[0]])
-            fc1 = tf.add(tf.matmul(fc1, weights['wd1']), biases['bd1'])
-            fc1 = tf.nn.relu(fc1)
+            #reshapedConvOut = tf.reshape(conv2, [-1, weights['wd1'].get_shape().as_list()[0]])
+        #  fc1 = tf.add(tf.matmul(fc1, weights['wd1']), biases['bd1'])
+        #  fc1 = tf.nn.relu(fc1)
             # Apply Dropout
-            fc1 = tf.nn.dropout(fc1, dropout)
+        #  fc1 = tf.nn.dropout(fc1, dropout)
 
             # Output, class prediction
-            out = tf.add(tf.matmul(fc1, weights['out']), biases['out'])
-            return out
+        #  out = tf.add(tf.matmul(fc1, weights['out']), biases['out'])
 
+
+            # We take the output from the final convolutional layer and send it to a recurrent layer.
+            # The input must be reshaped into [batch x trace x units] for rnn processing,
+            # and then returned to [batch x units] when sent through the upper levles.
+
+            self.convFlat = tf.reshape(slim.flatten(conv2), [self.rnn_batch_size, self.trainLength, self.h_size])
+
+            self.state_in = self.rnn_cell.zero_state(self.rnn_batch_size, tf.float32)
+
+            self.rnn, self.rnn_state = tf.nn.dynamic_rnn( inputs=self.convFlat, cell=self.rnn_cell, dtype=tf.float32, initial_state=self.state_in)
+            self.rnn = tf.reshape(self.rnn, shape=[-1, self.h_size])
+
+            # The output from the recurrent layer is then split into separate Value and Advantage streams
+            self.streamA, self.streamV = tf.split(self.rnn, 2, 1)
+            self.AW = tf.Variable(tf.random_normal([self.h_size // 2, len(actions)]))
+            self.VW = tf.Variable(tf.random_normal([self.h_size // 2, 1]))
+            self.Advantage = tf.matmul(self.streamA, self.AW)       #-> Now you have only 3 sized array
+            self.Value = tf.matmul(self.streamV, self.VW)          # -> Now you have 1 sized array
+
+            self.salience = tf.gradients(self.Advantage, self.price_in)
+            # Then combine them together to get our final Q-values.
+            Qout = self.Value + tf.subtract(self.Advantage, tf.reduce_mean(self.Advantage, axis=1, keep_dims=True))
+            '''
+            self.predict = tf.argmax(self.Qout, 1)
+
+            # Below we obtain the loss by taking the sum of squares difference between the target and prediction Q values.
+            self.targetQ = tf.placeholder(shape=[None], dtype=tf.float32)
+            self.actions = tf.placeholder(shape=[None], dtype=tf.int32)
+            self.actions_onehot = tf.one_hot(self.actions, 4, dtype=tf.float32)
+
+            self.Q = tf.reduce_sum(tf.multiply(self.Qout, self.actions_onehot), axis=1)
+
+            self.td_error = tf.square(self.targetQ - self.Q)
+
+            # In order to only propogate accurate gradients through the network, we will mask the first
+            # half of the losses for each trace as per Lample & Chatlot 2016
+            self.maskA = tf.zeros([self.batch_size, self.trainLength // 2])
+            self.maskB = tf.ones([self.batch_size, self.trainLength // 2])
+            self.mask = tf.concat([self.maskA, self.maskB], 1)
+            self.mask = tf.reshape(self.mask, [-1])
+            self.loss = tf.reduce_mean(self.td_error * self.mask)
+
+            self.trainer = tf.train.AdamOptimizer(learning_rate=0.0001)
+            self.updateModel = self.trainer.minimize(self.loss)
+            
+            return out
+            '''
+            return Qout
         #  W1 = tf.Variable(tf.random_normal([input_dim, h1_dim]))  # Go from 202 to 200
         #b1 = tf.Variable(tf.constant(0.1, shape=[h1_dim]))
         #h1 = tf.nn.relu(tf.matmul(self.x, W1) + b1)
         #W2 = tf.Variable(tf.random_normal([h1_dim, output_dim]))  # Go from 200 to number of actions
         #b2 = tf.Variable(tf.constant(0.1, shape=[output_dim]))
         #self.q = tf.nn.relu(tf.matmul(h1, W2) + b2)  # DETERMINES THE SCORE OF EACH ACTION
-        self.q = cov_net(self.x, self.weights, self.biases, self.keep_prob)
+        self.q = deep_net(self.x, self.weights, self.biases, self.keep_prob)
 
         if self.tensorboardLog:
             tf.summary.histogram('q', self.q)
@@ -159,9 +225,11 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             action_q_vals = None
             current_state = current_state.reshape((1, 1200))
             if self.tensorboardLog:
-                summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state, self.keep_prob : 0.90})
+                summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
+                print("ACTION Q VALUES ARE")
+                print(action_q_vals)
             else:
-                action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state, self.keep_prob: 0.90})
+                action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
             action_idx = np.argmax(action_q_vals)  # PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
             action = self.actions[action_idx]  # Get the action
             if self.tensorboardLog:
@@ -189,12 +257,13 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         state = state.reshape((1,1200))     #THERE IS ONLY 1 THING BATCHED
         next_state = next_state.reshape((1, 1200))   #THERE IS ONLY 1 THING BATCHED
 
-        action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
-        next_action_q_vals = self.sess.run(self.q, feed_dict={
-            self.x: next_state, self.keep_prob: 0.90})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
+        action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
+        next_action_q_vals = self.sess.run(self.q, feed_dict={ self.x: next_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
         next_action_idx = np.argmax(
-            next_action_q_vals)  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
-
+            next_action_q_vals
+        )  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
+        print("NEXT ACTION Q-VALS")
+        print(next_action_q_vals)
         '''
         TODO: Document what these 2 do soon.
         '''
@@ -202,5 +271,5 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         action_q_vals = np.squeeze(np.asarray(action_q_vals))
 
         self.sess.run(self.train_op,
-                      feed_dict={self.x: state, self.y: action_q_vals, self.keep_prob : 0.90})  # RUN THE TRAIN OP TO IMPROVE THE PREDICTIONS
+                      feed_dict={self.x: state, self.y: action_q_vals, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # RUN THE TRAIN OP TO IMPROVE THE PREDICTIONS
 

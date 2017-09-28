@@ -759,13 +759,14 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
             plot_prices_all(all_prices)
             print(all_prices)
             hist = 200
-            policy = QLearningAdvancedDecisionPolicy(actions, hist + 2, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
+            trace_length = 30
+            policy = QLearningAdvancedDecisionPolicy(actions, hist, trace_length, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
         else:
             all_prices = getCloseData(data)
             plot_prices_all(all_prices)
             print(all_prices)
             hist = 200
-            policy = QLearningDecisionPolicy(actions, hist + 2, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
+            policy = QLearningDecisionPolicy(actions, hist+2, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
 
         def serialize(data):
             serialized = []
