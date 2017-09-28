@@ -186,7 +186,8 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             tf.summary.scalar("loss histogram", loss)
 
         self.train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
-        self.sess = tf.Session()
+        #with tf.device('/gpu:0'):
+        self.sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
         self.sess.run(tf.global_variables_initializer())
 
     def createAgentState(self, price_data, budget, num_stocks):
@@ -229,35 +230,35 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         277.    276.37  277.69  278.69  281.26  279.16  279.65  281.49  281.5
         281.5   282.58   19.28   61.  ]]
         '''
-
-        writer = None
-        merged = None
-        if self.tensorboardLog:
-            writer = tf.summary.FileWriter(whatToLearn + "/")
-            merged = tf.summary.merge_all()
-        threshold = min(self.epsilon, step / 1000.)
-        if random.random() < threshold:
-            # Exploit best option with probability epsilon
-            summary = None
-            action_q_vals = None
-            current_state = current_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))
+        with tf.device('/gpu:0'):
+            writer = None
+            merged = None
             if self.tensorboardLog:
-                summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
-                print("ACTION Q VALUES ARE")
-                print(action_q_vals)
+                writer = tf.summary.FileWriter(whatToLearn + "/")
+                merged = tf.summary.merge_all()
+            threshold = min(self.epsilon, step / 1000.)
+            if random.random() < threshold:
+                # Exploit best option with probability epsilon
+                summary = None
+                action_q_vals = None
+                current_state = current_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))
+                if self.tensorboardLog:
+                    summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
+                    print("ACTION Q VALUES ARE")
+                    print(action_q_vals)
+                else:
+                    action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
+                action_idx = np.argmax(action_q_vals)  # PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
+                action = self.actions[action_idx]  # Get the action
+                if self.tensorboardLog:
+                    writer.add_summary(summary, step)
+
             else:
-                action_q_vals = self.sess.run(self.q, feed_dict={self.x: current_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
-            action_idx = np.argmax(action_q_vals)  # PICK THE MOST VALUABLE ACTION OUT OF THEM ALL
-            action = self.actions[action_idx]  # Get the action
+                # Explore random option with probability 1 - epsilon
+                action = self.actions[random.randint(0, len(self.actions) - 1)]  # Chhoose a random action
             if self.tensorboardLog:
-                writer.add_summary(summary, step)
-
-        else:
-            # Explore random option with probability 1 - epsilon
-            action = self.actions[random.randint(0, len(self.actions) - 1)]  # Chhoose a random action
-        if self.tensorboardLog:
-            writer.close()
-        return action
+                writer.close()
+            return action
 
     def update_q(self, state, action, reward, next_state):  # TO UPDATE THE STATE MATRIX FOR BETTER PREDICTIONS
         '''
@@ -270,23 +271,23 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         '''
         #  print("THE STATE SHAPE IS ")
         # print(state)
+        with tf.device('/gpu:0'):
+            state = state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))     #THERE IS ONLY 1 THING BATCHED
+            next_state = next_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))   #THERE IS ONLY 1 THING BATCHED
 
-        state = state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))     #THERE IS ONLY 1 THING BATCHED
-        next_state = next_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))   #THERE IS ONLY 1 THING BATCHED
+            action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
+            next_action_q_vals = self.sess.run(self.q, feed_dict={ self.x: next_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
+            next_action_idx = np.argmax(
+                next_action_q_vals
+            )  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
+            #print("NEXT ACTION Q-VALS")
+            #print(next_action_q_vals)
+            '''
+            TODO: Document what these 2 do soon.
+            '''
+            action_q_vals[0, next_action_idx] = reward + self.gamma * next_action_q_vals[0, next_action_idx]
+            action_q_vals = np.squeeze(np.asarray(action_q_vals))
 
-        action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
-        next_action_q_vals = self.sess.run(self.q, feed_dict={ self.x: next_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
-        next_action_idx = np.argmax(
-            next_action_q_vals
-        )  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
-        #print("NEXT ACTION Q-VALS")
-        #print(next_action_q_vals)
-        '''
-        TODO: Document what these 2 do soon.
-        '''
-        action_q_vals[0, next_action_idx] = reward + self.gamma * next_action_q_vals[0, next_action_idx]
-        action_q_vals = np.squeeze(np.asarray(action_q_vals))
-
-        self.sess.run(self.train_op,
-                      feed_dict={self.x: state, self.y: action_q_vals, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # RUN THE TRAIN OP TO IMPROVE THE PREDICTIONS
+            self.sess.run(self.train_op,
+                          feed_dict={self.x: state, self.y: action_q_vals, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # RUN THE TRAIN OP TO IMPROVE THE PREDICTIONS
 
