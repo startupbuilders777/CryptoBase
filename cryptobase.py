@@ -623,8 +623,7 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
 
     # We want to run simulations multiple times and average out the performances:
 
-    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list):
-        num_tries = 10
+    def run_simulations(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list, num_tries):
         final_portfolios = list()
         for i in range(num_tries):
             final_portfolio = run_simulation(policy, budget, num_stocks, prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
@@ -753,14 +752,16 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
         current_portfolio_value_list = []
         budget = startingCapital
         num_stocks = 0
+        num_tries = 10
 
         if(type == "advanced"):
             all_prices = getAllDataExceptTime(data)
             plot_prices_all(all_prices)
             print(all_prices)
-            hist = 30
-            trace_length = 45
+            hist = 100
+            trace_length = 1.5*hist
             policy = QLearningAdvancedDecisionPolicy(actions, hist, trace_length, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
+            num_tries = 1
         else:
             all_prices = getCloseData(data)
             plot_prices_all(all_prices)
@@ -776,7 +777,7 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
 
             return data
 
-        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list)
+        avg, std = run_simulations(policy, budget, num_stocks, all_prices, hist, reinforcementAgentDecisions, current_portfolio_value_list, num_tries)
         print("The end capital earned by the agent is: ")
         print(avg)
         print("The standard deviation for this capital amount in the test batch is: ")

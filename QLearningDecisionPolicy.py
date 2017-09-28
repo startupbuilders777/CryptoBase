@@ -47,7 +47,7 @@ class QLearningDecisionPolicy(DecisionPolicy):
             tf.summary.scalar("loss histogram", loss)
 
         self.train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
-        self.sess = tf.Session()
+        self.sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True) )
         self.sess.run(tf.global_variables_initializer())
 
     def createAgentState(self, price_data, budget, num_stocks):

@@ -20,11 +20,13 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         self.actions = actions
         self.tensorboardLog = tensorboardLog
         self.length_of_state = input_dim
-        self.h_size = 32
-        self.num_hidden_rnn = 64
+        self.h_size_0 = 8
+        self.h_size = 16
+        self.num_hidden_rnn = 16
         self.amount_of_data_in_each_state = 6
+        self.convolution_layer_1_length = 5
+        self.convolution_layer_2_length = 5
         output_dim = len(actions)
-        h1_dim = 200
 
         #if trace length is 30 and batch size is 10 -> that is 300 values
 
@@ -55,21 +57,16 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
 
         #ALWAYS INITIALIZE YOUR WEIGHTS AND BIASES
         self.weights = {
-            # 5x5 conv, 1 input, 32 outputs
-            'wc1': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, 10, 1, 16])),
-            # 5x5 conv, 32 inputs, 64 outputs
-            'wc2': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, 10, 16, self.h_size])),
-            # fully connected, 7*7*64 inputs, 1024 outputs
+
+            'wc1': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, self.convolution_layer_1_length, 1, self.h_size_0])),
+            'wc2': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, self.convolution_layer_2_length, self.h_size_0, self.h_size])),
             'wd1': tf.Variable(tf.random_normal([int(self.amount_of_data_in_each_state/2 * self.length_of_state/2 * self.h_size), 1024])),
-            # Hidden layer weights => 2*n_hidden because of forward + backward cells
             'birnn_out' : tf.Variable(tf.random_normal([2 * self.num_hidden_rnn, output_dim]))
-            # 1024 inputs, 10 outputs (class prediction)
-            # 'out': tf.Variable(tf.random_normal([1024, output_dim]))
         }
 
         self.biases = {
-            'bc1': tf.Variable(tf.random_normal([16])),
-            'bc2': tf.Variable(tf.random_normal([32])),
+            'bc1': tf.Variable(tf.random_normal([self.h_size_0])),
+            'bc2': tf.Variable(tf.random_normal([self.h_size])),
         #    'bd1': tf.Variable(tf.random_normal([1024])),
             'out': tf.Variable(tf.random_normal([output_dim]))
         }
@@ -186,9 +183,9 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             tf.summary.scalar("loss histogram", loss)
 
         self.train_op = tf.train.AdagradOptimizer(0.01).minimize(loss)
-        #with tf.device('/gpu:0'):
-        self.sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
-        self.sess.run(tf.global_variables_initializer())
+        with tf.device('/gpu:0'):
+            self.sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=True))
+            self.sess.run(tf.global_variables_initializer())
 
     def createAgentState(self, price_data, budget, num_stocks):
         state = []
