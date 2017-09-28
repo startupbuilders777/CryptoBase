@@ -21,6 +21,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         self.tensorboardLog = tensorboardLog
         self.length_of_state = input_dim
         self.h_size = 32
+        self.num_hidden_rnn = 64
         self.amount_of_data_in_each_state = 6
         output_dim = len(actions)
         h1_dim = 200
@@ -44,29 +45,32 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         price[x][4] -> budget
         price[x][5] -> num_stocks
         '''
-        self.x = tf.placeholder(tf.float32, [None, self.amount_of_data_in_each_state*self.length_of_state])  # PUT THE BATCH OF VALUES IN THE PLACEHOLDER X, size is 202.
-        self.y = tf.placeholder(tf.float32, [output_dim])  # outputs an action but should also output a value tooooo!!!!!!!
-        self.keep_prob = tf.placeholder(tf.float32)
-        self.trainLength = tf.placeholder(dtype=tf.int32)
+        self.x = tf.placeholder(tf.float32, [None, self.amount_of_data_in_each_state*self.length_of_state], name="x")  # PUT THE BATCH OF VALUES IN THE PLACEHOLDER X, size is 202.
+        self.y = tf.placeholder(tf.float32, [output_dim], name="y")  # outputs an action but should also output a value tooooo!!!!!!!
+        self.keep_prob = tf.placeholder(tf.float32, name="keep_prob")
+        self.trainLength = tf.placeholder(dtype=tf.int32, name="trainLength")
 
         self.rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=self.h_size, state_is_tuple=True)
-        self.rnn_batch_size = tf.placeholder(dtype=tf.int32, shape=[])
+        self.rnn_batch_size = tf.placeholder(dtype=tf.int32, shape=[], name="rnn_batch_size")
 
+        #ALWAYS INITIALIZE YOUR WEIGHTS AND BIASES
         self.weights = {
             # 5x5 conv, 1 input, 32 outputs
-            'wc1': tf.Variable(tf.random_normal([6, 10, 1, 16])),
+            'wc1': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, 10, 1, 16])),
             # 5x5 conv, 32 inputs, 64 outputs
-            'wc2': tf.Variable(tf.random_normal([6, 10, 16, self.h_size])),
+            'wc2': tf.Variable(tf.random_normal([self.amount_of_data_in_each_state, 10, 16, self.h_size])),
             # fully connected, 7*7*64 inputs, 1024 outputs
-            'wd1': tf.Variable(tf.random_normal([3 * 100 * self.h_size, 1024])),
+            'wd1': tf.Variable(tf.random_normal([int(self.amount_of_data_in_each_state/2 * self.length_of_state/2 * self.h_size), 1024])),
+            # Hidden layer weights => 2*n_hidden because of forward + backward cells
+            'birnn_out' : tf.Variable(tf.random_normal([2 * self.num_hidden_rnn, output_dim]))
             # 1024 inputs, 10 outputs (class prediction)
-            'out': tf.Variable(tf.random_normal([1024, output_dim]))
+            # 'out': tf.Variable(tf.random_normal([1024, output_dim]))
         }
 
         self.biases = {
             'bc1': tf.Variable(tf.random_normal([16])),
             'bc2': tf.Variable(tf.random_normal([32])),
-            'bd1': tf.Variable(tf.random_normal([1024])),
+        #    'bd1': tf.Variable(tf.random_normal([1024])),
             'out': tf.Variable(tf.random_normal([output_dim]))
         }
 
@@ -75,11 +79,33 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             x = tf.nn.bias_add(x, b)
             return tf.nn.relu(x)
 
+        def bidirectionalLSTM(x, trainLength, num_hidden_rnn, weights, biases):
+            # Current data input shape: (batch_size, timesteps, n_input)
+            # Required shape: 'timesteps' tensors list of shape (batch_size, num_input)
+
+            # Unstack to get a list of 'timesteps' tensors of shape (batch_size, num_input)
+            x = tf.unstack(x, trainLength, 1)
+
+            # Define lstm cells with tensorflow
+            # Forward direction cell
+            lstm_fw_cell = tensorflow.contrib.rnn.BasicLSTMCell(num_hidden_rnn, forget_bias=1.0)
+            # Backward direction cell
+            lstm_bw_cell = tensorflow.contrib.rnn.BasicLSTMCell(num_hidden_rnn, forget_bias=1.0)
+
+            # Get lstm cell output
+            try:
+                outputs, _, _ = tensorflow.contrib.rnn.static_bidirectional_rnn(lstm_fw_cell, lstm_bw_cell, x, dtype=tf.float32)
+            except Exception:  # Old TensorFlow version only returns outputs not states
+                outputs = tensorflow.contrib.rnn.static_bidirectional_rnn(lstm_fw_cell, lstm_bw_cell, x, dtype=tf.float32)
+
+            # Linear activation, using rnn inner loop last output
+            return tf.matmul(outputs[-1], weights['birnn_out']) + biases['out']
+
         def maxpool2d(x, k=2):
             return tf.nn.max_pool(x, ksize=[1, k, k, 1], strides=[1, k,k,1], padding="SAME")
 
         def deep_net(x, weights, biases, dropout):
-            self.price_in = tf.reshape(x, shape=[-1, 6, 200, 1])
+            self.price_in = tf.reshape(x, shape=[-1, self.amount_of_data_in_each_state, self.length_of_state, 1])
 
             # Convolution Layer
             conv1 = conv2d(self.price_in, weights['wc1'], biases['bc1'])
@@ -89,24 +115,14 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             # Max Pooling (down-sampling)       #Cuts both dimensiosn in half
             conv2 = maxpool2d(conv2, k=2)
 
-            # Fully connected layer
-            # Reshape conv2 output to fit fully connected layer input
-            #reshapedConvOut = tf.reshape(conv2, [-1, weights['wd1'].get_shape().as_list()[0]])
-        #  fc1 = tf.add(tf.matmul(fc1, weights['wd1']), biases['bd1'])
-        #  fc1 = tf.nn.relu(fc1)
-            # Apply Dropout
-        #  fc1 = tf.nn.dropout(fc1, dropout)
-
-            # Output, class prediction
-        #  out = tf.add(tf.matmul(fc1, weights['out']), biases['out'])
-
-
             # We take the output from the final convolutional layer and send it to a recurrent layer.
             # The input must be reshaped into [batch x trace x units] for rnn processing,
             # and then returned to [batch x units] when sent through the upper levles.
 
             self.convFlat = tf.reshape(slim.flatten(conv2), [self.rnn_batch_size, self.trainLength, self.h_size])
-
+            QOut = bidirectionalLSTM(self.convFlat, self.trace_length, self.num_hidden_rnn, weights, biases)
+            return QOut
+            '''
             self.state_in = self.rnn_cell.zero_state(self.rnn_batch_size, tf.float32)
 
             self.rnn, self.rnn_state = tf.nn.dynamic_rnn( inputs=self.convFlat, cell=self.rnn_cell, dtype=tf.float32, initial_state=self.state_in)
@@ -122,6 +138,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             self.salience = tf.gradients(self.Advantage, self.price_in)
             # Then combine them together to get our final Q-values.
             Qout = self.Value + tf.subtract(self.Advantage, tf.reduce_mean(self.Advantage, axis=1, keep_dims=True))
+            '''
             '''
             self.predict = tf.argmax(self.Qout, 1)
 
@@ -147,7 +164,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             
             return out
             '''
-            return Qout
+
         #  W1 = tf.Variable(tf.random_normal([input_dim, h1_dim]))  # Go from 202 to 200
         #b1 = tf.Variable(tf.constant(0.1, shape=[h1_dim]))
         #h1 = tf.nn.relu(tf.matmul(self.x, W1) + b1)
@@ -223,7 +240,7 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
             # Exploit best option with probability epsilon
             summary = None
             action_q_vals = None
-            current_state = current_state.reshape((1, 1200))
+            current_state = current_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))
             if self.tensorboardLog:
                 summary, action_q_vals = self.sess.run([self.merged, self.q], feed_dict={self.x: current_state, self.keep_prob : 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})
                 print("ACTION Q VALUES ARE")
@@ -254,16 +271,16 @@ class QLearningAdvancedDecisionPolicy(DecisionPolicy):
         #  print("THE STATE SHAPE IS ")
         # print(state)
 
-        state = state.reshape((1,1200))     #THERE IS ONLY 1 THING BATCHED
-        next_state = next_state.reshape((1, 1200))   #THERE IS ONLY 1 THING BATCHED
+        state = state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))     #THERE IS ONLY 1 THING BATCHED
+        next_state = next_state.reshape((1,self.length_of_state*self.amount_of_data_in_each_state))   #THERE IS ONLY 1 THING BATCHED
 
         action_q_vals = self.sess.run(self.q, feed_dict={self.x: state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE CURRENT STATE
         next_action_q_vals = self.sess.run(self.q, feed_dict={ self.x: next_state, self.keep_prob: 0.90, self.rnn_batch_size: self.rnn_batch_size_val, self.trainLength: self.trace_length})  # WHAT ARE THE ACTION_Q VALUES FOR THE NEXT STATE
         next_action_idx = np.argmax(
             next_action_q_vals
         )  # WHATS THE BEST NEXT ACTION TO TAKE FROM THE NEW STATE, GET THAT ACTIONS ID
-        print("NEXT ACTION Q-VALS")
-        print(next_action_q_vals)
+        #print("NEXT ACTION Q-VALS")
+        #print(next_action_q_vals)
         '''
         TODO: Document what these 2 do soon.
         '''

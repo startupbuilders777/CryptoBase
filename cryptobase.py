@@ -758,8 +758,8 @@ def reinforcementAgent(whatToLearn, startingCapital, type):
             all_prices = getAllDataExceptTime(data)
             plot_prices_all(all_prices)
             print(all_prices)
-            hist = 200
-            trace_length = 30
+            hist = 30
+            trace_length = 45
             policy = QLearningAdvancedDecisionPolicy(actions, hist, trace_length, tensorboardLog)         #-> INPUT DIM IS a matrix of size 202
         else:
             all_prices = getCloseData(data)
